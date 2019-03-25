@@ -24,7 +24,7 @@
         <div>
             <hr>
         </div>
-        <nav>
+        <nav class="mobile-navigation-container">
             <ul class="mobile-navigation">
                 <li class="navigation-item">
                     <router-link to="/employees">Employees</router-link>
@@ -90,6 +90,11 @@ export default {
 
     .mobile-navigation {
         display: flex;
+        padding: 0;
+    }
+    .mobile-navigation-container {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     @media screen and (min-width: 600px) {
