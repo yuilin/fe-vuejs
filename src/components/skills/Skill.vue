@@ -1,49 +1,56 @@
 <template>
-    <div id="skill">
-        <div id="skill-info">
-            <div id="skill-photo"><img src="../../assets/user-icons/4.png" id="user-icon" alt="username"></div>
-            <div id="skill-personal-data">
+    <div class="skill">
+        <div class="skill-info">
+            <div class="skill-photo"><img src="../../assets/skill-icons/1.png" class="user-icon" alt="username"></div>
+            <div class="skill-personal-data">
                 <div class="skill-personal-data-item"><h2>Technology name</h2></div>
-                <div class="skill-personal-data-item">URL: jsframework.net</div>
+                <div class="skill-personal-data-item">URL: <a href="http://vuejs.org" target="_blank">vuejs.org</a>
+                </div>
                 <div class="skill-personal-data-item">Staff count: 5</div>
                 <div class="skill-personal-data-item">Used in projects: 4</div>
             </div>
         </div>
-        <div id="tabs">
-            <div id="labels">
+        <div class="tabs">
+            <div class="labels">
                 <label class="label-item" @click="openInfo" title="Info">Info</label>
                 <label class="label-item" @click="openSkillTree" title="Skill tree">Skill tree</label>
             </div>
-            <div id="skill-box" class="box">
-                <div id="tab-info">
+            <div class="skill-box box">
+                <div class="tab-info">
                     <h2>Info</h2>
                     <div class="info box">
                         <div class="info-header"><h2>Technology info</h2></div>
                         <hr>
                         <div class="info-items">
-                            <div class="info-item">Latest ver: 3.15.15</div>
-                            <div class="info-item">GIT: git.test.test.com</div>
+                            <div class="info-item">Latest ver: 2.6.10</div>
+                            <div class="info-item">GIT: <a href="https://github.com/vuejs/vue" target="_blank">https://github.com/vuejs/vue</a>
+                            </div>
                         </div>
                     </div>
-                    <br>
                     <div class="info box">
                         <div class="info-header"><h2>Description</h2></div>
                         <hr>
                         <div class="info-items">
-                            <div class="info-item skill-description"><textarea class="skill-description" placeholder="Description"></textarea></div>
+                            <div class="info-item skill-description"><textarea class="skill-description"
+                                                                               placeholder="Description"></textarea>
+                            </div>
                         </div>
-                        <div class="info-items"><div class="info-item" id="info-save-button"><button>Save</button></div></div>
+                        <div class="info-items">
+                            <div class="info-item info-save-button">
+                                <button>Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="tab-skill-tree">
-                    <div id="skills-header">
-                        <div id="skills-label"><h2>Skill tree</h2>
+                <div class="tab-skill-tree">
+                    <div class="skills-header">
+                        <div class="skills-label"><h2>Skill tree</h2>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="modal">
+        <div class="modal">
             <div class="box">
                 <div class="info-items">
                     <div class="info-item">Type</div>
@@ -59,35 +66,39 @@
 export default {
   methods: {
     openInfo () {
-      document.getElementById('tab-info').style.display = 'inline'
-      document.getElementById('tab-skill-tree').style.display = 'none'
+      document.getElementsByClassName('tab-info')[0].style.display = 'inline'
+      document.getElementsByClassName('tab-skill-tree')[0].style.display = 'none'
     },
     openSkillTree () {
-      document.getElementById('tab-info').style.display = 'none'
-      document.getElementById('tab-skill-tree').style.display = 'inline'
+      document.getElementsByClassName('tab-info')[0].style.display = 'none'
+      document.getElementsByClassName('tab-skill-tree')[0].style.display = 'inline'
     }
   }
 }
 </script>
 
 <style scoped>
-    #skill-info, .info-items {
+    .skill-info, .info-items {
         display: flex;
     }
-    #skill-photo {
+
+    .skill-photo {
         display: flex;
         height: 200px;
         width: 200px;
         margin: 50px;
     }
-    #skill-personal-data {
+
+    .skill-personal-data {
         text-align: left;
         margin-top: 20px;
     }
+
     .skill-personal-data-item {
         padding: 10px;
     }
-    #skill-box {
+
+    .skill-box {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
@@ -95,54 +106,98 @@ export default {
         padding: 20px;
         border-radius: 0 10px 10px 10px;
     }
+
     .info {
         width: auto;
         margin: 10px;
         text-align: left;
     }
+
     .info-header {
         padding-left: 10px;
         padding-top: 5px;
     }
+
     .info-item {
         padding: 20px;
     }
-    #labels {
+
+    .labels {
         text-align: left;
-        box-shadow: 0 0 15px 1px #afafaf, inset 0 0 15px 1px #afafaf;
+        box-shadow: 0 0 1px 0 #afafaf, inset 0 0 1px 0 #afafaf;
         border-radius: 10px 10px 0 0;
         padding: 10px;
         width: 135px;
     }
+
     .label-item {
         padding: 10px;
+        cursor: pointer;
     }
-    #tab-skill-tree {
+
+    .tab-skill-tree {
         display: none;
     }
-    #skills-label {
+
+    .skills-label {
         display: inline-block;
     }
-    #skills-header {
+
+    .skills-header {
         width: 700px;
         margin-left: auto;
         margin-right: auto;
     }
+
     .skill-description {
         height: 80px;
         width: 100%;
     }
-    #info-save-button {
+
+    .info-save-button {
         padding-top: 0;
     }
-    #modal {
+
+    .modal {
         display: none;
         position: fixed;
         z-index: 1;
         padding-top: 100px;
-        top: 0px;
+        top: 0;
         width: 80%;
         height: 100%;
         overflow: auto;
+    }
+
+    @media screen and (max-width: 400px) {
+        .skill-info, .info-items {
+            display: block;
+        }
+
+        .labels {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            text-align: center;
+            width: 90%;
+            border-radius: 10px;
+        }
+
+        .skills-header {
+            width: 100%;
+        }
+
+        .info-items {
+            padding-top: 20px;
+        }
+
+        .info-item, .skill-personal-data-item {
+            padding: 5px;
+        }
+
+        .skill-personal-data {
+            padding-left: 35px;
+            margin-top: 0;
+        }
     }
 </style>
