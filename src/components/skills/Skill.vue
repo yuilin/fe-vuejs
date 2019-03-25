@@ -12,8 +12,8 @@
         </div>
         <div class="tabs">
             <div class="labels">
-                <label class="label-item" @click="openInfo" title="Info">Info</label>
-                <label class="label-item" @click="openSkillTree" title="Skill tree">Skill tree</label>
+                <label class="label-item active-tab" @click="openInfo" id="tab1" title="Info">Info</label>
+                <label class="label-item" @click="openSkillTree" id="tab2" title="Skill tree">Skill tree</label>
             </div>
             <div class="skill-box box">
                 <div class="tab-info">
@@ -66,12 +66,17 @@
 export default {
   methods: {
     openInfo () {
-      document.getElementsByClassName('tab-info')[0].style.display = 'inline'
-      document.getElementsByClassName('tab-skill-tree')[0].style.display = 'none'
+      document.querySelector('#tab1')
+      document.querySelector('.tab-info').style.display = 'inline'
+      document.querySelector('#tab1').classList.add('active-tab')
+      document.querySelector('.tab-skill-tree').style.display = 'none'
+      document.querySelector('#tab2').classList.remove('active-tab')
     },
     openSkillTree () {
-      document.getElementsByClassName('tab-info')[0].style.display = 'none'
-      document.getElementsByClassName('tab-skill-tree')[0].style.display = 'inline'
+      document.querySelector('.tab-info').style.display = 'none'
+      document.querySelector('#tab2').classList.add('active-tab')
+      document.querySelector('.tab-skill-tree').style.display = 'inline'
+      document.querySelector('#tab1').classList.remove('active-tab')
     }
   }
 }
@@ -124,7 +129,7 @@ export default {
 
     .labels {
         text-align: left;
-        box-shadow: 0 0 1px 0 #afafaf, inset 0 0 1px 0 #afafaf;
+        box-shadow: 0 0 5px 0 #afafaf, inset 0 0 1px 1px #afafaf;
         border-radius: 10px 10px 0 0;
         padding: 10px;
         width: 135px;
@@ -167,6 +172,10 @@ export default {
         width: 80%;
         height: 100%;
         overflow: auto;
+    }
+    .user-icon {
+        height: 200px;
+        width: 200px;
     }
 
     @media screen and (max-width: 400px) {

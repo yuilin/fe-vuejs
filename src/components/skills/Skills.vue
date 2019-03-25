@@ -207,6 +207,7 @@ export default {}
 
     .skill-filter-item {
         margin: 5px;
+        padding: 6px;
     }
 
     .skill-search-box {

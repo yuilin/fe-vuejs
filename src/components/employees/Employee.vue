@@ -12,8 +12,8 @@
         </div>
         <div class="tabs">
             <div class="labels">
-                <label class="label-item" @click="openInfo" title="Info">Info</label>
-                <label class="label-item" @click="openSkills" title="Skills">Skills</label>
+                <label class="label-item active-tab" @click="openInfo" id="tab1" title="Info">Info</label>
+                <label class="label-item" @click="openSkills" id="tab2" title="Skills">Skills</label>
             </div>
             <div class="employee-box box">
                 <div class="tab-info">
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="skills-table">
-                        <div class="skills-table-row skills-table-header">
+                        <div class="skills-table-header">
                             <div class="skills-table-item">Skill</div>
                             <div class="skills-table-item">Level</div>
                             <div class="skills-table-item">Date update</div>
@@ -99,12 +99,17 @@
 export default {
   methods: {
     openInfo () {
-      document.getElementsByClassName('tab-info')[0].style.display = 'inline'
-      document.getElementsByClassName('tab-skills')[0].style.display = 'none'
+      document.querySelector('#tab1')
+      document.querySelector('.tab-info').style.display = 'inline'
+      document.querySelector('#tab1').classList.add('active-tab')
+      document.querySelector('.tab-skills').style.display = 'none'
+      document.querySelector('#tab2').classList.remove('active-tab')
     },
     openSkills () {
-      document.getElementsByClassName('tab-info')[0].style.display = 'none'
-      document.getElementsByClassName('tab-skills')[0].style.display = 'inline'
+      document.querySelector('.tab-info').style.display = 'none'
+      document.querySelector('#tab2').classList.add('active-tab')
+      document.querySelector('.tab-skills').style.display = 'inline'
+      document.querySelector('#tab1').classList.remove('active-tab')
     }
   }
 }
@@ -163,7 +168,7 @@ export default {
 
     .labels {
         text-align: left;
-        box-shadow: 0 0 1px 0 #afafaf, inset 0 0 1px 0 #afafaf;
+        box-shadow: 0 0 5px 0 #afafaf, inset 0 0 1px 1px #afafaf;
         border-radius: 10px 10px 0 0;
         padding: 10px;
         width: 110px;
@@ -186,6 +191,7 @@ export default {
     }
 
     .skills-table-header {
+        display: table-row;
         border-radius: 10px 10px 0 0;
         box-shadow: inset 0 0 10px 3px #afafaf;
     }
@@ -214,6 +220,10 @@ export default {
         text-align: right;
         float: right;
         margin-top: 30px;
+    }
+    .user-icon {
+        height: 200px;
+        width: 200px;
     }
 
     @media screen and (max-width: 400px) {

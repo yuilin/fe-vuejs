@@ -225,6 +225,7 @@ export default {}
 
     .employee-filter-item {
         margin: 5px;
+        padding: 6px;
     }
 
     .employee-search-box {

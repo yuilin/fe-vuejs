@@ -108,4 +108,7 @@ export default {
         background-clip: text;
         font-size: 16px;
     }
+    .active-tab {
+        text-decoration: underline;
+    }
 </style>
