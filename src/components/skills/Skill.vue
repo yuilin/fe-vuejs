@@ -16,7 +16,7 @@
                 <label class="label-item" @click="openSkillTree" id="tab2" title="Skill tree">Skill tree</label>
             </div>
             <div class="skill-box box">
-                <TabInfo :data="infoBox" parent="Skill"></TabInfo>
+                <TabInfo :data="infoTabData" parent="Skill"></TabInfo>
                 <div class="tab-skill-tree">
                     <div class="skills-header">
                         <div class="skills-label"><h2>Skill tree</h2>
@@ -59,11 +59,11 @@ export default {
   },
   data () {
     return {
-      infoBox: []
+      infoTabData: []
     }
   },
   created: function () {
-    this.infoBox = [
+    this.infoTabData = [
       {
         header: 'Technology info',
         items:

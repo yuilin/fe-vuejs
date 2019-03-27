@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'Search',
+  name: 'myTable',
   props: {
     headerNames: Array,
     data: Array,

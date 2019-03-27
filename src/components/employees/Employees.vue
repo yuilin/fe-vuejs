@@ -2,7 +2,7 @@
     <div class="employees">
         <h1>Employees</h1>
         <myFilter parent="Employees"></myFilter>
-        <Search :headerNames="headerNames" :data="employees" link="/employee"></Search>
+        <myTable :headerNames="headerNames" :data="employees" link="/employee"></myTable>
         <Pagination></Pagination>
     </div>
 </template>
@@ -10,10 +10,10 @@
 <script>
 import myFilter from '@/components/common/Filter'
 import Pagination from '@/components/common/Pagination'
-import Search from '@/components/common/Search'
+import myTable from '@/components/common/Table'
 
 export default {
-  components: {Search, Pagination, myFilter},
+  components: {myTable, Pagination, myFilter},
   data () {
     return {
       employees: [],
