@@ -16,27 +16,7 @@
                 <label class="label-item" @click="openSkills" id="tab2" title="Skills">Skills</label>
             </div>
             <div class="employee-box box">
-                <div class="tab-info">
-                    <div class="info box">
-                        <div class="info-header"><h2>Personal info</h2></div>
-                        <hr>
-                        <div class="info-items">
-                            <div class="info-item">Other ID: 654321</div>
-                            <div class="info-item">Start Date: 01-01-1970</div>
-                            <div class="info-item">Gender: Male</div>
-                            <div class="info-item">Birthday: 01-01-1970</div>
-                        </div>
-                    </div>
-                    <div class="info box">
-                        <div class="info-header"><h2>Job Details</h2></div>
-                        <hr>
-                        <div class="info-items">
-                            <div class="info-item">Job Title: test test</div>
-                            <div class="info-item">Supervisor: Test Test</div>
-                            <div class="info-item">Department: Test</div>
-                        </div>
-                    </div>
-                </div>
+                <TabInfo :data="infoBox"></TabInfo>
                 <div class="tab-skills">
                     <div class="skills-header">
                         <div class="skills-label"><h2>My Skills</h2>
@@ -96,7 +76,10 @@
 </template>
 
 <script>
+import TabInfo from '@/components/common/info/TabInfo'
+
 export default {
+  components: {TabInfo},
   methods: {
     openInfo () {
       document.querySelector('#tab1')
@@ -111,17 +94,68 @@ export default {
       document.querySelector('.tab-skills').style.display = 'inline'
       document.querySelector('#tab1').classList.remove('active-tab')
     }
+  },
+  data () {
+    return {
+      infoBox: []
+    }
+  },
+  created: function () {
+    this.infoBox = [
+      {
+        header: 'Personal info',
+        items:
+          [
+            [
+              {
+                name: 'Other ID',
+                value: '654321'
+              },
+              {
+                name: 'Start Date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }]
+          ]
+      },
+      {
+        header: 'Job Details',
+        items:
+          [
+            [
+              {
+                name: 'Job Title',
+                value: 'test test'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Test Test'
+              },
+              {
+                name: 'Department',
+                value: 'Test'
+              }]
+          ]
+      }
+    ]
   }
 }
 </script>
 
 <style scoped>
-    .employee-info, .info-items {
+    .employee-info {
         display: flex;
     }
 
     @media screen and (max-width: 400px) {
-        .employee-info, .info-items {
+        .employee-info {
             display: block;
         }
     }
@@ -149,21 +183,6 @@ export default {
         width: auto;
         padding: 20px;
         border-radius: 0 10px 10px 10px;
-    }
-
-    .info {
-        width: auto;
-        margin: 10px;
-        text-align: left;
-    }
-
-    .info-header {
-        padding-left: 10px;
-        padding-top: 5px;
-    }
-
-    .info-item {
-        padding: 20px;
     }
 
     .labels {
@@ -221,6 +240,7 @@ export default {
         float: right;
         margin-top: 30px;
     }
+
     .user-icon {
         height: 200px;
         width: 200px;
@@ -240,11 +260,7 @@ export default {
             width: 100%;
         }
 
-        .info-items {
-            padding-top: 20px;
-        }
-
-        .info-item, .employee-personal-data-item {
+        .employee-personal-data-item {
             padding: 5px;
         }
 

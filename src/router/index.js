@@ -5,6 +5,7 @@ import Employees from '@/components/employees/Employees'
 import Employee from '@/components/employees/Employee'
 import Skills from '@/components/skills/Skills'
 import Skill from '@/components/skills/Skill'
+import Test from '@/components/Test'
 
 Vue.use(Router)
 

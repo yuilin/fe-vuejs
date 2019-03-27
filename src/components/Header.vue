@@ -92,6 +92,7 @@ export default {
         display: flex;
         padding: 0;
     }
+
     .mobile-navigation-container {
         margin-left: auto;
         margin-right: auto;

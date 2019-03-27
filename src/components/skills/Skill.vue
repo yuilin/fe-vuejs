@@ -16,32 +16,7 @@
                 <label class="label-item" @click="openSkillTree" id="tab2" title="Skill tree">Skill tree</label>
             </div>
             <div class="skill-box box">
-                <div class="tab-info">
-                    <h2>Info</h2>
-                    <div class="info box">
-                        <div class="info-header"><h2>Technology info</h2></div>
-                        <hr>
-                        <div class="info-items">
-                            <div class="info-item">Latest ver: 2.6.10</div>
-                            <div class="info-item">GIT: <a href="https://github.com/vuejs/vue" target="_blank">https://github.com/vuejs/vue</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="info box">
-                        <div class="info-header"><h2>Description</h2></div>
-                        <hr>
-                        <div class="info-items">
-                            <div class="info-item skill-description"><textarea class="skill-description"
-                                                                               placeholder="Description"></textarea>
-                            </div>
-                        </div>
-                        <div class="info-items">
-                            <div class="info-item info-save-button">
-                                <button>Save</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <TabInfo :data="infoBox" parent="Skill"></TabInfo>
                 <div class="tab-skill-tree">
                     <div class="skills-header">
                         <div class="skills-label"><h2>Skill tree</h2>
@@ -63,7 +38,10 @@
 </template>
 
 <script>
+import TabInfo from '@/components/common/info/TabInfo'
+
 export default {
+  components: {TabInfo},
   methods: {
     openInfo () {
       document.querySelector('#tab1')
@@ -78,6 +56,47 @@ export default {
       document.querySelector('.tab-skill-tree').style.display = 'inline'
       document.querySelector('#tab1').classList.remove('active-tab')
     }
+  },
+  data () {
+    return {
+      infoBox: []
+    }
+  },
+  created: function () {
+    this.infoBox = [
+      {
+        header: 'Technology info',
+        items:
+          [
+            [
+              {
+                name: 'Latest ver',
+                value: '2.6.10'
+              },
+              {
+                name: 'GIT',
+                value: 'https://github.com/vuejs/vue',
+                link: true
+              }]
+          ]
+      },
+      {
+        header: 'Description',
+        items:
+          [
+            [
+              {
+                description: 'Description'
+              }
+            ],
+            [
+              {
+                button: 'Save'
+              }
+            ]
+          ]
+      }
+    ]
   }
 }
 </script>
@@ -112,17 +131,6 @@ export default {
         border-radius: 0 10px 10px 10px;
     }
 
-    .info {
-        width: auto;
-        margin: 10px;
-        text-align: left;
-    }
-
-    .info-header {
-        padding-left: 10px;
-        padding-top: 5px;
-    }
-
     .info-item {
         padding: 20px;
     }
@@ -154,15 +162,6 @@ export default {
         margin-right: auto;
     }
 
-    .skill-description {
-        height: 80px;
-        width: 100%;
-    }
-
-    .info-save-button {
-        padding-top: 0;
-    }
-
     .modal {
         display: none;
         position: fixed;
@@ -173,6 +172,7 @@ export default {
         height: 100%;
         overflow: auto;
     }
+
     .user-icon {
         height: 200px;
         width: 200px;

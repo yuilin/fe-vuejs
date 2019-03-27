@@ -1,213 +1,275 @@
 <template>
     <div class="skills">
         <h1>Skills</h1>
-        <div class="skill-filter-box box">
-            <input class="skill-filter-item" type="text" placeholder="Skill title">
-            <input class="skill-filter-item" type="text" placeholder="Type">
-            <input class="skill-filter-item" type="text" placeholder="Category">
-            <input class="skill-filter-item" type="text" placeholder="Tags">
-        </div>
-        <div class="skill-search-box box">
-            <div class="skill-search-box-row skill-search-box-header">
-                <div class="skill-search-item">Title</div>
-                <div class="skill-search-item">Type</div>
-                <div class="skill-search-item">Category</div>
-                <div class="skill-search-item not-mobile">Version</div>
-                <div class="skill-search-item">Employees</div>
-                <div class="skill-search-item">Projects</div>
-                <div class="skill-search-item">Tags</div>
-            </div>
-            <div class="skill-search-box-row">
-                <div class="skill-search-item">
-                    <router-link to="/skill">HTML</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Technology</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Frontend</router-link>
-                </div>
-                <div class="skill-search-item not-mobile">
-                    <router-link to="/skill">5</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">20</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">5</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Markup</router-link>
-                </div>
-            </div>
-            <div class="skill-search-box-row">
-                <div class="skill-search-item">
-                    <router-link to="/skill">CSS</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Technology</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Frontend</router-link>
-                </div>
-                <div class="skill-search-item not-mobile">
-                    <router-link to="/skill">3</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">12</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">5</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Markup</router-link>
-                </div>
-            </div>
-            <div class="skill-search-box-row">
-                <div class="skill-search-item">
-                    <router-link to="/skill">Javascript</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Technology</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Frontend</router-link>
-                </div>
-                <div class="skill-search-item not-mobile">
-                    <router-link to="/skill">ES2018</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">10</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">5</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Programming language</router-link>
-                </div>
-            </div>
-            <div class="skill-search-box-row">
-                <div class="skill-search-item">
-                    <router-link to="/skill">TypeScript</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Technology</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Frontend</router-link>
-                </div>
-                <div class="skill-search-item not-mobile">
-                    <router-link to="/skill">3.2.0</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">9</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">3</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Programming language</router-link>
-                </div>
-            </div>
-            <div class="skill-search-box-row">
-                <div class="skill-search-item">
-                    <router-link to="/skill">React</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Technology</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Frontend</router-link>
-                </div>
-                <div class="skill-search-item not-mobile">
-                    <router-link to="/skill">3.16.0</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">8</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">5</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Framework</router-link>
-                </div>
-            </div>
-            <div class="skill-search-box-row">
-                <div class="skill-search-item">
-                    <router-link to="/skill">Vue</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Technology</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Frontend</router-link>
-                </div>
-                <div class="skill-search-item not-mobile">
-                    <router-link to="/skill">3.0.2</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">6</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">2</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Framework</router-link>
-                </div>
-            </div>
-            <div class="skill-search-box-row">
-                <div class="skill-search-item">
-                    <router-link to="/skill">Angular</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Technology</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Frontend</router-link>
-                </div>
-                <div class="skill-search-item not-mobile">
-                    <router-link to="/skill">7.2.5</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">7</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">3</router-link>
-                </div>
-                <div class="skill-search-item">
-                    <router-link to="/skill">Framework</router-link>
-                </div>
-            </div>
-        </div>
-        <div class="skill-pagination">
-            <button class="skill-pagination-item box">&lt;</button>
-            <button class="skill-pagination-item box">1</button>
-            <button class="skill-pagination-item box">2</button>
-            <button class="skill-pagination-item box">3</button>
-            <button class="skill-pagination-item box">></button>
-        </div>
+        <myFilter parent="Skills"></myFilter>
+        <Search :headerNames="headerNames" :data="skills" link="/skill"></Search>
+        <Pagination></Pagination>
     </div>
 </template>
 
 <script>
-export default {}
+import myFilter from '@/components/common/Filter'
+import Pagination from '@/components/common/Pagination'
+import Search from '@/components/common/Search'
+
+export default {
+  components: {Search, Pagination, myFilter},
+  data () {
+    return {
+      skills: [],
+      headerNames: []
+    }
+  },
+  created: function () {
+    this.skills = [
+      {
+        title: {
+          value: 'HTML',
+          display: true
+        },
+        type: {
+          value: 'Technology',
+          display: true
+        },
+        category: {
+          value: 'Frontend',
+          display: true
+        },
+        version: {
+          value: '5',
+          display: 'not-mobile'
+        },
+        employees: {
+          value: '20',
+          display: true
+        },
+        projects: {
+          value: '5',
+          display: true
+        },
+        tags: {
+          value: 'Markup',
+          display: true
+        }
+      },
+      {
+        title: {
+          value: 'CSS',
+          display: true
+        },
+        type: {
+          value: 'Technology',
+          display: true
+        },
+        category: {
+          value: 'Frontend',
+          display: true
+        },
+        version: {
+          value: '3',
+          display: 'not-mobile'
+        },
+        employees: {
+          value: '12',
+          display: true
+        },
+        projects: {
+          value: '5',
+          display: true
+        },
+        tags: {
+          value: 'Markup',
+          display: true
+        }
+      },
+      {
+        title: {
+          value: 'JavaScript',
+          display: true
+        },
+        type: {
+          value: 'Technology',
+          display: true
+        },
+        category: {
+          value: 'Frontend',
+          display: true
+        },
+        version: {
+          value: 'ES2018',
+          display: 'not-mobile'
+        },
+        employees: {
+          value: '10',
+          display: true
+        },
+        projects: {
+          value: '5',
+          display: true
+        },
+        tags: {
+          value: 'Programming language',
+          display: true
+        }
+      },
+      {
+        title: {
+          value: 'TypeScript',
+          display: true
+        },
+        type: {
+          value: 'Technology',
+          display: true
+        },
+        category: {
+          value: 'Frontend',
+          display: true
+        },
+        version: {
+          value: '3.2.0',
+          display: 'not-mobile'
+        },
+        employees: {
+          value: '9',
+          display: true
+        },
+        projects: {
+          value: '3',
+          display: true
+        },
+        tags: {
+          value: 'Programming language',
+          display: true
+        }
+      },
+      {
+        title: {
+          value: 'React',
+          display: true
+        },
+        type: {
+          value: 'Technology',
+          display: true
+        },
+        category: {
+          value: 'Frontend',
+          display: true
+        },
+        version: {
+          value: '3.16.0',
+          display: 'not-mobile'
+        },
+        employees: {
+          value: '8',
+          display: true
+        },
+        projects: {
+          value: '5',
+          display: true
+        },
+        tags: {
+          value: 'Framework',
+          display: true
+        }
+      },
+      {
+        title: {
+          value: 'Vue',
+          display: true
+        },
+        type: {
+          value: 'Technology',
+          display: true
+        },
+        category: {
+          value: 'Frontend',
+          display: true
+        },
+        version: {
+          value: '3.2.0',
+          display: 'not-mobile'
+        },
+        employees: {
+          value: '6',
+          display: true
+        },
+        projects: {
+          value: '2',
+          display: true
+        },
+        tags: {
+          value: 'Framework',
+          display: true
+        }
+      },
+      {
+        title: {
+          value: 'Angular',
+          display: true
+        },
+        type: {
+          value: 'Technology',
+          display: true
+        },
+        category: {
+          value: 'Frontend',
+          display: true
+        },
+        version: {
+          value: '7.2.5',
+          display: 'not-mobile'
+        },
+        employees: {
+          value: '7',
+          display: true
+        },
+        projects: {
+          value: '3',
+          display: true
+        },
+        tags: {
+          value: 'Markup',
+          display: true
+        }
+      }
+    ]
+    this.headerNames = [
+      {
+        name: 'Title',
+        display: true
+      },
+      {
+        name: 'Type',
+        display: true
+      },
+      {
+        name: 'Category',
+        display: true
+      },
+      {
+        name: 'Version',
+        display: 'not-mobile'
+      },
+      {
+        name: 'Employees',
+        display: true
+      },
+      {
+        name: 'Projects',
+        display: true
+      },
+      {
+        name: 'Tags',
+        display: true
+      }
+    ]
+  }
+}
 </script>
 
 <style scoped>
     .skills {
         margin: 50px;
-    }
-
-    .skill-filter-box {
-        width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 20px;
-    }
-
-    .skill-filter-item {
-        margin: 5px;
-        padding: 6px;
     }
 
     .skill-search-box {
@@ -234,23 +296,8 @@ export default {}
         padding: 10px;
     }
 
-    .skill-pagination {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20px;
-        width: 130px;
-        height: 40px;
-    }
-
-    .skill-pagination-item {
-        border-radius: 5px;
-        box-shadow: inset 0 0 5px 1px #afafaf;
-        margin: 4px;
-    }
-
     @media screen and (max-width: 800px) {
-        .skill-filter-box, .skill-search-box {
+        .skill-search-box {
             width: 100%;
             padding: 0;
         }
