@@ -16,8 +16,8 @@ export default {
   components: {myTable, Pagination, myFilter},
   data () {
     return {
-      employees: [],
-      headerNames: []
+      employees: Array,
+      headerNames: Array
     }
   },
   created: function () {

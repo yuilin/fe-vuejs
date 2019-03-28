@@ -11,7 +11,7 @@ import InfoBox from '@/components/common/info/InfoBox'
 
 export default {
   components: {InfoBox},
-  name: 'Info',
+  name: 'TabInfo',
   props: {
     parent: String,
     data: Array

@@ -1,5 +1,6 @@
 <template>
-    <Main parent="Employee" :infoTabData="infoTabData" :skillsTabData="skillsTabData"></Main>
+    <Main parent="Employee" :infoTabData="infoTabData" :skillsTabData="skillsTabData"
+          :personalData="personalData" tab1="Info" tab2="Skills"></Main>
 </template>
 
 <script>
@@ -9,8 +10,9 @@ export default {
   components: {Main},
   data () {
     return {
-      infoTabData: [],
-      skillsTabData: []
+      infoTabData: Array,
+      skillsTabData: Object,
+      personalData: Object
     }
   },
   created: function () {
@@ -63,96 +65,99 @@ export default {
         {
           skill: {
             value: 'jQuery',
-            display: true,
             link: '/skill'
           },
           level: {
-            value: '7/10',
-            display: true
+            value: '7/10'
           },
           date: {
-            value: '01.01.1970',
-            display: true
+            value: '01.01.1970'
           },
           actions: {
-            value: 'edit',
-            display: 'true'
+            value: 'edit'
           }
         },
         {
           skill: {
             value: 'JavaScript',
-            display: true,
             link: '/skill'
           },
           level: {
-            value: '9/10',
-            display: true
+            value: '9/10'
           },
           date: {
-            value: '01.01.1970',
-            display: true
+            value: '01.01.1970'
           },
           actions: {
-            value: 'edit',
-            display: 'true'
+            value: 'edit'
           }
         },
         {
           skill: {
             value: 'Powerpoint',
-            display: true,
             link: '/skill'
           },
           level: {
-            value: '5/10',
-            display: true
+            value: '5/10'
           },
           date: {
-            value: '01.01.1970',
-            display: true
+            value: '01.01.1970'
           },
           actions: {
-            value: 'edit',
-            display: 'true'
+            value: 'edit'
           }
         },
         {
           skill: {
             value: 'Java',
-            display: true,
             link: '/skill'
           },
           level: {
-            value: '7/10',
-            display: true
+            value: '7/10'
           },
           date: {
-            value: '01.01.1970',
-            display: true
+            value: '01.01.1970'
           },
           actions: {
-            value: 'edit',
-            display: 'true'
+            value: 'edit'
           }
         }
       ],
       headerNames: [
         {
-          name: 'Skill',
-          display: true
+          name: 'Skill'
         },
         {
-          name: 'Level',
-          display: true
+          name: 'Level'
         },
         {
-          name: 'Date update',
-          display: true
+          name: 'Date update'
         },
         {
-          name: 'Actions',
-          display: 'not-mobile'
+          name: 'Actions'
+        }
+      ]
+    }
+    this.personalData = {
+      type: 'user',
+      id: 1,
+      data: [
+        {
+          value: 'Name Surname',
+          type: 'header'
+        },
+        {
+          name: 'Email',
+          value: 'test.test@test.com',
+          type: 'e-mail'
+        },
+        {
+          name: 'Workplace',
+          value: '11AA'
+        },
+        {
+          name: 'Project',
+          value: 'Test project'
         }
       ]
     }

@@ -2,13 +2,11 @@
     <div class="search-box box">
         <div class="search-box-row search-box-header">
             <div v-for="(headerName, index) in headerNames" v-bind:key="index"
-                 :class="headerName.display === true ? 'search-item' : 'search-item ' + headerName.display">
-                {{headerName.name}}
+                 :class="headerName.display ? 'search-item ' + headerName.display : 'search-item'">{{headerName.name}}
             </div>
         </div>
         <div v-for="(row, index) in data" v-bind:key="index" class="search-box-row">
-            <div v-for="(r, i) in row" v-bind:key="i"
-                 :class="r.display === true ? 'search-item' : 'search-item ' + r.display">
+            <div v-for="(r, i) in row" v-bind:key="i" :class="r.display ? 'search-item ' + r.display : 'search-item'">
                 <router-link :to="link">{{r.value}}</router-link>
             </div>
         </div>
@@ -60,6 +58,10 @@ export default {
 
         .search-box {
             margin-top: 20px;
+        }
+
+        .not-mobile {
+            display: none;
         }
     }
 </style>
