@@ -1,12 +1,16 @@
 <template>
     <div class="tabs">
         <div class="labels">
-            <label class="label-item active-tab" @click="openTab1" id="tab1" :title="tab1">{{tab1}}</label>
-            <label class="label-item" @click="openTab2" id="tab2" :title="tab2">{{tab2}}</label>
+            <label :class="tab === 1 ? 'label-item active-tab' : 'label-item'" @click="showTab(1)" id="tab1"
+                   :title="tab1">{{tab1}}</label>
+            <label :class="tab === 2 ? 'label-item active-tab' : 'label-item'" @click="showTab(2)" id="tab2"
+                   :title="tab2">{{tab2}}</label>
         </div>
         <div class="employee-box box">
-            <TabInfo :data="infoTabData"></TabInfo>
-            <TabSkills :data="skillsTabData"></TabSkills>
+            <transition name="fade" mode="out-in">
+                <TabInfo v-if="tab === 1" :data="infoTabData"></TabInfo>
+                <TabSkills v-else :data="skillsTabData"></TabSkills>
+            </transition>
         </div>
     </div>
 </template>
@@ -18,6 +22,11 @@ import TabSkills from '@/components/common/skills/TabSkills'
 export default {
   name: 'Tabs',
   components: {TabSkills, TabInfo},
+  data () {
+    return {
+      tab: 1
+    }
+  },
   props: {
     infoTabData: Array,
     skillsTabData: Object,
@@ -25,17 +34,8 @@ export default {
     tab2: String
   },
   methods: {
-    openTab1 () {
-      document.querySelector('.tab-info').style.display = 'inline'
-      document.querySelector('#tab1').classList.add('active-tab')
-      document.querySelector('.tab-skills').style.display = 'none'
-      document.querySelector('#tab2').classList.remove('active-tab')
-    },
-    openTab2 () {
-      document.querySelector('.tab-info').style.display = 'none'
-      document.querySelector('#tab2').classList.add('active-tab')
-      document.querySelector('.tab-skills').style.display = 'inline'
-      document.querySelector('#tab1').classList.remove('active-tab')
+    showTab (id) {
+      this.tab = id
     }
   }
 }
@@ -63,6 +63,14 @@ export default {
         width: auto;
         padding: 20px;
         border-radius: 0 10px 10px 10px;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .45s;
+    }
+
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
     }
 
     @media screen and (max-width: 400px) {

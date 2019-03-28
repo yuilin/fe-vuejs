@@ -25,10 +25,6 @@ export default {
 
 <style scoped>
 
-    .tab-skills {
-        display: none;
-    }
-
     .skills-label {
         display: inline-block;
     }

@@ -1,7 +1,7 @@
 <template>
     <div class="info">
         <!--<div class="icon"><img :src="'../../assets/' + personalData.type + '-icons/' + personalData.id + '.png'" class="user-icon" alt="username"></div>-->
-        <div class="icon"><img v-if="personalData.type === 'user'" src="../../assets/user-icons/1.png" class="user-icon"
+        <div class="icon"><img v-if="personalData.type === 'user'" src="../../assets/user-icons/4.png" class="user-icon"
                                alt="username"><img v-else src="../../assets/skill-icons/1.png" class="user-icon"
                                                    alt="username"></div>
         <hr class="mobile">
