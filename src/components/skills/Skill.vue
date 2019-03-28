@@ -15,65 +15,11 @@ export default {
       personalData: Object
     }
   },
-  created: function () {
-    this.infoTabData = [
-      {
-        header: 'Technology info',
-        items:
-          [
-            [
-              {
-                name: 'Latest ver',
-                value: '2.6.10'
-              },
-              {
-                name: 'GIT',
-                value: 'https://github.com/vuejs/vue',
-                link: true
-              }]
-          ]
-      },
-      {
-        header: 'Description',
-        items:
-          [
-            [
-              {
-                description: 'Description'
-              }
-            ],
-            [
-              {
-                button: 'Save'
-              }
-            ]
-          ]
-      }
-    ]
-    this.skillsTabData = {}
-    this.personalData = {
-      type: 'skill',
-      id: 1,
-      data: [
-        {
-          value: 'Technology name',
-          type: 'header'
-        },
-        {
-          name: 'URL',
-          value: 'test.test@test.com',
-          type: 'link'
-        },
-        {
-          name: 'Staff count',
-          value: '5'
-        },
-        {
-          name: 'Used in projects',
-          value: '4'
-        }
-      ]
-    }
+  created () {
+    this.$store.commit('setSkillsPersonalData')
+    this.infoTabData = this.$store.getters.getSkillsInfoTabData
+    this.skillsTabData = this.$store.getters.getSkillsTreeTabData
+    this.personalData = this.$store.getters.getSkillsPersonalData
   }
 }
 </script>
