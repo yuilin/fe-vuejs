@@ -1,5 +1,5 @@
 <template>
-    <div class="personal-data-item" v-if="item.type === 'header'"><h2>{{item.value}}</h2></div>
+    <div class="personal-data-item" v-if="type === 'header'"><h2>{{header}}</h2></div>
     <div class="personal-data-item" v-else-if="item.type === 'e-mail'">{{item.name}}: <a
             :href="'mailto:' + item.value">{{item.value}}</a></div>
     <div class="personal-data-item" v-else-if="item.type === 'link'">{{item.name}}: <a
@@ -12,7 +12,9 @@
 export default {
   name: 'PersonalDataItem',
   props: {
-    item: Object
+    item: Object,
+    type: String,
+    header: String
   }
 }
 </script>

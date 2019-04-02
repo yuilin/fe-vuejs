@@ -6,8 +6,9 @@
             </div>
         </div>
         <div v-for="(row, index) in data" v-bind:key="index" class="search-box-row">
-            <div v-for="(r, i) in row" v-bind:key="i" :class="r.display ? 'search-item ' + r.display : 'search-item'">
-                <router-link :to="link">{{r.value}}</router-link>
+            <div v-for="(r, i) in row.searchFields" v-bind:key="i" :class="r.display ? 'search-item ' + r.display : 'search-item'">
+                <router-link v-if="type === 'Employee'" :to="link + row.info[0].items[0][0].value">{{r.value}}</router-link>
+                <router-link v-else :to="link">{{r.value}}</router-link>
             </div>
         </div>
     </div>
@@ -19,8 +20,10 @@ export default {
   props: {
     headerNames: Array,
     data: Array,
-    link: String
-  }
+    link: String,
+    type: String
+  },
+  methods: {}
 }
 </script>
 

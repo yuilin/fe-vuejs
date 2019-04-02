@@ -2,7 +2,7 @@
     <div class="skills">
         <h1>Skills</h1>
         <myFilter parent="Skills"></myFilter>
-        <myTable :headerNames="headerNames" :data="skills" link="/skill"></myTable>
+        <myTable :headerNames="headerNames" :data="skills" link="/skills/"></myTable>
         <Pagination></Pagination>
     </div>
 </template>

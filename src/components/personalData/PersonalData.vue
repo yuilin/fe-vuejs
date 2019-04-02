@@ -1,12 +1,13 @@
 <template>
     <div class="info">
-        <!--<div class="icon"><img :src="'../../assets/' + personalData.type + '-icons/' + personalData.id + '.png'" class="user-icon" alt="username"></div>-->
-        <div class="icon"><img v-if="personalData.type === 'user'" src="../../assets/user-icons/4.png" class="user-icon"
+        <div class="icon"><img v-if="parent === 'Employee'" src="../../assets/user-icons/4.png" class="user-icon"
                                alt="username"><img v-else src="../../assets/skill-icons/1.png" class="user-icon"
                                                    alt="username"></div>
         <hr class="mobile">
         <div class="personal-data">
-            <PersonalDataItem v-for="(item, index) in personalData.data" v-bind:key="index"
+            <PersonalDataItem type="header"
+                              :header="personalData.credentials.name + ' ' + personalData.credentials.surname"></PersonalDataItem>
+            <PersonalDataItem v-for="(item, index) in personalData.items" v-bind:key="index"
                               :item="item"></PersonalDataItem>
         </div>
     </div>
@@ -19,6 +20,7 @@ export default {
   name: 'PersonalData',
   components: {PersonalDataItem},
   props: {
+    parent: String,
     personalData: Object
   }
 }

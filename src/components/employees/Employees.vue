@@ -2,7 +2,7 @@
     <div class="employees">
         <h1>Employees</h1>
         <myFilter parent="Employees"></myFilter>
-        <myTable :headerNames="headerNames" :data="employees" link="/employee"></myTable>
+        <myTable :headerNames="headerNames" :data="employees"  link="/employees/" type="Employee"></myTable>
         <Pagination></Pagination>
     </div>
 </template>
@@ -21,10 +21,8 @@ export default {
     }
   },
   created () {
-    this.$store.commit('setEmployees')
-    this.$store.commit('setEmployeesHeaderNames')
-    this.employees = this.$store.getters.getEmployees
-    this.headerNames = this.$store.getters.getEmployeesHeaderNames
+    this.employees = this.$store.getters['getEmployees']
+    this.headerNames = this.$store.getters['getEmployeesHeaderNames']
   }
 }
 </script>

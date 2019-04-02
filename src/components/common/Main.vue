@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PersonalData :personalData="personalData"></PersonalData>
+        <PersonalData :parent=parent :personalData="personalData"></PersonalData>
         <Tabs :infoTabData="infoTabData" :skillsTabData="skillsTabData" :tab1="tab1" :tab2="tab2"></Tabs>
     </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   props: {
     parent: String,
     infoTabData: Array,
-    skillsTabData: Object,
+    skillsTabData: Array,
     personalData: Object,
     tab1: String,
     tab2: String

@@ -1,6 +1,6 @@
 <template>
-    <Main parent="Employee" :infoTabData="infoTabData" :skillsTabData="skillsTabData"
-          :personalData="personalData" tab1="Info" tab2="Skills"></Main>
+    <Main parent="Employee" :infoTabData="selectedEmployee.info" :skillsTabData="selectedEmployee.skills"
+          :personalData="selectedEmployee.personalData" tab1="Info" tab2="Skills"></Main>
 </template>
 
 <script>
@@ -10,16 +10,15 @@ export default {
   components: {Main},
   data () {
     return {
-      infoTabData: Array,
-      skillsTabData: Object,
-      personalData: Object
+      num: Number(this.$route.params.id),
+      selectedEmployee: Object
     }
   },
   created () {
-    this.$store.commit('setEmployeesPersonalData')
-    this.infoTabData = this.$store.getters.getEmployeesInfoTabData
-    this.skillsTabData = this.$store.getters.getEmployeesSkillsTabData
-    this.personalData = this.$store.getters.getEmployeesPersonalData
+  },
+  mounted () {
+    this.employees = this.$store.getters['getEmployees']
+    this.selectedEmployee = this.employees.find(employee => employee.info[0].items[0][0].value === this.num)
   }
 }
 </script>

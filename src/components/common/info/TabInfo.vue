@@ -1,7 +1,7 @@
 <template>
     <div class="tab-info">
         <h2 v-if="parent === 'Skill'">Info</h2>
-        <InfoBox v-for="(infoBox, index) in data" v-bind:key="index" :infoHeader="infoBox.header"
+        <InfoBox v-for="(infoBox, index) in data" v-bind:key="index" :infoHeader="infoBox.name"
                  :infoItems="infoBox.items"></InfoBox>
     </div>
 </template>

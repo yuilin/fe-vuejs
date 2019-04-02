@@ -20,7 +20,7 @@ export default new Router({
       component: Employees
     },
     {
-      path: '/employee/',
+      path: '/employees/:id',
       component: Employee
     },
     {
@@ -28,7 +28,7 @@ export default new Router({
       component: Skills
     },
     {
-      path: '/skill',
+      path: '/skills/:id',
       component: Skill
     }
   ]

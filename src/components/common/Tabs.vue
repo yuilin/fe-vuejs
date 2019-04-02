@@ -29,7 +29,7 @@ export default {
   },
   props: {
     infoTabData: Array,
-    skillsTabData: Object,
+    skillsTabData: Array,
     tab1: String,
     tab2: String
   },

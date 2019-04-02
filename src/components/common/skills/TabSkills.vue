@@ -7,7 +7,7 @@
                 <img src="../../../assets/icons/add.png" alt="add">
             </div>
         </div>
-        <myTable :headerNames="data.headerNames" :data="data.skills" link="/skill"></myTable>
+        <myTable :headerNames="headerNames" :data="data[0]" link="/skill"></myTable>
     </div>
 </template>
 
@@ -18,7 +18,15 @@ export default {
   name: 'TabSkills',
   components: {myTable},
   props: {
-    data: Object
+    data: Array
+  },
+  data () {
+    return {
+      headerNames: Array
+    }
+  },
+  mounted () {
+    this.headerNames = this.$store.getters['getEmployeesSkillTableHeaderNames']
   }
 }
 </script>

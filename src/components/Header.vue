@@ -41,7 +41,7 @@
 
 <script>
 export default {
-  name: 'AppHeader'
+  name: 'Content'
 }
 </script>
 
