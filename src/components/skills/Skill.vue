@@ -16,7 +16,6 @@ export default {
     }
   },
   created () {
-    this.$store.commit('setSkillsPersonalData')
     this.infoTabData = this.$store.getters.getSkillsInfoTabData
     this.skillsTabData = this.$store.getters.getSkillsTreeTabData
     this.personalData = this.$store.getters.getSkillsPersonalData

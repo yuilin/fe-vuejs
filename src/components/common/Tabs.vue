@@ -8,8 +8,8 @@
         </div>
         <div class="employee-box box">
             <transition name="fade" mode="out-in">
-                <TabInfo v-if="tab === 1" :data="infoTabData"></TabInfo>
-                <TabSkills v-else :data="skillsTabData"></TabSkills>
+                <TabInfo :parent="parent" v-if="tab === 1" :data="infoTabData"></TabInfo>
+                <TabSkills :parent="parent" v-else :data="skillsTabData"></TabSkills>
             </transition>
         </div>
     </div>
@@ -31,7 +31,8 @@ export default {
     infoTabData: Array,
     skillsTabData: Array,
     tab1: String,
-    tab2: String
+    tab2: String,
+    parent: String
   },
   methods: {
     showTab (id) {
@@ -48,7 +49,6 @@ export default {
         border-radius: 10px 10px 0 0;
         padding: 10px;
         width: 135px;
-        text-align: center;
     }
 
     .label-item {

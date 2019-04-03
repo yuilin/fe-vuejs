@@ -1,7 +1,7 @@
 <template>
     <div>
         <PersonalData :parent=parent :personalData="personalData"></PersonalData>
-        <Tabs :infoTabData="infoTabData" :skillsTabData="skillsTabData" :tab1="tab1" :tab2="tab2"></Tabs>
+        <Tabs :parent=parent :infoTabData="infoTabData" :skillsTabData="skillsTabData" :tab1="tab1" :tab2="tab2"></Tabs>
     </div>
 </template>
 

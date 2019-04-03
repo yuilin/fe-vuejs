@@ -18,7 +18,7 @@ export default {
   },
   mounted () {
     this.employees = this.$store.getters['getEmployees']
-    this.selectedEmployee = this.employees.find(employee => employee.info[0].items[0][0].value === this.num)
+    this.selectedEmployee = this.employees.find(employee => employee.id === this.num)
   }
 }
 </script>

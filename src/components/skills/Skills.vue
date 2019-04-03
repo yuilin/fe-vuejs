@@ -21,10 +21,8 @@ export default {
     }
   },
   created () {
-    this.$store.commit('setSkills')
-    this.$store.commit('setSkillsHeaderNames')
-    this.skills = this.$store.getters.getSkills
-    this.headerNames = this.$store.getters.getSkillsHeaderNames
+    this.skills = this.$store.getters['getSkills']
+    this.headerNames = this.$store.getters['getSkillsHeaderNames']
   }
 }
 </script>

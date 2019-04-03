@@ -2,6 +2,7 @@ export default {
   state: {
     employees: [
       {
+        id: 1,
         auth: {
           login: 'John',
           password: 'JohnDue'
@@ -26,7 +27,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon: 'icon'
+          icon: 1
         },
         info: [
           {
@@ -74,7 +75,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -90,7 +92,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -106,7 +109,7 @@ export default {
             }
           }
         ],
-        searchFields: {
+        data: {
           name: {
             value: 'John'
           },
@@ -128,6 +131,7 @@ export default {
         }
       },
       {
+        id: 2,
         auth: {
           login: 'Bill',
           password: 'BillBogus'
@@ -152,7 +156,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon: 'icon'
+          icon: 2
         },
         info: [
           {
@@ -200,7 +204,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -216,7 +221,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -232,7 +238,7 @@ export default {
             }
           }
         ],
-        searchFields: {
+        data: {
           name: {
             value: 'Bill'
           },
@@ -254,6 +260,7 @@ export default {
         }
       },
       {
+        id: 3,
         auth: {
           login: 'Arden',
           password: 'ArdenLiz'
@@ -278,7 +285,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon: 'icon'
+          icon: 3
         },
         info: [
           {
@@ -326,7 +333,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -342,7 +350,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -358,7 +367,7 @@ export default {
             }
           }
         ],
-        searchFields: {
+        data: {
           name: {
             value: 'Arden'
           },
@@ -380,6 +389,7 @@ export default {
         }
       },
       {
+        id: 4,
         auth: {
           login: 'Dair',
           password: 'DairMick'
@@ -404,7 +414,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon: 'icon'
+          icon: 4
         },
         info: [
           {
@@ -452,7 +462,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -468,7 +479,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -484,7 +496,7 @@ export default {
             }
           }
         ],
-        searchFields: {
+        data: {
           name: {
             value: 'Dair'
           },
@@ -506,6 +518,7 @@ export default {
         }
       },
       {
+        id: 5,
         auth: {
           login: 'Suzy',
           password: 'SuzyStock'
@@ -530,7 +543,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon: 'icon'
+          icon: 5
         },
         info: [
           {
@@ -578,7 +591,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -594,7 +608,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -610,7 +625,7 @@ export default {
             }
           }
         ],
-        searchFields: {
+        data: {
           name: {
             value: 'Suzy'
           },
@@ -632,6 +647,7 @@ export default {
         }
       },
       {
+        id: 6,
         auth: {
           login: 'Sato',
           password: 'SatoMori'
@@ -656,7 +672,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon: 'icon'
+          icon: 6
         },
         info: [
           {
@@ -704,7 +720,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -720,7 +737,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -736,7 +754,7 @@ export default {
             }
           }
         ],
-        searchFields: {
+        data: {
           name: {
             value: 'Sato'
           },
@@ -758,6 +776,7 @@ export default {
         }
       },
       {
+        id: 7,
         auth: {
           login: 'Peck',
           password:
@@ -784,8 +803,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon:
-            'icon'
+          icon: 7
         },
         info: [
           {
@@ -833,7 +851,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -849,7 +868,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -865,29 +885,29 @@ export default {
             }
           }
         ],
-        searchFields:
-          {
-            name: {
-              value: 'Peck'
-            },
-            surname: {
-              value: 'Greg'
-            },
-            position: {
-              value: 'Developer'
-            },
-            project: {
-              value: 'Test project'
-            },
-            department: {
-              value: 'Test Department'
-            },
-            skills: {
-              value: 'Java'
-            }
+        data: {
+          name: {
+            value: 'Peck'
+          },
+          surname: {
+            value: 'Greg'
+          },
+          position: {
+            value: 'Developer'
+          },
+          project: {
+            value: 'Test project'
+          },
+          department: {
+            value: 'Test Department'
+          },
+          skills: {
+            value: 'Java'
           }
+        }
       },
       {
+        id: 8,
         auth: {
           login: 'Vice',
           password:
@@ -914,8 +934,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon:
-            'icon'
+          icon: 8
         },
         info: [
           {
@@ -963,7 +982,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -979,7 +999,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -995,29 +1016,29 @@ export default {
             }
           }
         ],
-        searchFields:
-          {
-            name: {
-              value: 'Vice'
-            },
-            surname: {
-              value: 'Lee'
-            },
-            position: {
-              value: 'Developer'
-            },
-            project: {
-              value: 'Test project'
-            },
-            department: {
-              value: 'Test Department'
-            },
-            skills: {
-              value: 'Java'
-            }
+        data: {
+          name: {
+            value: 'Vice'
+          },
+          surname: {
+            value: 'Lee'
+          },
+          position: {
+            value: 'Developer'
+          },
+          project: {
+            value: 'Test project'
+          },
+          department: {
+            value: 'Test Department'
+          },
+          skills: {
+            value: 'Java'
           }
+        }
       },
       {
+        id: 9,
         auth: {
           login: 'West',
           password:
@@ -1044,8 +1065,7 @@ export default {
               value: 'Test project'
             }
           ],
-          icon:
-            'icon'
+          icon: 9
         },
         info: [
           {
@@ -1093,7 +1113,8 @@ export default {
         ],
         skills: [
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -1109,7 +1130,8 @@ export default {
             }
           },
           {
-            searchFields: {
+            id: 1,
+            data: {
               skill: {
                 value: 'Java'
               },
@@ -1125,27 +1147,26 @@ export default {
             }
           }
         ],
-        searchFields:
-          {
-            name: {
-              value: 'West'
-            },
-            surname: {
-              value: 'Clint'
-            },
-            position: {
-              value: 'Developer'
-            },
-            project: {
-              value: 'Test project'
-            },
-            department: {
-              value: 'Test Department'
-            },
-            skills: {
-              value: 'Java'
-            }
+        data: {
+          name: {
+            value: 'West'
+          },
+          surname: {
+            value: 'Clint'
+          },
+          position: {
+            value: 'Developer'
+          },
+          project: {
+            value: 'Test project'
+          },
+          department: {
+            value: 'Test Department'
+          },
+          skills: {
+            value: 'Java'
           }
+        }
       }
     ],
     employeesHeaderNames: [

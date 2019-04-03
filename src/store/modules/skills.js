@@ -1,14 +1,9 @@
 export default {
   state: {
-    skills: Array,
-    skillsInfoTabData: [],
-    skillsTreeTabData: [],
-    skillsPersonalData: []
-  },
-  mutations: {
-    setSkills () {
-      this.state.skills = [
-        {
+    skills: [
+      {
+        id: 1,
+        data: {
           title: {
             value: 'HTML'
           },
@@ -31,8 +26,11 @@ export default {
           tags: {
             value: 'Markup'
           }
-        },
-        {
+        }
+      },
+      {
+        id: 2,
+        data: {
           title: {
             value: 'CSS'
           },
@@ -55,8 +53,11 @@ export default {
           tags: {
             value: 'Markup'
           }
-        },
-        {
+        }
+      },
+      {
+        id: 3,
+        data: {
           title: {
             value: 'JavaScript'
           },
@@ -79,8 +80,11 @@ export default {
           tags: {
             value: 'Programming language'
           }
-        },
-        {
+        }
+      },
+      {
+        id: 4,
+        data: {
           title: {
             value: 'TypeScript'
           },
@@ -103,8 +107,11 @@ export default {
           tags: {
             value: 'Programming language'
           }
-        },
-        {
+        }
+      },
+      {
+        id: 5,
+        data: {
           title: {
             value: 'React'
           },
@@ -127,8 +134,11 @@ export default {
           tags: {
             value: 'Framework'
           }
-        },
-        {
+        }
+      },
+      {
+        id: 6,
+        data: {
           title: {
             value: 'Vue'
           },
@@ -151,8 +161,11 @@ export default {
           tags: {
             value: 'Framework'
           }
-        },
-        {
+        }
+      },
+      {
+        id: 7,
+        data: {
           title: {
             value: 'Angular'
           },
@@ -176,101 +189,97 @@ export default {
             value: 'Markup'
           }
         }
-      ]
-    },
-    setSkillsHeaderNames () {
-      this.state.skillsHeaderNames = [
-        {
-          name: 'Title'
-        },
-        {
-          name: 'Type'
-        },
-        {
-          name: 'Category'
-        },
-        {
-          name: 'Version',
-          display: 'not-mobile'
-        },
-        {
-          name: 'Employees'
-        },
-        {
-          name: 'Projects'
-        },
-        {
-          name: 'Tags'
-        }
-      ]
-    },
-    setSkillsPersonalData () {
-      this.state.skillsInfoTabData = [
-        {
-          header: 'Technology info',
-          items:
-            [
-              [
-                {
-                  name: 'Latest ver',
-                  value: '2.6.10'
-                },
-                {
-                  name: 'GIT',
-                  value: 'https://github.com/vuejs/vue',
-                  link: true
-                }]
-            ]
-        },
-        {
-          header: 'Description',
-          items:
-            [
-              [
-                {
-                  description: 'Description'
-                }
-              ],
-              [
-                {
-                  button: 'Save'
-                }
-              ]
-            ]
-        }
-      ]
-      this.state.skillsTreeTabData = {}
-      this.state.skillsPersonalData = {
-        type: 'skill',
-        id: 1,
-        data: [
-          {
-            value: 'Technology name',
-            type: 'header'
-          },
-          {
-            name: 'URL',
-            value: 'test.test@test.com',
-            type: 'link'
-          },
-          {
-            name: 'Staff count',
-            value: '5'
-          },
-          {
-            name: 'Used in projects',
-            value: '4'
-          }
-        ]
       }
-    }
+    ],
+    skillsInfoTabData: [
+      {
+        name: 'Technology info',
+        items:
+          [
+            [
+              {
+                name: 'Latest ver',
+                value: '2.6.10'
+              },
+              {
+                name: 'GIT',
+                value: 'https://github.com/vuejs/vue',
+                link: true
+              }]
+          ]
+      },
+      {
+        name: 'Description',
+        items:
+          [
+            [
+              {
+                description: 'Description'
+              }
+            ],
+            [
+              {
+                button: 'Save'
+              }
+            ]
+          ]
+      }
+    ],
+    skillsTreeTabData: [],
+    skillsPersonalData: {
+      icon: 1,
+      credentials: {
+        name: 'Technology name'
+      },
+      items: [
+        {
+          name: 'URL',
+          value: 'test.test@test.com',
+          type: 'link'
+        },
+        {
+          name: 'Staff count',
+          value: '5'
+        },
+        {
+          name: 'Used in projects',
+          value: '4'
+        }
+      ]
+    },
+    skillsHeaderNames: [
+      {
+        name: 'Title'
+      },
+      {
+        name: 'Type'
+      },
+      {
+        name: 'Category'
+      },
+      {
+        name: 'Version',
+        display: 'not-mobile'
+      },
+      {
+        name: 'Employees'
+      },
+      {
+        name: 'Projects'
+      },
+      {
+        name: 'Tags'
+      }
+    ]
+  },
+  mutations: {
   },
   actions: {},
   getters: {
-    getSkills: (state, getter, rootState) => rootState.skills,
-    getSkillsHeaderNames: (state, getter, rootState) => rootState.skillsHeaderNames,
-    getSkillsInfoTabData: (state, getters, rootState) => rootState.skillsInfoTabData,
-    getSkillsTreeTabData: (state, getters, rootState) => rootState.skillsTreeTabData,
-    getSkillsPersonalData: (state, getters, rootState) => rootState.skillsPersonalData
+    getSkills: state => state.skills,
+    getSkillsHeaderNames: state => state.skillsHeaderNames,
+    getSkillsInfoTabData: state => state.skillsInfoTabData,
+    getSkillsTreeTabData: state => state.skillsTreeTabData,
+    getSkillsPersonalData: state => state.skillsPersonalData
   }
 }
