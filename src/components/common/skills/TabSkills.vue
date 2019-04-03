@@ -7,7 +7,7 @@
                 <img src="../../../assets/icons/add.png" alt="add">
             </div>
         </div>
-        <myTable :headerNames="headerNames" :data="data[0]" link="/skill"></myTable>
+        <myTable :headerNames="headerNames" :data="data" link="/skill"></myTable>
     </div>
 </template>
 

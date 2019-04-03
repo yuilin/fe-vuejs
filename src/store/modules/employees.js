@@ -74,17 +74,35 @@ export default {
         ],
         skills: [
           {
-            skill: {
-              value: 'Java'
-            },
-            level: {
-              value: 'level'
-            },
-            date: {
-              value: 'date'
-            },
-            action: {
-              value: 'action'
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
+            }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
             }
           }
         ],
@@ -181,42 +199,38 @@ export default {
           }
         ],
         skills: [
-          [
-            {
-              searchFields: {
-                skill: {
-                  value: 'Java'
-                },
-                level: {
-                  value: 'level'
-                },
-                date: {
-                  value: 'date'
-                },
-                action: {
-                  value: 'action'
-                }
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
               }
             }
-          ],
-          [
-            {
-              searchFields: {
-                skill: {
-                  value: 'Java'
-                },
-                level: {
-                  value: 'level'
-                },
-                date: {
-                  value: 'date'
-                },
-                action: {
-                  value: 'action'
-                }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
               }
             }
-          ]
+          }
         ],
         searchFields: {
           name: {
@@ -312,17 +326,35 @@ export default {
         ],
         skills: [
           {
-            skill: {
-              value: 'Java'
-            },
-            level: {
-              value: 'level'
-            },
-            date: {
-              value: 'date'
-            },
-            action: {
-              value: 'action'
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
+            }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
             }
           }
         ],
@@ -420,17 +452,35 @@ export default {
         ],
         skills: [
           {
-            skill: {
-              value: 'Java'
-            },
-            level: {
-              value: 'level'
-            },
-            date: {
-              value: 'date'
-            },
-            action: {
-              value: 'action'
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
+            }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
             }
           }
         ],
@@ -528,17 +578,35 @@ export default {
         ],
         skills: [
           {
-            skill: {
-              value: 'Java'
-            },
-            level: {
-              value: 'level'
-            },
-            date: {
-              value: 'date'
-            },
-            action: {
-              value: 'action'
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
+            }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
             }
           }
         ],
@@ -636,17 +704,35 @@ export default {
         ],
         skills: [
           {
-            skill: {
-              value: 'Java'
-            },
-            level: {
-              value: 'level'
-            },
-            date: {
-              value: 'date'
-            },
-            action: {
-              value: 'action'
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
+            }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
             }
           }
         ],
@@ -747,17 +833,35 @@ export default {
         ],
         skills: [
           {
-            skill: {
-              value: 'Java'
-            },
-            level: {
-              value: 'level'
-            },
-            date: {
-              value: 'date'
-            },
-            action: {
-              value: 'action'
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
+            }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
             }
           }
         ],
@@ -859,17 +963,35 @@ export default {
         ],
         skills: [
           {
-            skill: {
-              value: 'Java'
-            },
-            level: {
-              value: 'level'
-            },
-            date: {
-              value: 'date'
-            },
-            action: {
-              value: 'action'
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
+            }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
             }
           }
         ],
@@ -971,17 +1093,35 @@ export default {
         ],
         skills: [
           {
-            skill: {
-              value: 'Java'
-            },
-            level: {
-              value: 'level'
-            },
-            date: {
-              value: 'date'
-            },
-            action: {
-              value: 'action'
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
+            }
+          },
+          {
+            searchFields: {
+              skill: {
+                value: 'Java'
+              },
+              level: {
+                value: 'level'
+              },
+              date: {
+                value: 'date'
+              },
+              action: {
+                value: 'action'
+              }
             }
           }
         ],
