@@ -14,11 +14,10 @@
                     </li>
                 </ul>
             </nav>
-            <router-link to="/employee">
-                <div class="username">username</div>
-            </router-link>
-            <router-link to="/employee">
-                <div class="icon"><img src="../assets/user-icons/4.png" class="user-icon" alt="username"></div>
+            <div @click="logout" v-if="employee !== undefined" class="logout">Logout</div>
+            <router-link v-if="employee !== undefined" :to="/employees/ + employee.id">
+                <div class="icon"><img :src="'/static/user-icons/' + employee.personalData.icon + '.png'"
+                                       class="user-icon" alt="username"></div>
             </router-link>
         </div>
         <div>
@@ -41,7 +40,18 @@
 
 <script>
 export default {
-  name: 'Content'
+  name: 'Content',
+  methods: {
+    logout () {
+      this.$router.push('/')
+      this.$store.commit('setId', null)
+    }
+  },
+  computed: {
+    employee () {
+      return this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getId'])
+    }
+  }
 }
 </script>
 
@@ -71,7 +81,7 @@ export default {
         margin: 20px;
     }
 
-    .username {
+    .logout {
         display: flex;
         margin: 30px 10px 30px 1px;
         right: 50px;

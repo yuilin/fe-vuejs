@@ -93,7 +93,7 @@ export default {
         cursor: pointer;
     }
 
-    input[type=text], input[type=pwd], textarea {
+    input[type=text], input[type=password], textarea {
         color: #565656;
     }
 
@@ -109,5 +109,11 @@ export default {
     }
     .active-tab {
         text-decoration: underline;
+    }
+    .error {
+        color: red
+    }
+    .success {
+        color: green
     }
 </style>

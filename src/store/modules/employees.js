@@ -4,8 +4,8 @@ export default {
       {
         id: 1,
         auth: {
-          login: 'John',
-          password: 'JohnDue'
+          login: 'a',
+          password: 'a'
         },
         personalData: {
           credentials: {
@@ -1204,8 +1204,93 @@ export default {
       }
     ]
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    addEmployee (state, payload) {
+      state.employees.push(
+        {
+          id: payload.id,
+          auth: {
+            login: payload.user,
+            password: payload.password
+          },
+          personalData: {
+            credentials: {
+              name: payload.name,
+              surname: payload.surname
+            },
+            items: [
+              {
+                name: 'E-mail',
+                value: payload.email,
+                type: 'e-mail'
+              },
+              {
+                name: 'Workplace',
+                value: payload.workplace
+              },
+              {
+                name: 'Project',
+                value: payload.project
+              }
+            ],
+            icon: payload.id
+          },
+          info: [
+            {
+              name: 'Personal Info',
+              items: [
+                [
+                  {
+                    name: 'Id',
+                    value: payload.id
+                  },
+                  {
+                    name: 'Start date',
+                    value: payload.startDate
+                  },
+                  {
+                    name: 'Gender',
+                    value: payload.gender
+                  },
+                  {
+                    name: 'Birthday',
+                    value: payload.birthday
+                  }
+                ]
+              ]
+            }
+          ],
+          data: {
+            name: {
+              value: payload.name
+            },
+            surname: {
+              value: payload.surname
+            },
+            position: {
+              value: 'Developer'
+            },
+            project: {
+              value: payload.project
+            },
+            department: {
+              value: ''
+            },
+            skills: {
+              value: ''
+            }
+          }
+        }
+      )
+    }
+  },
+  actions: {
+    addEmployee: (context, payload) => {
+      if (this.getEmployees().find(employee => employee.id !== payload.id)) {
+        context.commit('addEmployee', payload)
+      }
+    }
+  },
   getters: {
     getEmployees: state => state.employees,
     getEmployeesHeaderNames: state => state.employeesHeaderNames,

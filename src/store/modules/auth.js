@@ -1,18 +1,13 @@
 export default {
   state: {
-    auth: {
-      login: '',
-      id: ''
-    }
+    id: null
   },
   mutations: {
-    setAuth (state, payload) {
-      this.state.auth.login = payload.login
-      this.state.auth.id = payload.id
+    setId (state, payload) {
+      state.id = payload
     }
   },
-  actions: {},
   getters: {
-    getAuth: state => state.auth
+    getId: state => state.id
   }
 }
