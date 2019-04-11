@@ -108,27 +108,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'John'
-          },
-          surname: {
-            value: 'Due'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       },
       {
         id: 2,
@@ -237,27 +217,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'Bill'
-          },
-          surname: {
-            value: 'Bogus'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       },
       {
         id: 3,
@@ -366,27 +326,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'Arden'
-          },
-          surname: {
-            value: 'Liz'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       },
       {
         id: 4,
@@ -495,27 +435,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'Dair'
-          },
-          surname: {
-            value: 'Mick'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       },
       {
         id: 5,
@@ -624,27 +544,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'Suzy'
-          },
-          surname: {
-            value: 'Stock'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       },
       {
         id: 6,
@@ -753,27 +653,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'Sato'
-          },
-          surname: {
-            value: 'Mori'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       },
       {
         id: 7,
@@ -884,27 +764,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'Peck'
-          },
-          surname: {
-            value: 'Greg'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       },
       {
         id: 8,
@@ -1015,27 +875,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'Vice'
-          },
-          surname: {
-            value: 'Lee'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       },
       {
         id: 9,
@@ -1146,27 +986,7 @@ export default {
               }
             }
           }
-        ],
-        data: {
-          name: {
-            value: 'West'
-          },
-          surname: {
-            value: 'Clint'
-          },
-          position: {
-            value: 'Developer'
-          },
-          project: {
-            value: 'Test project'
-          },
-          department: {
-            value: 'Test Department'
-          },
-          skills: {
-            value: 'Java'
-          }
-        }
+        ]
       }
     ],
     employeesHeaderNames: [
