@@ -1,9 +1,9 @@
 <template>
     <div class="filter-box box">
-        <input class="filter-item" type="text" :placeholder="parent === 'Employees' ? 'Name / Surname' : 'Skill title'">
-        <input class="filter-item" type="text" :placeholder="parent === 'Employees' ? 'Skill' : 'Type'">
-        <input class="filter-item" type="text" :placeholder="parent === 'Employees' ? 'Project' : 'Category'">
-        <input class="filter-item" type="text" :placeholder="parent === 'Employees' ? 'Department' : 'Tags'">
+        <input class="filter-item" id="Filter1" type="text" :placeholder="parent === 'Employees' ? 'Name / Surname' : 'Skill title'" :value="filter1" @input="updateFilter">
+        <input class="filter-item" id="Filter2" type="text" :placeholder="parent === 'Employees' ? 'Skill' : 'Type'" :value="filter2" @input="updateFilter">
+        <input class="filter-item" id="Filter3" type="text" :placeholder="parent === 'Employees' ? 'Project' : 'Category'" :value="filter3" @input="updateFilter">
+        <input class="filter-item" id="Filter4" type="text" :placeholder="parent === 'Employees' ? 'Department' : 'Tags'" :value="filter4" @input="updateFilter">
     </div>
 </template>
 
@@ -12,6 +12,25 @@ export default {
   name: 'myFilter',
   props: {
     parent: String
+  },
+  computed: {
+    filter1 () {
+      return this.$store.getters['getFilter1']
+    },
+    filter2 () {
+      return this.$store.getters['getFilter2']
+    },
+    filter3 () {
+      return this.$store.getters['getFilter3']
+    },
+    filter4 () {
+      return this.$store.getters['getFilter4']
+    }
+  },
+  methods: {
+    updateFilter (e) {
+      this.$store.commit('set' + e.target.id, e.target.value)
+    }
   }
 }
 </script>

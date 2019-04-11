@@ -16,48 +16,75 @@ export default {
   components: {myTable, Pagination, myFilter},
   data () {
     return {
-      employees: [],
-      headerNames: Array,
-      filteredEmployeesSearchData: [],
-      data: []
+      headerNames: Array
     }
   },
   created () {
-    this.employees = this.$store.getters['getEmployees']
     this.headerNames = this.$store.getters['getEmployeesHeaderNames']
-    this.data = this.parse(this.employees)
-    this.filteredEmployeesSearchData = this.data.filter(data => data.data.name.value === 'John')
+  },
+  computed: {
+    filter1 () {
+      return this.$store.getters['getFilter1']
+    },
+    filter2 () {
+      return this.$store.getters['getFilter2']
+    },
+    filter3 () {
+      return this.$store.getters['getFilter3']
+    },
+    filter4 () {
+      return this.$store.getters['getFilter4']
+    },
+    data () {
+      let data = this.parse(this.$store.getters['getEmployees'])
+      if (this.filter1 != null && this.filter1.length > 0) {
+        data = Array.from(new Set(data.filter(data => data.data.name.value.toUpperCase().search(this.filter1.toUpperCase()) > -1)
+          .concat(data.filter(data => data.data.surname.value.toUpperCase().search(this.filter1.toUpperCase()) > -1))))
+      }
+      if (this.filter2 != null && this.filter2.length > 0) {
+        data = data.filter(data => data.data.skills.value.toUpperCase().search(this.filter2.toUpperCase()) > -1)
+      }
+      if (this.filter3 != null && this.filter3.length > 0) {
+        data = data.filter(data => data.data.project.value.toUpperCase().search(this.filter3.toUpperCase()) > -1)
+      }
+      if (this.filter4 != null && this.filter4.length > 0) {
+        data = data.filter(data => data.data.department.value.toUpperCase().search(this.filter4.toUpperCase()) > -1)
+      }
+      return data
+    }
   },
   methods: {
     parse (objects) {
-      return objects.map(function (object) {
-        let parsed = {
-          id: object.id,
-          name: object.personalData.credentials.name,
-          surname: object.personalData.credentials.surname,
-          info: object.info.find(i => i.name === 'Job Details').items.map(function (object) {
-            return {
-              position: object.find(o => o.name === 'Position').value,
-              department: object.find(o => o.name === 'Department').value
+      return objects.map(
+        (object) => {
+          let parsed = {
+            id: object.id,
+            name: object.personalData.credentials.name,
+            surname: object.personalData.credentials.surname,
+            info: object.info.find(i => i.name === 'Job Details').items.map((object) => {
+              return {
+                position: object.find(o => o.name === 'Position').value,
+                department: object.find(o => o.name === 'Department').value
+              }
+            })[0],
+            project: object.personalData.items.find(item => item.name === 'Project').value,
+            skills: object.skills.map((object) => {
+              return object.data.skill.value
+            }).join(' ')
+          }
+          return {
+            id: parsed.id,
+            data: {
+              name: {value: parsed.name},
+              surname: {value: parsed.surname},
+              position: {value: parsed.info.position},
+              department: {value: parsed.info.department},
+              project: {value: parsed.project},
+              skills: {value: parsed.skills}
             }
-          })[0],
-          project: object.personalData.items.find(item => item.name === 'Project').value,
-          skills: object.skills.map(function (object) {
-            return object.data.skill.value
-          }).join(' ')
-        }
-        return {
-          id: parsed.id,
-          data: {
-            name: {value: parsed.name},
-            surname: {value: parsed.surname},
-            position: {value: parsed.info.position},
-            department: {value: parsed.info.department},
-            project: {value: parsed.project},
-            skills: {value: parsed.skills}
           }
         }
-      })
+      )
     }
   }
 }
