@@ -15,8 +15,6 @@ export default {
     }
   },
   created () {
-  },
-  mounted () {
     this.employees = this.$store.getters['getEmployees']
     this.selectedEmployee = this.employees.find(employee => employee.id === this.num)
   }
