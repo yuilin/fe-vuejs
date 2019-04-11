@@ -1,9 +1,13 @@
 <template>
     <div class="filter-box box">
-        <input class="filter-item" id="Filter1" type="text" :placeholder="parent === 'Employees' ? 'Name / Surname' : 'Skill title'" :value="filter1" @input="updateFilter">
-        <input class="filter-item" id="Filter2" type="text" :placeholder="parent === 'Employees' ? 'Skill' : 'Type'" :value="filter2" @input="updateFilter">
-        <input class="filter-item" id="Filter3" type="text" :placeholder="parent === 'Employees' ? 'Project' : 'Category'" :value="filter3" @input="updateFilter">
-        <input class="filter-item" id="Filter4" type="text" :placeholder="parent === 'Employees' ? 'Department' : 'Tags'" :value="filter4" @input="updateFilter">
+        <input class="filter-item" id="Filter1" type="text" v-if="parent === 'Employees'" placeholder="Name / Surname" :value="filter1" @input="updateFilter">
+        <input class="filter-item" id="Filter5" type="text" v-else placeholder="Skill title" :value="filter5" @input="updateFilter">
+        <input class="filter-item" id="Filter2" type="text" v-if="parent === 'Employees'" placeholder="Skill" :value="filter2" @input="updateFilter">
+        <input class="filter-item" id="Filter6" type="text" v-else placeholder="Type" :value="filter6" @input="updateFilter">
+        <input class="filter-item" id="Filter3" type="text" v-if="parent === 'Employees'" placeholder="Project" :value="filter3" @input="updateFilter">
+        <input class="filter-item" id="Filter7" type="text" v-else placeholder="Category" :value="filter7" @input="updateFilter">
+        <input class="filter-item" id="Filter4" type="text" v-if="parent === 'Employees'" placeholder="Department" :value="filter4" @input="updateFilter">
+        <input class="filter-item" id="Filter8" type="text" v-else placeholder="Tags" :value="filter8" @input="updateFilter">
     </div>
 </template>
 
@@ -25,6 +29,18 @@ export default {
     },
     filter4 () {
       return this.$store.getters['getFilter4']
+    },
+    filter5 () {
+      return this.$store.getters['getFilter5']
+    },
+    filter6 () {
+      return this.$store.getters['getFilter6']
+    },
+    filter7 () {
+      return this.$store.getters['getFilter7']
+    },
+    filter8 () {
+      return this.$store.getters['getFilter8']
     }
   },
   methods: {
