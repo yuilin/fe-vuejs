@@ -23,32 +23,32 @@ export default {
     this.headerNames = this.$store.getters['getEmployeesHeaderNames']
   },
   computed: {
-    filter1 () {
+    filterName () {
       return this.$store.getters['getFilter1']
     },
-    filter2 () {
+    filterSkill () {
       return this.$store.getters['getFilter2']
     },
-    filter3 () {
+    filterProject () {
       return this.$store.getters['getFilter3']
     },
-    filter4 () {
+    filterDepartment () {
       return this.$store.getters['getFilter4']
     },
     data () {
       let data = this.parse(this.$store.getters['getEmployees'])
-      if (this.filter1 != null && this.filter1.length > 0) {
-        data = Array.from(new Set(data.filter(data => data.data.name.value.toUpperCase().search(this.filter1.toUpperCase()) > -1)
-          .concat(data.filter(data => data.data.surname.value.toUpperCase().search(this.filter1.toUpperCase()) > -1))))
+      if (this.filterName != null && this.filterName.length > 0) {
+        data = Array.from(new Set(data.filter(data => data.data.name.value.toUpperCase().search(this.filterName.toUpperCase()) > -1)
+          .concat(data.filter(data => data.data.surname.value.toUpperCase().search(this.filterName.toUpperCase()) > -1))))
       }
-      if (this.filter2 != null && this.filter2.length > 0) {
-        data = data.filter(data => data.data.skills.value.toUpperCase().search(this.filter2.toUpperCase()) > -1)
+      if (this.filterSkill != null && this.filterSkill.length > 0) {
+        data = data.filter(data => data.data.skills.value.toUpperCase().search(this.filterSkill.toUpperCase()) > -1)
       }
-      if (this.filter3 != null && this.filter3.length > 0) {
-        data = data.filter(data => data.data.project.value.toUpperCase().search(this.filter3.toUpperCase()) > -1)
+      if (this.filterProject != null && this.filterProject.length > 0) {
+        data = data.filter(data => data.data.project.value.toUpperCase().search(this.filterProject.toUpperCase()) > -1)
       }
-      if (this.filter4 != null && this.filter4.length > 0) {
-        data = data.filter(data => data.data.department.value.toUpperCase().search(this.filter4.toUpperCase()) > -1)
+      if (this.filterDepartment != null && this.filterDepartment.length > 0) {
+        data = data.filter(data => data.data.department.value.toUpperCase().search(this.filterDepartment.toUpperCase()) > -1)
       }
       return data
     }

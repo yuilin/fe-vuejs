@@ -5,7 +5,8 @@ export default {
         id: 1,
         data: {
           title: {
-            value: 'Java'
+            value: 'Java',
+            link: true
           },
           type: {
             value: 'Technology'
@@ -32,7 +33,8 @@ export default {
         id: 2,
         data: {
           title: {
-            value: 'JavaScript'
+            value: 'JavaScript',
+            link: true
           },
           type: {
             value: 'Technology'
@@ -59,7 +61,8 @@ export default {
         id: 3,
         data: {
           title: {
-            value: 'CSS'
+            value: 'CSS',
+            link: true
           },
           type: {
             value: 'Technology'
@@ -86,7 +89,8 @@ export default {
         id: 4,
         data: {
           title: {
-            value: 'TypeScript'
+            value: 'TypeScript',
+            link: true
           },
           type: {
             value: 'Technology'
@@ -113,7 +117,8 @@ export default {
         id: 5,
         data: {
           title: {
-            value: 'React'
+            value: 'React',
+            link: true
           },
           type: {
             value: 'Technology'
@@ -140,7 +145,8 @@ export default {
         id: 6,
         data: {
           title: {
-            value: 'Vue'
+            value: 'Vue',
+            link: true
           },
           type: {
             value: 'Technology'
@@ -167,7 +173,8 @@ export default {
         id: 7,
         data: {
           title: {
-            value: 'Angular'
+            value: 'Angular',
+            link: true
           },
           type: {
             value: 'Technology'
