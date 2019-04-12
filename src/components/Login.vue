@@ -146,6 +146,7 @@ export default {
 
     .registration {
         margin-top: 30px;
+        cursor: pointer;
     }
 
     .wrapper {

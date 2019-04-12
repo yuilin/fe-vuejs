@@ -85,6 +85,7 @@ export default {
         display: flex;
         margin: 30px 10px 30px 1px;
         right: 50px;
+        cursor: pointer;
     }
 
     .icon {
