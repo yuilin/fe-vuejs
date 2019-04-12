@@ -5,13 +5,13 @@ export default {
         id: 1,
         data: {
           title: {
-            value: 'HTML'
+            value: 'Java'
           },
           type: {
             value: 'Technology'
           },
           category: {
-            value: 'Frontend'
+            value: 'Backend'
           },
           version: {
             value: '5',
@@ -24,7 +24,7 @@ export default {
             value: '5'
           },
           tags: {
-            value: 'Markup'
+            value: 'Language'
           }
         }
       },
@@ -32,7 +32,7 @@ export default {
         id: 2,
         data: {
           title: {
-            value: 'CSS'
+            value: 'JavaScript'
           },
           type: {
             value: 'Technology'
@@ -51,7 +51,7 @@ export default {
             value: '5'
           },
           tags: {
-            value: 'Markup'
+            value: 'Programming language'
           }
         }
       },
@@ -59,7 +59,7 @@ export default {
         id: 3,
         data: {
           title: {
-            value: 'JavaScript'
+            value: 'CSS'
           },
           type: {
             value: 'Technology'
@@ -78,7 +78,7 @@ export default {
             value: '5'
           },
           tags: {
-            value: 'Programming language'
+            value: 'Markup'
           }
         }
       },
@@ -272,8 +272,7 @@ export default {
       }
     ]
   },
-  mutations: {
-  },
+  mutations: {},
   actions: {},
   getters: {
     getSkills: state => state.skills,

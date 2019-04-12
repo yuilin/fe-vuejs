@@ -75,8 +75,8 @@ export default {
           return {
             id: parsed.id,
             data: {
-              name: {value: parsed.name},
-              surname: {value: parsed.surname},
+              name: {value: parsed.name, link: true},
+              surname: {value: parsed.surname, link: true},
               position: {value: parsed.info.position},
               department: {value: parsed.info.department},
               project: {value: parsed.project},

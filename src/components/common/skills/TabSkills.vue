@@ -1,13 +1,14 @@
 <template>
     <div v-if="parent === 'Employee'" class="tab-skills">
-        <div class="skills-header">
+        <div v-if="employee !== undefined && employee.id === Number(this.$route.params.id)" class="skills-header">
             <div class="skills-label"><h2>My Skills</h2>
             </div>
             <div class="add-icon">
-                <img src="../../../assets/icons/add.png" alt="add">
+                <img src="../../../../static/icons/add.png" alt="add" @click="addSkill">
             </div>
         </div>
-        <myTable :headerNames="headerNames" :data="data" link="/skills/"></myTable>
+        <myTable :headerNames="headerNames" :data="data" link="/skills/"
+                 :editable="employee !== undefined && employee.id === Number(this.$route.params.id)"></myTable>
     </div>
 </template>
 
@@ -28,6 +29,16 @@ export default {
   },
   created () {
     this.headerNames = this.$store.getters['getEmployeesSkillTableHeaderNames']
+  },
+  computed: {
+    employee () {
+      return this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getId'])
+    }
+  },
+  methods: {
+    addSkill () {
+      this.$store.commit('addSkillToEmployee', this.employee.id)
+    }
   }
 }
 </script>

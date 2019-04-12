@@ -78,34 +78,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -187,34 +205,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -296,34 +332,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -405,34 +459,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -514,34 +586,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -623,34 +713,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -734,34 +842,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -845,34 +971,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -956,34 +1100,52 @@ export default {
             id: 1,
             data: {
               skill: {
-                value: 'Java'
+                value: 'Java',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           },
           {
-            id: 1,
+            id: 2,
             data: {
               skill: {
-                value: 'Java'
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
               },
               level: {
-                value: 'level'
+                value: 'level',
+                options: 'levelList'
               },
               date: {
-                value: 'date'
+                value: 'date',
+                editable: false
               },
-              action: {
-                value: 'action'
-              }
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
             }
           }
         ]
@@ -1102,6 +1264,48 @@ export default {
           }
         }
       )
+    },
+    addSkillToEmployee (state, payload) {
+      state.employees.find(employee => employee.id === payload).skills.push({
+        id: 0,
+        data: {
+          skill: {
+            value: 'Select Skill',
+            link: true,
+            options: 'skillList'
+          },
+          level: {
+            value: '0',
+            options: 'levelList'
+          },
+          date: {
+            value: new Date().toLocaleString(),
+            editable: false
+          },
+          action: [
+            {
+              value: 'edit'
+            },
+            {
+              value: 'delete'
+            }
+          ]
+        }
+      })
+    },
+    deleteEmployeeSkill (state, payload) {
+      state.employees.find(employee => employee.id === payload.employeeId).skills.splice(
+        state.employees.find(employee => employee.id === payload.employeeId).skills.indexOf(
+          state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.skillId)), 1)
+    },
+    updateEmployeeSkill (state, payload) {
+      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.skill.value = payload.skillName
+      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.date.value = new Date().toLocaleString()
+      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).id = payload.value
+    },
+    updateEmployeeSkillLevel (state, payload) {
+      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.level.value = payload.value
+      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.date.value = new Date().toLocaleString()
     }
   },
   actions: {

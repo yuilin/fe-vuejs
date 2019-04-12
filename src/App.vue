@@ -6,6 +6,7 @@
 
 <script>
 import Header from '@/components/Header.vue'
+
 export default {
   name: 'App',
   components: {
@@ -46,13 +47,13 @@ export default {
     }
 
     @media screen and (max-width: 400px) {
-        body, input, textarea, button {
+        body, input, textarea, button, select {
             font-size: 8px;
         }
     }
 
     @media screen and (min-width: 400px) and (max-width: 800px) {
-        body, input, textarea, button {
+        body, input, textarea, button, select {
             font-size: 12px;
         }
     }
@@ -82,7 +83,7 @@ export default {
         background-clip: text;
     }
 
-    input, textarea, button {
+    input, textarea, button, select {
         border: 0;
         box-shadow: 0 0 1px 1px lightgrey, inset 0 0 1px 1px lightgrey;
         border-radius: 3px;
@@ -93,7 +94,7 @@ export default {
         cursor: pointer;
     }
 
-    input[type=text], input[type=password], textarea {
+    input[type=text], input[type=password], textarea, select {
         color: #565656;
     }
 
@@ -107,12 +108,15 @@ export default {
         background-clip: text;
         font-size: 16px;
     }
+
     .active-tab {
         text-decoration: underline;
     }
+
     .error {
         color: red
     }
+
     .success {
         color: green
     }
