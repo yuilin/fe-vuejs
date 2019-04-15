@@ -10,6 +10,12 @@
                         <router-link to="/employees">Employees</router-link>
                     </li>
                     <li class="navigation-item">
+                        <router-link to="/projects">Projects</router-link>
+                    </li>
+                    <li class="navigation-item">
+                        <router-link to="/departments">Departments</router-link>
+                    </li>
+                    <li class="navigation-item">
                         <router-link to="/skills">Skills</router-link>
                     </li>
                 </ul>
@@ -27,6 +33,12 @@
             <ul class="mobile-navigation">
                 <li class="navigation-item">
                     <router-link to="/employees">Employees</router-link>
+                </li>
+                <li class="navigation-item">
+                    <router-link to="/projects">Projects</router-link>
+                </li>
+                <li class="navigation-item">
+                    <router-link to="/departments">Departments</router-link>
                 </li>
                 <li class="navigation-item">
                     <router-link to="/skills">Skills</router-link>

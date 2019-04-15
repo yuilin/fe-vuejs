@@ -24,7 +24,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: '-'
             }
           ],
           icon: 1
@@ -67,7 +67,7 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 1
                 }
               ]
             ]
@@ -151,7 +151,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: '-'
             }
           ],
           icon: 2
@@ -194,7 +194,7 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 2
                 }
               ]
             ]
@@ -278,7 +278,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: 1
             }
           ],
           icon: 3
@@ -321,7 +321,7 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 1
                 }
               ]
             ]
@@ -405,7 +405,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: 2
             }
           ],
           icon: 4
@@ -448,7 +448,7 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 1
                 }
               ]
             ]
@@ -532,7 +532,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: 3
             }
           ],
           icon: 5
@@ -575,7 +575,7 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 2
                 }
               ]
             ]
@@ -659,7 +659,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: 4
             }
           ],
           icon: 6
@@ -702,7 +702,7 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 1
                 }
               ]
             ]
@@ -788,7 +788,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: 5
             }
           ],
           icon: 7
@@ -831,7 +831,7 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 2
                 }
               ]
             ]
@@ -917,7 +917,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: 6
             }
           ],
           icon: 8
@@ -960,7 +960,7 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 2
                 }
               ]
             ]
@@ -1046,7 +1046,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 'Test project'
+              value: 7
             }
           ],
           icon: 9
@@ -1089,7 +1089,136 @@ export default {
                 },
                 {
                   name: 'Department',
-                  value: 'Test department'
+                  value: 2
+                }
+              ]
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 'level',
+                options: 'levelList'
+              },
+              date: {
+                value: 'date',
+                editable: false
+              },
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 'level',
+                options: 'levelList'
+              },
+              date: {
+                value: 'date',
+                editable: false
+              },
+              action: [
+                {
+                  value: 'edit'
+                },
+                {
+                  value: 'delete'
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: 10,
+        auth: {
+          login: 'PM10',
+          password:
+            'PM10'
+        },
+        personalData: {
+          credentials: {
+            name: 'PM',
+            surname:
+              '10'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'PM.10@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 8
+            }
+          ],
+          icon: 10
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              [
+                {
+                  name: 'Id',
+                  value: 10
+                },
+                {
+                  name: 'Start date',
+                  value: '01-01-1970'
+                },
+                {
+                  name: 'Gender',
+                  value: 'Male'
+                },
+                {
+                  name: 'Birthday',
+                  value: '01-01-1970'
+                }
+              ]
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              [
+                {
+                  name: 'Position',
+                  value: 'Developer'
+                },
+                {
+                  name: 'Supervisor',
+                  value: 'Supervisor'
+                },
+                {
+                  name: 'Department',
+                  value: 2
                 }
               ]
             ]

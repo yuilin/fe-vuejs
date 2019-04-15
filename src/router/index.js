@@ -5,6 +5,10 @@ import Employees from '@/components/employees/Employees'
 import Employee from '@/components/employees/Employee'
 import Skills from '@/components/skills/Skills'
 import Skill from '@/components/skills/Skill'
+import Projects from '@/components/projects/Projects'
+import Project from '@/components/projects/Project'
+import Departments from '@/components/departments/Departments'
+import Department from '@/components/departments/Department'
 
 Vue.use(Router)
 
@@ -30,6 +34,22 @@ export default new Router({
     {
       path: '/skills/:id',
       component: Skill
+    },
+    {
+      path: '/departments/',
+      component: Departments
+    },
+    {
+      path: '/departments/:id',
+      component: Department
+    },
+    {
+      path: '/projects/',
+      component: Projects
+    },
+    {
+      path: '/projects/:id',
+      component: Project
     }
   ]
 })

@@ -1,5 +1,5 @@
 <template>
-    <div class="skills">
+    <div class="body">
         <h1>Skills</h1>
         <myFilter parent="Skills"></myFilter>
         <myTable :headerNames="headerNames" :data="data" link="/skills/"></myTable>
@@ -14,6 +14,7 @@ import myTable from '@/components/common/Table'
 
 export default {
   components: {myTable, Pagination, myFilter},
+  name: 'Skills',
   data () {
     return {
       headerNames: Array
@@ -56,13 +57,4 @@ export default {
 </script>
 
 <style scoped>
-    .skills {
-        margin: 50px;
-    }
-
-    @media screen and (max-width: 800px) {
-        .skills {
-            margin: 40px 0 0 0;
-        }
-    }
 </style>

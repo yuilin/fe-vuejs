@@ -24,6 +24,16 @@ export default {
         color: #565656;
     }
 
+    .body {
+        margin: 50px;
+    }
+
+    @media screen and (max-width: 800px) {
+        .body {
+            margin: 40px 0 0 0;
+        }
+    }
+
     .content {
         width: 100%;
         margin-left: auto;

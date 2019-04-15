@@ -1,8 +1,8 @@
 <template>
-    <div class="employees">
+    <div class="body">
         <h1>Employees</h1>
         <myFilter parent="Employees"></myFilter>
-        <myTable :headerNames="headerNames" :data="data" link="/employees/" type="Employee"></myTable>
+        <myTable :headerNames="headerNames" :data="data" link="/employees/"></myTable>
         <Pagination></Pagination>
     </div>
 </template>
@@ -14,6 +14,7 @@ import myTable from '@/components/common/Table'
 
 export default {
   components: {myTable, Pagination, myFilter},
+  name: 'Employees',
   data () {
     return {
       headerNames: Array
@@ -62,15 +63,17 @@ export default {
             name: object.personalData.credentials.name,
             surname: object.personalData.credentials.surname,
             info: object.info.find(i => i.name === 'Job Details').items.map((object) => {
+              let department = this.$store.getters['getDepartments'].find(department => department.id === object.find(o => o.name === 'Department').value)
               return {
                 position: object.find(o => o.name === 'Position').value,
-                department: object.find(o => o.name === 'Department').value
+                department: {name: department.name, id: department.id}
               }
             })[0],
-            project: object.personalData.items.find(item => item.name === 'Project').value,
+            project: this.$store.getters['getProjects'].find(project => project.id === object.personalData.items.find(item => item.name === 'Project').value),
             skills: object.skills.map((object) => {
-              return object.data.skill.value
-            }).join(' ')
+              let skill = this.$store.getters['getSkills'].find(skill => skill.id === object.id)
+              return {name: skill.data.title.value, link: 'skills', id: skill.id}
+            })
           }
           return {
             id: parsed.id,
@@ -78,9 +81,13 @@ export default {
               name: {value: parsed.name, link: true},
               surname: {value: parsed.surname, link: true},
               position: {value: parsed.info.position},
-              department: {value: parsed.info.department},
-              project: {value: parsed.project},
-              skills: {value: parsed.skills}
+              project: {
+                value: parsed.project === undefined ? '-' : parsed.project.name,
+                link: parsed.project === undefined ? undefined : 'projects',
+                id: parsed.project === undefined ? undefined : parsed.project.id
+              },
+              department: {value: parsed.info.department.name, link: 'departments', id: parsed.info.department.id},
+              skills: {values: parsed.skills}
             }
           }
         }
@@ -91,13 +98,4 @@ export default {
 </script>
 
 <style scoped>
-    .employees {
-        margin: 50px;
-    }
-
-    @media screen and (max-width: 1200px) {
-        .employees {
-            margin: 40px 0 0 0;
-        }
-    }
 </style>
