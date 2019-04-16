@@ -33,43 +33,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 1
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 1
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 1
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 1
+              }
             ]
           }
         ],
@@ -160,43 +156,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 2
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 2
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 2
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 2
+              }
             ]
           }
         ],
@@ -287,43 +279,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 3
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 3
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 1
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 1
+              }
             ]
           }
         ],
@@ -414,43 +402,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 4
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 4
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 1
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 1
+              }
             ]
           }
         ],
@@ -541,43 +525,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 5
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 5
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 2
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 2
+              }
             ]
           }
         ],
@@ -668,43 +648,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 6
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 6
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 1
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 1
+              }
             ]
           }
         ],
@@ -797,43 +773,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 7
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 7
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 2
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 2
+              }
             ]
           }
         ],
@@ -926,43 +898,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 8
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 8
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 2
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 2
+              }
             ]
           }
         ],
@@ -1055,43 +1023,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 9
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 9
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 2
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 2
+              }
             ]
           }
         ],
@@ -1184,43 +1148,39 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              [
-                {
-                  name: 'Id',
-                  value: 10
-                },
-                {
-                  name: 'Start date',
-                  value: '01-01-1970'
-                },
-                {
-                  name: 'Gender',
-                  value: 'Male'
-                },
-                {
-                  name: 'Birthday',
-                  value: '01-01-1970'
-                }
-              ]
+              {
+                name: 'Id',
+                value: 10
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
             ]
           },
           {
             name: 'Job Details',
             items: [
-              [
-                {
-                  name: 'Position',
-                  value: 'Developer'
-                },
-                {
-                  name: 'Supervisor',
-                  value: 'Supervisor'
-                },
-                {
-                  name: 'Department',
-                  value: 2
-                }
-              ]
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor',
+                value: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 2
+              }
             ]
           }
         ],
@@ -1350,24 +1310,22 @@ export default {
             {
               name: 'Personal Info',
               items: [
-                [
-                  {
-                    name: 'Id',
-                    value: payload.id
-                  },
-                  {
-                    name: 'Start date',
-                    value: payload.startDate
-                  },
-                  {
-                    name: 'Gender',
-                    value: payload.gender
-                  },
-                  {
-                    name: 'Birthday',
-                    value: payload.birthday
-                  }
-                ]
+                {
+                  name: 'Id',
+                  value: payload.id
+                },
+                {
+                  name: 'Start date',
+                  value: payload.startDate
+                },
+                {
+                  name: 'Gender',
+                  value: payload.gender
+                },
+                {
+                  name: 'Birthday',
+                  value: payload.birthday
+                }
               ]
             }
           ],

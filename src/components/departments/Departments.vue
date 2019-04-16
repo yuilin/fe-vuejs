@@ -39,23 +39,26 @@ export default {
         data = data.filter(data => data.data.manager.value.toUpperCase().search(this.filterManager.toUpperCase()) > -1)
       }
       return data
+    },
+    employees () {
+      return this.$store.getters['getEmployees']
     }
   },
   methods: {
     parse (objects) {
       return objects.map(
         (object) => {
-          let employee = this.$store.getters['getEmployees'].find(employee => employee.id === object.manager)
+          let manager = this.$store.getters['getEmployees'].find(employee => employee.id === object.manager)
           return {
             id: object.id,
             data: {
               name: {value: object.name, link: true},
               manager: {
-                value: Object.values(employee.personalData.credentials).join(' '),
+                value: Object.values(manager.personalData.credentials).join(' '),
                 link: 'employees',
-                id: employee.id
+                id: manager.id
               },
-              employees: {value: '0'}
+              employees: {value: this.employees.filter(employee => employee.info.find(info => info.name === 'Job Details').items.find(item => item.name === 'Department').value === object.id).length}
             }
           }
         }

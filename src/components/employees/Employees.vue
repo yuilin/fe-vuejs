@@ -58,17 +58,14 @@ export default {
     parse (objects) {
       return objects.map(
         (object) => {
+          let info = object.info.find(i => i.name === 'Job Details').items
+          let department = this.$store.getters['getDepartments'].find(department => department.id === info.find(item => item.name === 'Department').value)
           let parsed = {
             id: object.id,
             name: object.personalData.credentials.name,
             surname: object.personalData.credentials.surname,
-            info: object.info.find(i => i.name === 'Job Details').items.map((object) => {
-              let department = this.$store.getters['getDepartments'].find(department => department.id === object.find(o => o.name === 'Department').value)
-              return {
-                position: object.find(o => o.name === 'Position').value,
-                department: {name: department.name, id: department.id}
-              }
-            })[0],
+            department: {name: department.name, id: department.id},
+            position: info.find(item => item.name === 'Position').value,
             project: this.$store.getters['getProjects'].find(project => project.id === object.personalData.items.find(item => item.name === 'Project').value),
             skills: object.skills.map((object) => {
               let skill = this.$store.getters['getSkills'].find(skill => skill.id === object.id)
@@ -80,13 +77,13 @@ export default {
             data: {
               name: {value: parsed.name, link: true},
               surname: {value: parsed.surname, link: true},
-              position: {value: parsed.info.position},
+              position: {value: parsed.position},
               project: {
                 value: parsed.project === undefined ? '-' : parsed.project.name,
                 link: parsed.project === undefined ? undefined : 'projects',
                 id: parsed.project === undefined ? undefined : parsed.project.id
               },
-              department: {value: parsed.info.department.name, link: 'departments', id: parsed.info.department.id},
+              department: {value: parsed.department.name, link: 'departments', id: parsed.department.id},
               skills: {values: parsed.skills}
             }
           }

@@ -1,6 +1,6 @@
 <template>
     <div class="info-items">
-        <InfoItem v-for="(item, index) in items" v-bind:key="index" :item="item"></InfoItem>
+        <InfoItem :item="items"></InfoItem>
     </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: 'infoItems',
   components: {InfoItem},
   props: {
-    items: Array
+    items: Object
   }
 }
 </script>

@@ -18,12 +18,6 @@ export default {
             value: '5',
             display: 'not-mobile'
           },
-          employees: {
-            value: '20'
-          },
-          projects: {
-            value: '5'
-          },
           tags: {
             value: 'Language'
           }
@@ -45,12 +39,6 @@ export default {
           version: {
             value: '3',
             display: 'not-mobile'
-          },
-          employees: {
-            value: '12'
-          },
-          projects: {
-            value: '5'
           },
           tags: {
             value: 'Programming language'
@@ -74,12 +62,6 @@ export default {
             value: 'ES2018',
             display: 'not-mobile'
           },
-          employees: {
-            value: '10'
-          },
-          projects: {
-            value: '5'
-          },
           tags: {
             value: 'Markup'
           }
@@ -101,12 +83,6 @@ export default {
           version: {
             value: '3.2.0',
             display: 'not-mobile'
-          },
-          employees: {
-            value: '9'
-          },
-          projects: {
-            value: '3'
           },
           tags: {
             value: 'Programming language'
@@ -130,12 +106,6 @@ export default {
             value: '3.16.0',
             display: 'not-mobile'
           },
-          employees: {
-            value: '8'
-          },
-          projects: {
-            value: '5'
-          },
           tags: {
             value: 'Framework'
           }
@@ -157,12 +127,6 @@ export default {
           version: {
             value: '3.2.0',
             display: 'not-mobile'
-          },
-          employees: {
-            value: '6'
-          },
-          projects: {
-            value: '2'
           },
           tags: {
             value: 'Framework'
@@ -186,12 +150,6 @@ export default {
             value: '7.2.5',
             display: 'not-mobile'
           },
-          employees: {
-            value: '7'
-          },
-          projects: {
-            value: '3'
-          },
           tags: {
             value: 'Markup'
           }
@@ -203,32 +161,27 @@ export default {
         name: 'Technology info',
         items:
           [
-            [
-              {
-                name: 'Latest ver',
-                value: '2.6.10'
-              },
-              {
-                name: 'GIT',
-                value: 'https://github.com/vuejs/vue',
-                link: true
-              }]
+            {
+              name: 'Latest ver',
+              value: '2.6.10'
+            },
+            {
+              name: 'GIT',
+              value: 'https://github.com/vuejs/vue',
+              link: true
+            }
           ]
       },
       {
         name: 'Description',
         items:
           [
-            [
-              {
-                description: 'Description'
-              }
-            ],
-            [
-              {
-                button: 'Save'
-              }
-            ]
+            {
+              description: 'Description'
+            },
+            {
+              button: 'Save'
+            }
           ]
       }
     ],
@@ -269,13 +222,13 @@ export default {
         display: 'not-mobile'
       },
       {
+        name: 'Tags'
+      },
+      {
         name: 'Employees'
       },
       {
         name: 'Projects'
-      },
-      {
-        name: 'Tags'
       }
     ]
   },

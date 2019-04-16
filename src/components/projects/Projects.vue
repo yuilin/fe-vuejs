@@ -45,6 +45,9 @@ export default {
         data = data.filter(data => data.data.department.value.toUpperCase().search(this.filterDepartment.toUpperCase()) > -1)
       }
       return data
+    },
+    employees () {
+      return this.$store.getters['getEmployees']
     }
   },
   methods: {
@@ -63,7 +66,7 @@ export default {
                 id: employee.id
               },
               department: {value: departments.name, link: 'departments', id: departments.id},
-              employees: {value: '0'}
+              employees: {value: this.employees.filter(employee => employee.personalData.items.find(item => item.name === 'Project').value === object.id).length}
             }
           }
         }
