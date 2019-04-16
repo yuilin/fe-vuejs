@@ -12,7 +12,7 @@
                     <router-link v-if="r.value && r.link && !r.id" :to="link  + row.id">{{r.value}}</router-link>
                     <router-link v-else-if="r.value && r.link && r.id" :to="r.link  + '/' + r.id">{{r.value}}
                     </router-link>
-                    <div v-else-if="r.value" class="contents">{{r.value}}</div>
+                    <div v-else-if="r.value !== undefined" class="contents">{{r.value}}</div>
                     <div v-else-if="r.values" v-for="(arr, i) in r.values" v-bind:key="i">
                         <router-link :to="arr.link  + '/' + arr.id">{{arr.name}}</router-link>
                     </div>

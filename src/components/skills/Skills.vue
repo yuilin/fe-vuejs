@@ -59,11 +59,11 @@ export default {
   },
   methods: {
     calculateEmployees (record) {
-      let employees = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => skill.id === record.id))
+      let employees = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === record.id))
       record.data.employees = {value: Object.assign(employees).length > 0 ? employees.length : '0'}
     },
     calculateProjects (record) {
-      let projects = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => skill.id === record.id)).map((employee) =>
+      let projects = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === record.id)).map((employee) =>
         employee.personalData.items.find(item => item.name === 'Project').value)
       record.data.projects = {value: Object.assign(projects).length > 0 ? Array.from(new Set(projects.filter(Number))).length : '0'}
     }
