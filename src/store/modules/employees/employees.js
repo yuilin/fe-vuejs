@@ -1388,7 +1388,7 @@ export default {
     updateEmployeeSkill (state, payload) {
       state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.skill.value = payload.skillName
       state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.date.value = new Date().toLocaleString()
-      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).id = payload.value
+      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).id = Number(payload.value)
     },
     updateEmployeeSkillLevel (state, payload) {
       state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.level.value = payload.value

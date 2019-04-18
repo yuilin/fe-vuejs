@@ -37,11 +37,7 @@ export default {
       return this.$store.getters['getFilter8']
     },
     data () {
-      let data = this.$store.getters['getSkills']
-      data.forEach(record => {
-        this.calculateEmployees(record)
-        this.calculateProjects(record)
-      })
+      let data = this.parse(this.$store.getters['getSkills'])
       if (this.filterSkill != null && this.filterSkill.length > 0) {
         data = data = data.filter(data => data.data.title.value.toUpperCase().search(this.filterSkill.toUpperCase()) > -1)
       }
@@ -58,14 +54,31 @@ export default {
     }
   },
   methods: {
-    calculateEmployees (record) {
-      let employees = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === record.id))
-      record.data.employees = {value: Object.assign(employees).length > 0 ? employees.length : '0'}
+    calculateEmployees (id) {
+      let employees = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === id))
+      return Object.assign(employees).length > 0 ? employees.length : '0'
     },
-    calculateProjects (record) {
-      let projects = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === record.id)).map((employee) =>
+    calculateProjects (id) {
+      let projects = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === id)).map((employee) =>
         employee.personalData.items.find(item => item.name === 'Project').value)
-      record.data.projects = {value: Object.assign(projects).length > 0 ? Array.from(new Set(projects.filter(Number))).length : '0'}
+      return Object.assign(projects).length > 0 ? Array.from(new Set(projects.filter(Number))).length : '0'
+    },
+    parse (objects) {
+      return objects.map(
+        (object) => {
+          return {
+            id: object.id,
+            data: {
+              name: {value: object.personalData.credentials.name, link: true},
+              type: {value: object.info.find(info => info.name === 'Info').items.find(item => item.name === 'Type').value},
+              category: {value: object.info.find(info => info.name === 'Info').items.find(item => item.name === 'Category').value},
+              version: {value: object.info.find(info => info.name === 'Info').items.find(item => item.name === 'Latest ver').value},
+              employees: {value: this.calculateEmployees(object.id)},
+              projects: {value: this.calculateProjects(object.id)}
+            }
+          }
+        }
+      )
     }
   }
 }

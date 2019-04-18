@@ -8,7 +8,7 @@
         </div>
         <div class="employee-box box">
             <transition name="fade" mode="out-in">
-                <TabInfo :parent="parent" v-if="tab === 1" :data="infoTabData"></TabInfo>
+                <TabInfo v-if="tab === 1" :data="infoTabData"></TabInfo>
                 <TabSkills :parent="parent" v-else :data="skillsTabData"></TabSkills>
             </transition>
         </div>

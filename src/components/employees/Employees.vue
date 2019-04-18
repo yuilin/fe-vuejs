@@ -69,7 +69,7 @@ export default {
             project: this.$store.getters['getProjects'].find(project => project.id === object.personalData.items.find(item => item.name === 'Project').value),
             skills: object.skills.map((object) => {
               let skill = this.$store.getters['getSkills'].find(skill => skill.id === Number(object.id))
-              return {name: skill.data.title.value, link: 'skills', id: skill.id}
+              return {name: skill.personalData.credentials.name, link: 'skills', id: skill.id}
             })
           }
           return {

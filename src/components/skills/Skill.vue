@@ -1,6 +1,6 @@
 <template>
-    <Main parent="Skill" :infoTabData="infoTabData" :skillsTabData="skillsTabData"
-          :personalData="personalData" tab1="Info" tab2="Skill tree"></Main>
+    <Main parent="Skill" :infoTabData="selectedSkill.info" :skillsTabData="[]"
+          :personalData="addCalculatedValues(selectedSkill)" tab1="Info" tab2="Skill tree"></Main>
 </template>
 
 <script>
@@ -10,15 +10,38 @@ export default {
   components: {Main},
   data () {
     return {
-      infoTabData: Array,
-      skillsTabData: Object,
-      personalData: Object
+      num: Number(this.$route.params.id),
+      selectedSkill: Object
     }
   },
   created () {
-    this.infoTabData = this.$store.getters.getSkillsInfoTabData
-    this.skillsTabData = this.$store.getters.getSkillsTreeTabData
-    this.personalData = this.$store.getters.getSkillsPersonalData
+    this.skills = this.$store.getters['getSkills']
+    this.selectedSkill = this.skills.find(skill => skill.id === this.num)
+  },
+  methods: {
+    addCalculatedValues (selectedSkill) {
+      return {
+        icon: selectedSkill.personalData.icon,
+        credentials: selectedSkill.personalData.credentials,
+        items: selectedSkill.personalData.items.map(
+          (item) => {
+            return {
+              name: item.name,
+              value: item.name === 'Staff count' ? this.calculateEmployees(selectedSkill.id) : this.calculateProjects(selectedSkill.id)
+            }
+          }
+        )
+      }
+    },
+    calculateProjects (id) {
+      let projects = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === id)).map((employee) =>
+        employee.personalData.items.find(item => item.name === 'Project').value)
+      return Object.assign(projects).length > 0 ? Array.from(new Set(projects.filter(Number))).length : '0'
+    },
+    calculateEmployees (id) {
+      let employees = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === id))
+      return Object.assign(employees).length > 0 ? employees.length : '0'
+    }
   }
 }
 </script>

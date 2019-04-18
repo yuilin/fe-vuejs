@@ -66,7 +66,7 @@ export default {
         (skill) => {
           return {
             id: skill.id,
-            value: skill.data.title.value
+            value: skill.personalData.credentials.name
           }
         }
       ).filter(skill => this.employeeSkillList.indexOf(skill.id) === -1)
@@ -113,7 +113,7 @@ export default {
             employeeId: this.employee.id,
             recordId: this.editRecord,
             value: e.target.value,
-            skillName: this.$store.getters['getSkills'].find(skill => skill.id === Number(e.target.value)).data.title.value
+            skillName: this.$store.getters['getSkills'].find(skill => skill.id === Number(e.target.value)).personalData.credentials.name
           })
           this.editRecord = e.target.value
           break
