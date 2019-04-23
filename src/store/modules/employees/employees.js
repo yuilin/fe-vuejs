@@ -79,11 +79,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -105,11 +105,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -202,11 +202,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -228,11 +228,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -325,11 +325,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -351,11 +351,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -448,11 +448,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -474,11 +474,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -571,11 +571,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -597,11 +597,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -694,11 +694,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -720,11 +720,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -819,11 +819,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -845,11 +845,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -944,11 +944,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -970,11 +970,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -1069,11 +1069,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -1095,11 +1095,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -1194,11 +1194,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -1220,11 +1220,11 @@ export default {
                 options: 'skillList'
               },
               level: {
-                value: 'level',
+                value: 5,
                 options: 'levelList'
               },
               date: {
-                value: 'date',
+                value: '23.04.2019, 14:37:14',
                 editable: false
               },
               action: [
@@ -1353,11 +1353,11 @@ export default {
       )
     },
     addSkillToEmployee (state, payload) {
-      state.employees.find(employee => employee.id === payload).skills.push({
-        id: 0,
+      state.employees.find(employee => employee.id === payload.employeeId).skills.push({
+        id: payload.value,
         data: {
           skill: {
-            value: 'Select Skill',
+            value: payload.skillName,
             link: true,
             options: 'skillList'
           },

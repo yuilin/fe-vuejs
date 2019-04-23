@@ -33,11 +33,37 @@ export default {
   computed: {
     employee () {
       return this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getId'])
+    },
+    skillList () {
+      return this.$store.getters['getSkills'].map(
+        (skill) => {
+          return {
+            id: skill.id,
+            value: skill.personalData.credentials.name
+          }
+        }
+      ).filter(skill => this.employeeSkillList.indexOf(skill.id) === -1)
+    },
+    employeeSkillList () {
+      return this.employee.skills.map(
+        (eSkill) => {
+          if (this.editRecord !== eSkill.id) {
+            return eSkill.id
+          }
+        }
+      )
     }
   },
   methods: {
     addSkill () {
-      this.$store.commit('addSkillToEmployee', this.employee.id)
+      if (this.$store.getters['getEditRecord'] === 0 && this.skillList.length > 0) {
+        this.$store.commit('addSkillToEmployee', {
+          employeeId: this.employee.id,
+          value: this.skillList[0].id,
+          skillName: this.skillList[0].value
+        })
+        this.$store.commit('setEditRecord', 0)
+      }
     }
   }
 }

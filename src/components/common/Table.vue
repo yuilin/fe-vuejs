@@ -26,7 +26,7 @@
                 <div v-else :class="r.display ? 'search-item ' + r.display : 'search-item'">
                     <select v-if="r.value && r.editable !== false" :to="link  + row.id">
                         <option v-for="(item, i) in handleListCall(r.options)" v-bind:key="i" :value="item.id"
-                                :selected="item.id === editRecord" @click="updateItem" :class="r.options">
+                                :selected="selectedRecord(item.id, r.options)" @click="updateItem" :class="r.options">
                             {{item.value}}
                         </option>
                     </select>
@@ -54,10 +54,14 @@ export default {
   },
   data () {
     return {
-      editRecord: null
+      selectedSkill: null,
+      selectedLevel: null
     }
   },
   computed: {
+    editRecord () {
+      return Number(this.$store.getters['getEditRecord'])
+    },
     employee () {
       return this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getId'])
     },
@@ -109,32 +113,41 @@ export default {
     updateItem (e) {
       switch (e.target.className) {
         case 'skillList': {
-          this.$store.commit('updateEmployeeSkill', {
-            employeeId: this.employee.id,
-            recordId: this.editRecord,
-            value: e.target.value,
-            skillName: this.$store.getters['getSkills'].find(skill => skill.id === Number(e.target.value)).personalData.credentials.name
-          })
-          this.editRecord = e.target.value
+          this.selectedSkill = e.target.value
           break
         }
         case 'levelList': {
-          this.$store.commit('updateEmployeeSkillLevel', {
-            employeeId: this.employee.id,
-            recordId: this.editRecord,
-            value: e.target.value
-          })
+          this.selectedLevel = e.target.value
           break
         }
       }
     },
     edit (id) {
-      this.editRecord = this.editRecord === id ? null : id
-      // this.$store.commit('editEmployeeSkill', {employeeId: this.employee.id, skillId: id})
+      if (this.editRecord === 0 || this.editRecord === id) {
+        if (this.editRecord === id) {
+          this.$store.commit('updateEmployeeSkillLevel', {
+            employeeId: this.employee.id,
+            recordId: this.editRecord,
+            value: this.selectedLevel
+          })
+          this.$store.commit('updateEmployeeSkill', {
+            employeeId: this.employee.id,
+            recordId: this.editRecord,
+            value: this.selectedSkill,
+            skillName: this.$store.getters['getSkills'].find(skill => skill.id === Number(this.selectedSkill)).personalData.credentials.name
+          })
+          this.selectedSkill = null
+          this.selectedLevel = null
+        } else {
+          this.selectedSkill = this.employee.skills.find(skill => skill.id === id).id
+          this.selectedLevel = this.employee.skills.find(skill => skill.id === id).data.level.value
+        }
+        this.$store.commit('setEditRecord', this.editRecord === id ? Number(0) : id)
+      }
     },
     delete (id) {
       if (this.editRecord === id) {
-        this.editRecord = null
+        this.$store.commit('setEditRecord', 0)
       }
       this.$store.commit('deleteEmployeeSkill', {employeeId: this.employee.id, skillId: id})
     },
@@ -143,11 +156,16 @@ export default {
     },
     handleListCall (functionName) {
       return this[functionName]
-    }
-  },
-  watch: {
-    editRecord: function (val) {
-      this.editRecord = val
+    },
+    selectedRecord (id, options) {
+      switch (options) {
+        case 'skillList': {
+          return id === this.editRecord
+        }
+        case 'levelList': {
+          return id === Number(this.employee.skills.find(skill => skill.id === this.editRecord).data.level.value)
+        }
+      }
     }
   }
 }
