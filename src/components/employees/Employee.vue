@@ -8,15 +8,13 @@ import Main from '@/components/common/Main'
 
 export default {
   components: {Main},
-  data () {
-    return {
-      num: Number(this.$route.params.id),
-      selectedEmployee: Object
-    }
-  },
   created () {
     this.employees = this.$store.getters['getEmployees']
-    this.selectedEmployee = this.employees.find(employee => employee.id === this.num)
+  },
+  computed: {
+    selectedEmployee () {
+      return this.employees.find(employee => employee.id === Number(this.$route.params.id))
+    }
   }
 }
 </script>

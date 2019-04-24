@@ -15,11 +15,6 @@ import myTable from '@/components/common/Table'
 export default {
   components: {myTable, Pagination, myFilter},
   name: 'Skills',
-  data () {
-    return {
-      headerNames: Array
-    }
-  },
   created () {
     this.headerNames = this.$store.getters['getSkillsHeaderNames']
   },

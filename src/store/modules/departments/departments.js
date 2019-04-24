@@ -22,10 +22,31 @@ export default {
       {
         name: 'Employees'
       }
+    ],
+    departmentHeaderNames: [
+      {
+        name: 'Name'
+      },
+      {
+        name: 'Surname'
+      },
+      {
+        name: 'Position'
+      },
+      {
+        name: 'Project'
+      },
+      {
+        name: 'Skills'
+      },
+      {
+        name: 'Actions'
+      }
     ]
   },
   getters: {
     getDepartments: state => state.departments,
-    getDepartmentsHeaderNames: state => state.departmentsHeaderNames
+    getDepartmentsHeaderNames: state => state.departmentsHeaderNames,
+    getDepartmentHeaderNames: state => state.departmentHeaderNames
   }
 }

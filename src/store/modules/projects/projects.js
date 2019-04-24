@@ -63,10 +63,28 @@ export default {
       {
         name: 'Employees'
       }
+    ],
+    projectHeaderNames: [
+      {
+        name: 'Name'
+      },
+      {
+        name: 'Surname'
+      },
+      {
+        name: 'Position'
+      },
+      {
+        name: 'Skills'
+      },
+      {
+        name: 'Actions'
+      }
     ]
   },
   getters: {
     getProjects: state => state.projects,
-    getProjectsHeaderNames: state => state.projectsHeaderNames
+    getProjectsHeaderNames: state => state.projectsHeaderNames,
+    getProjectHeaderNames: state => state.projectHeaderNames
   }
 }

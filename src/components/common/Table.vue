@@ -10,11 +10,11 @@
             <div v-for="(r, i) in row.data" v-bind:key="i" class="contents">
                 <div v-if="row.id !== editRecord" :class="r.display ? 'search-item ' + r.display : 'search-item'">
                     <router-link v-if="r.value && r.link && !r.id" :to="link  + row.id">{{r.value}}</router-link>
-                    <router-link v-else-if="r.value && r.link && r.id" :to="r.link  + '/' + r.id">{{r.value}}
+                    <router-link v-else-if="r.value && r.link && r.id" :to="r.link + r.id">{{r.value}}
                     </router-link>
                     <div v-else-if="r.value !== undefined" class="contents">{{r.value}}</div>
                     <div v-else-if="r.values" v-for="(arr, i) in r.values" v-bind:key="i">
-                        <router-link :to="arr.link  + '/' + arr.id">{{arr.name}}</router-link>
+                        <router-link :to="arr.link + arr.id">{{arr.name}}</router-link>
                     </div>
                     <div v-else class="contents" v-for="(action, i) in r" v-bind:key="i">
                         <img v-if="editable" :src="'../../../static/icons/' + action.value + '.png'" :alt="action.value"

@@ -15,11 +15,6 @@ import myTable from '@/components/common/Table'
 export default {
   components: {myTable, Pagination, myFilter},
   name: 'Projects',
-  data () {
-    return {
-      headerNames: Array
-    }
-  },
   created () {
     this.headerNames = this.$store.getters['getProjectsHeaderNames']
   },
@@ -62,10 +57,10 @@ export default {
               name: {value: object.name, link: true},
               manager: {
                 value: Object.values(employee.personalData.credentials).join(' '),
-                link: 'employees',
+                link: '/employees/',
                 id: employee.id
               },
-              department: {value: departments.name, link: 'departments', id: departments.id},
+              department: {value: departments.name, link: '/departments/', id: departments.id},
               employees: {value: this.employees.filter(employee => employee.personalData.items.find(item => item.name === 'Project').value === object.id).length}
             }
           }

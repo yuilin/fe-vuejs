@@ -15,11 +15,6 @@ import myTable from '@/components/common/Table'
 export default {
   components: {myTable, Pagination, myFilter},
   name: 'Employees',
-  data () {
-    return {
-      headerNames: Array
-    }
-  },
   created () {
     this.headerNames = this.$store.getters['getEmployeesHeaderNames']
   },
@@ -69,7 +64,7 @@ export default {
             project: this.$store.getters['getProjects'].find(project => project.id === object.personalData.items.find(item => item.name === 'Project').value),
             skills: object.skills.map((object) => {
               let skill = this.$store.getters['getSkills'].find(skill => skill.id === Number(object.id))
-              return {name: skill.personalData.credentials.name, link: 'skills', id: skill.id}
+              return {name: skill.personalData.credentials.name, link: '/skills/', id: skill.id}
             })
           }
           return {
@@ -80,10 +75,10 @@ export default {
               position: {value: parsed.position},
               project: {
                 value: parsed.project === undefined ? '-' : parsed.project.name,
-                link: parsed.project === undefined ? undefined : 'projects',
+                link: parsed.project === undefined ? undefined : '/projects/',
                 id: parsed.project === undefined ? undefined : parsed.project.id
               },
-              department: {value: parsed.department.name, link: 'departments', id: parsed.department.id},
+              department: {value: parsed.department.name, link: '/departments/', id: parsed.department.id},
               skills: {values: parsed.skills}
             }
           }

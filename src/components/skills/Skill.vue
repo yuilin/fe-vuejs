@@ -8,15 +8,13 @@ import Main from '@/components/common/Main'
 
 export default {
   components: {Main},
-  data () {
-    return {
-      num: Number(this.$route.params.id),
-      selectedSkill: Object
-    }
-  },
   created () {
     this.skills = this.$store.getters['getSkills']
-    this.selectedSkill = this.skills.find(skill => skill.id === this.num)
+  },
+  computed: {
+    selectedSkill () {
+      return this.skills.find(skill => skill.id === Number(this.$route.params.id))
+    }
   },
   methods: {
     addCalculatedValues (selectedSkill) {
