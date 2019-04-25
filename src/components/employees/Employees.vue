@@ -59,7 +59,7 @@ export default {
             id: object.id,
             name: object.personalData.credentials.name,
             surname: object.personalData.credentials.surname,
-            department: {name: department.name, id: department.id},
+            department: department !== undefined ? {name: department.name, id: department.id} : undefined,
             position: info.find(item => item.name === 'Position').value,
             project: this.$store.getters['getProjects'].find(project => project.id === object.personalData.items.find(item => item.name === 'Project').value),
             skills: object.skills.map((object) => {
@@ -78,7 +78,7 @@ export default {
                 link: parsed.project === undefined ? undefined : '/projects/',
                 id: parsed.project === undefined ? undefined : parsed.project.id
               },
-              department: {value: parsed.department.name, link: '/departments/', id: parsed.department.id},
+              department: department !== undefined ? {value: parsed.department.name, link: '/departments/', id: parsed.department.id} : {value: '-'},
               skills: {values: parsed.skills}
             }
           }

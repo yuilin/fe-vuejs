@@ -344,7 +344,6 @@ export default {
       state.editRecord = Number(payload)
     }
   },
-  actions: {},
   getters: {
     getSkills: state => state.skills,
     getSkillsHeaderNames: state => state.skillsHeaderNames,

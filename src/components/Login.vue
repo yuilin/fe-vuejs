@@ -31,6 +31,7 @@
             <div class="login-item"><input v-model="startData" type="text" placeholder="Start Date"></div>
             <div class="login-item"><input v-model="gender" type="text" placeholder="Gender"></div>
             <div class="login-item"><input v-model="birthDay" type="text" placeholder="Birthday"></div>
+            <div class="login-item"><input v-model="position" type="text" placeholder="Position"></div>
             <div class="login-item">
                 <!--<router-link to="/employees">-->
                 <button @click="reg">Register</button>
@@ -61,7 +62,8 @@ export default {
       email: null,
       startData: null,
       gender: null,
-      birthDay: null
+      birthDay: null,
+      position: null
     }
   },
   methods: {
@@ -94,6 +96,7 @@ export default {
             startDate: this.startDate,
             gender: this.gender,
             birthday: this.birthday,
+            position: this.position,
             id: 1 + this.employees[this.employees.length - 1].id
           })
           this.messages.push('10')
@@ -118,6 +121,7 @@ export default {
       this.startData = null
       this.gender = null
       this.birthDay = null
+      this.position = null
     }
   }
 }

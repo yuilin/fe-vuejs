@@ -2,7 +2,8 @@
     <div class="search-box box">
         <div class="search-box-row search-box-header">
             <div v-for="(headerName, index) in headerNames" v-bind:key="index"
-                 :class="headerName.display ? 'search-item ' + headerName.display : 'search-item'">{{headerName.name}}
+                 :class="headerName.display ? headerName.display === 'editable' && !editable ? 'search-item none' : 'search-item ' + headerName.display : 'search-item'">
+                {{headerName.name}}
             </div>
         </div>
         <div v-for="(row, index) in data" v-bind:key="index"
@@ -18,7 +19,7 @@
                     </div>
                     <div v-else class="contents" v-for="(action, i) in r" v-bind:key="i">
                         <img v-if="editable" :src="'../../../static/icons/' + action.value + '.png'" :alt="action.value"
-                             @click="handleFunctionCall(action.value, row.id)">
+                             @click="handleFunctionCall(action.function, row.id)">
                         <img v-else :src="'../../../static/icons/' + action.value + '.png'" :alt="action.value"
                              class="inactive-icon">
                     </div>
@@ -31,9 +32,12 @@
                         </option>
                     </select>
                     <div v-else-if="r.value && r.editable === false" class="contents">{{r.value}}</div>
+                    <div v-else-if="r.values" v-for="(arr, i) in r.values" v-bind:key="i">
+                        <router-link :to="arr.link + arr.id">{{arr.name}}</router-link>
+                    </div>
                     <div v-else class="contents" v-for="(action, i) in r" v-bind:key="i">
                         <img v-if="editable" :src="'../../../static/icons/' + action.value + '.png'" :alt="action.value"
-                             @click="handleFunctionCall(action.value, row.id)">
+                             @click="handleFunctionCall(action.function, row.id)">
                         <img v-else :src="'../../../static/icons/' + action.value + '.png'" :alt="action.value"
                              class="inactive-icon">
                     </div>
@@ -52,10 +56,18 @@ export default {
     link: String,
     editable: Boolean
   },
+  created:
+    function () {
+      if (Number(this.$store.getters['getEditRecord']) !== 0) {
+        this.$store.commit('setEditRecord', 0)
+      }
+    },
   data () {
     return {
       selectedSkill: null,
-      selectedLevel: null
+      selectedLevel: null,
+      selectedPosition: null,
+      selectedProject: null
     }
   },
   computed: {
@@ -107,6 +119,30 @@ export default {
           value: 5
         }
       ]
+    },
+    positionList () {
+      return this.$store.getters['getPositions'].map(
+        (position) => {
+          return {
+            id: position,
+            value: position
+          }
+        }
+      )
+    },
+    projectPositionList () {
+      return this.positionList.filter(position => position.id !== 'Department Manager')
+    },
+    projectList () {
+      let projects = this.$store.getters['getProjects'].map(
+        (project) => {
+          return {
+            id: project.id,
+            value: project.name
+          }
+        })
+      projects.unshift({id: null, name: ''})
+      return projects
     }
   },
   methods: {
@@ -120,9 +156,21 @@ export default {
           this.selectedLevel = e.target.value
           break
         }
+        case 'positionList': {
+          this.selectedPosition = e.target.value
+          break
+        }
+        case 'projectPositionList': {
+          this.selectedPosition = e.target.value
+          break
+        }
+        case 'projectList': {
+          this.selectedProject = e.target.value
+          break
+        }
       }
     },
-    edit (id) {
+    editEmployee (id) {
       if (this.editRecord === 0 || this.editRecord === id) {
         if (this.editRecord === id) {
           this.$store.commit('updateEmployeeSkillLevel', {
@@ -145,11 +193,73 @@ export default {
         this.$store.commit('setEditRecord', this.editRecord === id ? Number(0) : id)
       }
     },
-    delete (id) {
+    deleteEmployee (id) {
       if (this.editRecord === id) {
         this.$store.commit('setEditRecord', 0)
       }
       this.$store.commit('deleteEmployeeSkill', {employeeId: this.employee.id, skillId: id})
+    },
+    editProjectEmployee (id) {
+      if (this.editRecord === 0 || this.editRecord === id) {
+        if (this.editRecord === id) {
+          if (this.selectedPosition === 'Project Manager') {
+            let previousManager = this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getProjects'].find(project => project.id === Number(this.$route.params.id)).manager)
+            this.$store.commit('updateEmployeeProject', {employeeId: previousManager.id, projectId: null})
+            this.$store.commit('updateProject', {projectId: Number(this.$route.params.id), manager: id})
+          }
+          this.$store.commit('updateEmployeePosition', {
+            employeeId: id,
+            position: this.selectedPosition
+          })
+          this.selectedPosition = null
+        } else {
+          this.selectedPosition = this.data.find(employee => employee.id === id).data.position.value
+        }
+        this.$store.commit('setEditRecord', this.editRecord === id ? Number(0) : id)
+      }
+    },
+    deleteProjectEmployee (id) {
+      if (this.editRecord === id) {
+        this.$store.commit('setEditRecord', 0)
+      }
+      this.$store.commit('updateEmployeeProject', {employeeId: id, project: null})
+    },
+    editDepartmentEmployee (id) {
+      if (this.editRecord === 0 || this.editRecord === id) {
+        if (this.editRecord === id) {
+          let previousDManager = this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getDepartments'].find(department => department.id === Number(this.$route.params.id)).manager)
+          let previousPManager = this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getProjects'].find(project => project.id === Number(this.selectedProject)).manager)
+          if (this.selectedPosition === 'Department Manager' && id !== previousDManager.id) {
+            this.$store.commit('updateEmployeeDepartment', {employeeId: previousDManager.id, departmentId: null})
+            this.$store.commit('updateDepartment', {departmentId: Number(this.$route.params.id), manager: id})
+          } else if (this.selectedPosition === 'Project Manager' && id !== previousPManager.id) {
+            this.$store.commit('updateEmployeeProject', {employeeId: previousPManager.id, projectId: null})
+            this.$store.commit('updateProject', {projectId: Number(this.$route.params.id), manager: id})
+          }
+          if (this.selectedPosition === 'Department Manager') {
+            this.$store.commit('updateEmployeeProject', {employeeId: id, projectId: null})
+          } else {
+            this.$store.commit('updateEmployeeProject', {employeeId: id, projectId: Number(this.selectedProject)})
+          }
+          this.$store.commit('updateEmployeePosition', {
+            employeeId: id,
+            position: this.selectedPosition
+          })
+          this.selectedPosition = null
+          this.selectedProject = null
+        } else {
+          this.selectedPosition = this.data.find(employee => employee.id === id).data.position.value
+          this.selectedProject = this.data.find(employee => employee.id === id).data.project.id
+        }
+        this.$store.commit('setEditRecord', this.editRecord === id ? Number(0) : id)
+      }
+    },
+    deleteDepartmentEmployee (id) {
+      if (this.editRecord === id) {
+        this.$store.commit('setEditRecord', 0)
+      }
+      this.$store.commit('updateEmployeeDepartment', {employeeId: id, departmentId: null})
+      this.$store.commit('updateEmployeeProject', {employeeId: id, departmentId: null})
     },
     handleFunctionCall (functionName, id) {
       this[functionName](id)
@@ -164,6 +274,15 @@ export default {
         }
         case 'levelList': {
           return id === Number(this.employee.skills.find(skill => skill.id === this.editRecord).data.level.value)
+        }
+        case 'positionList': {
+          return id === this.selectedPosition
+        }
+        case 'projectPositionList': {
+          return id === this.selectedPosition
+        }
+        case 'projectList': {
+          return id === this.selectedProject
         }
       }
     }
@@ -207,6 +326,10 @@ export default {
 
     .inactive-icon {
         background-color: lightgrey;
+    }
+
+    .none {
+        display: none
     }
 
     @media screen and (max-width: 1200px) {

@@ -1,7 +1,8 @@
 <template>
     <div class="body">
         <h1>{{selectedProject.name}}</h1>
-        <myTable :headerNames="headerNames" :data="data" link="/employees/"></myTable>
+        <myTable :headerNames="headerNames" :data="data" link="/employees/"
+                 :editable="selectedProject.manager === user"></myTable>
     </div>
 </template>
 
@@ -21,6 +22,9 @@ export default {
     },
     data () {
       return this.parse(this.$store.getters['getEmployees']).filter(employee => employee.project === this.selectedProject.id)
+    },
+    user () {
+      return this.$store.getters['getId']
     }
   },
   methods: {
@@ -39,16 +43,29 @@ export default {
               return {name: skill.personalData.credentials.name, link: '/skills/', id: skill.id}
             })
           }
-          return {
-            id: parsed.id,
-            data: {
-              name: {value: parsed.name, link: true},
-              surname: {value: parsed.surname, link: true},
-              position: {value: parsed.position},
-              skills: {values: parsed.skills},
-              actions: [{value: 'edit'}, {value: 'delete'}]
-            },
-            project: parsed.project === undefined ? undefined : parsed.project.id
+          if (this.selectedProject.manager === this.user) {
+            return {
+              id: parsed.id,
+              data: {
+                name: {value: parsed.name, link: true, editable: false},
+                surname: {value: parsed.surname, link: true, editable: false},
+                position: {value: parsed.position, options: 'projectPositionList'},
+                skills: {values: parsed.skills},
+                actions: this.selectedProject.manager === parsed.id ? [] : [{value: 'edit', function: 'editProjectEmployee'}, {value: 'delete', function: 'deleteProjectEmployee'}]
+              },
+              project: parsed.project === undefined ? undefined : parsed.project.id
+            }
+          } else {
+            return {
+              id: parsed.id,
+              data: {
+                name: {value: parsed.name, link: true},
+                surname: {value: parsed.surname, link: true},
+                position: {value: parsed.position},
+                skills: {values: parsed.skills}
+              },
+              project: parsed.project === undefined ? undefined : parsed.project.id
+            }
           }
         }
       )

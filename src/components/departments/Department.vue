@@ -1,7 +1,8 @@
 <template>
     <div class="body">
         <h1>{{selectedDepartment.name}}</h1>
-        <myTable :headerNames="headerNames" :data="data" link="/employees/"></myTable>
+        <myTable :headerNames="headerNames" :data="data" link="/employees/"
+                 :editable="selectedDepartment.manager === user"></myTable>
     </div>
 </template>
 
@@ -21,6 +22,9 @@ export default {
     },
     data () {
       return this.parse(this.$store.getters['getEmployees']).filter(employee => employee.department === this.selectedDepartment.id)
+    },
+    user () {
+      return this.$store.getters['getId']
     }
   },
   methods: {
@@ -28,7 +32,7 @@ export default {
       return objects.map(
         (object) => {
           let info = object.info.find(i => i.name === 'Job Details').items
-          let department = this.$store.getters['getDepartments'].find(department => department.id === info.find(item => item.name === 'Department').value).id
+          let department = this.$store.getters['getDepartments'].find(department => department.id === info.find(item => item.name === 'Department').value)
           let parsed = {
             id: object.id,
             name: object.personalData.credentials.name,
@@ -40,21 +44,40 @@ export default {
               return {name: skill.personalData.credentials.name, link: '/skills/', id: skill.id}
             })
           }
-          return {
-            id: parsed.id,
-            data: {
-              name: {value: parsed.name, link: true},
-              surname: {value: parsed.surname, link: true},
-              position: {value: parsed.position},
-              project: {
-                value: parsed.project === undefined ? '-' : parsed.project.name,
-                link: parsed.project === undefined ? undefined : '/projects/',
-                id: parsed.project === undefined ? undefined : parsed.project.id
+          if (this.selectedDepartment.manager === this.user) {
+            return {
+              id: parsed.id,
+              data: {
+                name: {value: parsed.name, link: true, editable: false},
+                surname: {value: parsed.surname, link: true, editable: false},
+                position: {value: parsed.position, options: 'positionList'},
+                project: {
+                  value: parsed.project === undefined ? '-' : parsed.project.name,
+                  link: parsed.project === undefined ? undefined : '/projects/',
+                  id: parsed.project === undefined ? undefined : parsed.project.id,
+                  options: 'projectList'
+                },
+                skills: {values: parsed.skills},
+                actions: this.selectedDepartment.manager === parsed.id || parsed.position === 'Project Manager' ? [] : [{value: 'edit', function: 'editDepartmentEmployee'}, {value: 'delete', function: 'deleteDepartmentEmployee'}]
               },
-              skills: {values: parsed.skills},
-              actions: [{value: 'edit'}, {value: 'delete'}]
-            },
-            department: department
+              department: department !== undefined ? department.id : '-'
+            }
+          } else {
+            return {
+              id: parsed.id,
+              data: {
+                name: {value: parsed.name, link: true},
+                surname: {value: parsed.surname, link: true},
+                position: {value: parsed.position},
+                project: {
+                  value: parsed.project === undefined ? '-' : parsed.project.name,
+                  link: parsed.project === undefined ? undefined : '/projects/',
+                  id: parsed.project === undefined ? undefined : parsed.project.id
+                },
+                skills: {values: parsed.skills}
+              },
+              department: department !== undefined ? department.id : '-'
+            }
           }
         }
       )

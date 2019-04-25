@@ -4,8 +4,8 @@ export default {
       {
         id: 1,
         auth: {
-          login: 'a',
-          password: 'a'
+          login: 'dm1',
+          password: 'dm1'
         },
         personalData: {
           credentials: {
@@ -56,11 +56,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Department Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -85,15 +84,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -111,15 +102,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -127,8 +110,8 @@ export default {
       {
         id: 2,
         auth: {
-          login: 'Bill',
-          password: 'BillBogus'
+          login: 'dm2',
+          password: 'dm2'
         },
         personalData: {
           credentials: {
@@ -179,11 +162,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Department Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -208,15 +190,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -234,15 +208,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -250,8 +216,8 @@ export default {
       {
         id: 3,
         auth: {
-          login: 'Arden',
-          password: 'ArdenLiz'
+          login: 'pm1',
+          password: 'pm1'
         },
         personalData: {
           credentials: {
@@ -302,11 +268,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Project Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -331,15 +296,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -357,15 +314,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -373,8 +322,8 @@ export default {
       {
         id: 4,
         auth: {
-          login: 'Dair',
-          password: 'DairMick'
+          login: 'pm2',
+          password: 'pm2'
         },
         personalData: {
           credentials: {
@@ -425,11 +374,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Project Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -454,15 +402,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -480,15 +420,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -496,8 +428,8 @@ export default {
       {
         id: 5,
         auth: {
-          login: 'Suzy',
-          password: 'SuzyStock'
+          login: 'pm3',
+          password: 'pm3'
         },
         personalData: {
           credentials: {
@@ -548,11 +480,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Project Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -577,15 +508,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -603,15 +526,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -619,8 +534,8 @@ export default {
       {
         id: 6,
         auth: {
-          login: 'Sato',
-          password: 'SatoMori'
+          login: 'pm4',
+          password: 'pm4'
         },
         personalData: {
           credentials: {
@@ -671,11 +586,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Project Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -700,15 +614,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -726,15 +632,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -742,15 +640,13 @@ export default {
       {
         id: 7,
         auth: {
-          login: 'Peck',
-          password:
-            'PeckGreg'
+          login: 'pm5',
+          password: 'pm5'
         },
         personalData: {
           credentials: {
             name: 'Peck',
-            surname:
-              'Greg'
+            surname: 'Greg'
           },
           items: [
             {
@@ -796,11 +692,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Project Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -825,15 +720,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -851,15 +738,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -867,15 +746,13 @@ export default {
       {
         id: 8,
         auth: {
-          login: 'Vice',
-          password:
-            'ViceLee'
+          login: 'pm6',
+          password: 'pm6'
         },
         personalData: {
           credentials: {
             name: 'Vice',
-            surname:
-              'Lee'
+            surname: 'Lee'
           },
           items: [
             {
@@ -921,11 +798,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Project Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -950,15 +826,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -976,15 +844,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -992,15 +852,13 @@ export default {
       {
         id: 9,
         auth: {
-          login: 'West',
-          password:
-            'WestClint'
+          login: 'pm7',
+          password: 'pm7'
         },
         personalData: {
           credentials: {
             name: 'West',
-            surname:
-              'Clint'
+            surname: 'Clint'
           },
           items: [
             {
@@ -1046,11 +904,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Project Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -1075,15 +932,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -1101,15 +950,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           }
         ]
@@ -1117,15 +958,13 @@ export default {
       {
         id: 10,
         auth: {
-          login: 'PM10',
-          password:
-            'PM10'
+          login: 'pm8',
+          password: 'pm8'
         },
         personalData: {
           credentials: {
             name: 'PM',
-            surname:
-              '10'
+            surname: '8'
           },
           items: [
             {
@@ -1171,11 +1010,10 @@ export default {
             items: [
               {
                 name: 'Position',
-                value: 'Developer'
+                value: 'Project Manager'
               },
               {
-                name: 'Supervisor',
-                value: 'Supervisor'
+                name: 'Supervisor'
               },
               {
                 name: 'Department',
@@ -1200,15 +1038,7 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
-              },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              }
             }
           },
           {
@@ -1226,15 +1056,219 @@ export default {
               date: {
                 value: '23.04.2019, 14:37:14',
                 editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 11,
+        auth: {
+          login: 'd1',
+          password: 'd1'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'First'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd1@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 1
+            }
+          ],
+          icon: 11
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Id',
+                value: 11
               },
-              action: [
-                {
-                  value: 'edit'
-                },
-                {
-                  value: 'delete'
-                }
-              ]
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 2
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 12,
+        auth: {
+          login: 'd2',
+          password: 'd2'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Second'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd2@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 1
+            }
+          ],
+          icon: 12
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Id',
+                value: 12
+              },
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              },
+              {
+                name: 'Supervisor'
+              },
+              {
+                name: 'Department',
+                value: 2
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
             }
           }
         ]
@@ -1271,7 +1305,8 @@ export default {
         name: 'Date update'
       },
       {
-        name: 'Actions'
+        name: 'Actions',
+        display: 'editable'
       }
     ]
   },
@@ -1337,7 +1372,7 @@ export default {
               value: payload.surname
             },
             position: {
-              value: 'Developer'
+              value: payload.position
             },
             project: {
               value: payload.project
@@ -1368,15 +1403,7 @@ export default {
           date: {
             value: new Date().toLocaleString(),
             editable: false
-          },
-          action: [
-            {
-              value: 'edit'
-            },
-            {
-              value: 'delete'
-            }
-          ]
+          }
         }
       })
     },
@@ -1393,6 +1420,15 @@ export default {
     updateEmployeeSkillLevel (state, payload) {
       state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.level.value = payload.value
       state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.date.value = new Date().toLocaleString()
+    },
+    updateEmployeePosition (state, payload) {
+      state.employees.find(employee => employee.id === payload.employeeId).info.find(info => info.name === 'Job Details').items.find(item => item.name === 'Position').value = payload.position
+    },
+    updateEmployeeProject (state, payload) {
+      state.employees.find(employee => employee.id === payload.employeeId).personalData.items.find(item => item.name === 'Project').value = payload.projectId
+    },
+    updateEmployeeDepartment (state, payload) {
+      state.employees.find(employee => employee.id === payload.employeeId).info.find(info => info.name === 'Job Details').items.find(item => item.name === 'Department').value = payload.departmentId
     }
   },
   actions: {

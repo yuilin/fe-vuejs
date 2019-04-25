@@ -78,9 +78,15 @@ export default {
         name: 'Skills'
       },
       {
-        name: 'Actions'
+        name: 'Actions',
+        display: 'editable'
       }
     ]
+  },
+  mutations: {
+    updateProject (state, payload) {
+      state.projects.find(project => project.id === payload.projectId).manager = payload.manager
+    }
   },
   getters: {
     getProjects: state => state.projects,

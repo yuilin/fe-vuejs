@@ -22,11 +22,6 @@ export default {
     data: Array,
     parent: String
   },
-  data () {
-    return {
-      headerNames: Array
-    }
-  },
   created () {
     this.headerNames = this.$store.getters['getEmployeesSkillTableHeaderNames']
   },

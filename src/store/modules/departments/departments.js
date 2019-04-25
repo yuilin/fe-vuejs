@@ -40,9 +40,15 @@ export default {
         name: 'Skills'
       },
       {
-        name: 'Actions'
+        name: 'Actions',
+        display: 'editable'
       }
     ]
+  },
+  mutations: {
+    updateDepartment (state, payload) {
+      state.departments.find(department => department.id === payload.departmentId).manager = payload.manager
+    }
   },
   getters: {
     getDepartments: state => state.departments,
