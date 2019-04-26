@@ -1397,7 +1397,7 @@ export default {
             options: 'skillList'
           },
           level: {
-            value: '0',
+            value: '1',
             options: 'levelList'
           },
           date: {
@@ -1408,32 +1408,55 @@ export default {
       })
     },
     deleteEmployeeSkill (state, payload) {
-      state.employees.find(employee => employee.id === payload.employeeId).skills.splice(
-        state.employees.find(employee => employee.id === payload.employeeId).skills.indexOf(
-          state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.skillId)), 1)
+      state.employees
+        .find(employee => employee.id === payload.employeeId).skills
+        .splice(state.employees
+          .find(employee => employee.id === payload.employeeId).skills
+          .indexOf(state.employees
+            .find(employee => employee.id === payload.employeeId).skills
+            .find(skill => skill.id === payload.skillId)), 1)
     },
     updateEmployeeSkill (state, payload) {
-      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.skill.value = payload.skillName
-      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.date.value = new Date().toLocaleString()
-      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).id = Number(payload.value)
+      state.employees
+        .find(employee => employee.id === payload.employeeId).skills
+        .find(skill => skill.id === payload.recordId).data.skill.value = payload.skillName
+      state.employees
+        .find(employee => employee.id === payload.employeeId).skills
+        .find(skill => skill.id === payload.recordId).data.date.value = new Date().toLocaleString()
+      state.employees
+        .find(employee => employee.id === payload.employeeId).skills
+        .find(skill => skill.id === payload.recordId).id = Number(payload.value)
     },
     updateEmployeeSkillLevel (state, payload) {
-      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.level.value = payload.value
-      state.employees.find(employee => employee.id === payload.employeeId).skills.find(skill => skill.id === payload.recordId).data.date.value = new Date().toLocaleString()
+      state.employees
+        .find(employee => employee.id === payload.employeeId).skills
+        .find(skill => skill.id === payload.recordId).data.level.value = payload.value
+      state.employees
+        .find(employee => employee.id === payload.employeeId).skills
+        .find(skill => skill.id === payload.recordId).data.date.value = new Date().toLocaleString()
     },
     updateEmployeePosition (state, payload) {
-      state.employees.find(employee => employee.id === payload.employeeId).info.find(info => info.name === 'Job Details').items.find(item => item.name === 'Position').value = payload.position
+      state.employees
+        .find(employee => employee.id === payload.employeeId).info
+        .find(info => info.name === 'Job Details').items
+        .find(item => item.name === 'Position').value = payload.position
     },
     updateEmployeeProject (state, payload) {
-      state.employees.find(employee => employee.id === payload.employeeId).personalData.items.find(item => item.name === 'Project').value = payload.projectId
+      state.employees
+        .find(employee => employee.id === payload.employeeId).personalData.items
+        .find(item => item.name === 'Project').value = payload.projectId
     },
     updateEmployeeDepartment (state, payload) {
-      state.employees.find(employee => employee.id === payload.employeeId).info.find(info => info.name === 'Job Details').items.find(item => item.name === 'Department').value = payload.departmentId
+      state.employees
+        .find(employee => employee.id === payload.employeeId).info
+        .find(info => info.name === 'Job Details').items
+        .find(item => item.name === 'Department').value = payload.departmentId
     }
   },
   actions: {
     addEmployee: (context, payload) => {
-      if (this.getEmployees().find(employee => employee.id !== payload.id)) {
+      if (this.getEmployees()
+        .find(employee => employee.id !== payload.id)) {
         context.commit('addEmployee', payload)
       }
     }

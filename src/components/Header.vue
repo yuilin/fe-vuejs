@@ -22,8 +22,11 @@
             </nav>
             <div @click="logout" v-if="employee !== undefined" class="logout">Logout</div>
             <router-link v-if="employee !== undefined" :to="/employees/ + employee.id">
-                <div class="icon"><img :src="'/static/user-icons/' + employee.personalData.icon + '.png'"
-                                       class="user-icon" alt="username"></div>
+                <div class="icon">
+                    <img :src="'/static/user-icons/' + employee.personalData.icon + '.png'"
+                         class="user-icon"
+                         alt="username">
+                </div>
             </router-link>
         </div>
         <div>
@@ -61,7 +64,8 @@ export default {
   },
   computed: {
     employee () {
-      return this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getId'])
+      return this.$store.getters['getEmployees']
+        .find(employee => employee.id === this.$store.getters['getId'])
     }
   }
 }

@@ -2,7 +2,9 @@
     <div class="info box">
         <div class="info-header"><h2>{{infoHeader}}</h2></div>
         <hr>
-        <InfoItems v-for="(items, index) in infoItems" v-bind:key="index" :items="items"></InfoItems>
+        <InfoItems v-for="(items, index) in infoItems" v-bind:key="index"
+                   :items="items">
+        </InfoItems>
     </div>
 </template>
 

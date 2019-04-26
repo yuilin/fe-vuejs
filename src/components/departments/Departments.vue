@@ -43,7 +43,8 @@ export default {
     parse (objects) {
       return objects.map(
         (object) => {
-          let manager = this.$store.getters['getEmployees'].find(employee => employee.id === object.manager)
+          let manager = this.$store.getters['getEmployees']
+            .find(employee => employee.id === object.manager)
           return {
             id: object.id,
             data: {
@@ -53,7 +54,11 @@ export default {
                 link: '/employees/',
                 id: manager.id
               },
-              employees: {value: this.employees.filter(employee => employee.info.find(info => info.name === 'Job Details').items.find(item => item.name === 'Department').value === object.id).length}
+              employees: {
+                value: this.employees.filter(employee => employee.info
+                  .find(info => info.name === 'Job Details').items
+                  .find(item => item.name === 'Department').value === object.id).length
+              }
             }
           }
         }

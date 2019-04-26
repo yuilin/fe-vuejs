@@ -1,15 +1,27 @@
 <template>
     <div class="tabs">
         <div class="labels">
-            <label :class="tab === 1 ? 'label-item active-tab' : 'label-item'" @click="showTab(1)" id="tab1"
-                   :title="tab1">{{tab1}}</label>
-            <label :class="tab === 2 ? 'label-item active-tab' : 'label-item'" @click="showTab(2)" id="tab2"
-                   :title="tab2">{{tab2}}</label>
+            <label :class="tab === 1 ? 'label-item active-tab' : 'label-item'"
+                   @click="showTab(1)"
+                   id="tab1"
+                   :title="tab1">{{tab1}}
+            </label>
+            <label :class="tab === 2 ? 'label-item active-tab' : 'label-item'"
+                   @click="showTab(2)"
+                   id="tab2"
+                   :title="tab2">{{tab2}}
+            </label>
         </div>
         <div class="employee-box box">
             <transition name="fade" mode="out-in">
-                <TabInfo v-if="tab === 1" :data="infoTabData"></TabInfo>
-                <TabSkills :parent="parent" v-else :data="skillsTabData"></TabSkills>
+                <TabInfo v-if="tab === 1"
+                         :data="infoTabData">
+                </TabInfo>
+                <TabSkills
+                        :parent="parent"
+                        v-else
+                        :data="skillsTabData">
+                </TabSkills>
             </transition>
         </div>
     </div>

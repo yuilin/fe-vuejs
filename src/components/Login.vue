@@ -1,44 +1,80 @@
 <template>
-    <div class="wrapper">
+    <div>
         <div class="login-box box" v-if="this.display === 'login'">
-            <div class="login-item"><h1>Login</h1></div>
-            <div v-if="messages.includes('1')" class="login-item error">Wrong login or password</div>
-            <div class="login-item"><input v-model="user" type="text" placeholder="login"></div>
-            <div class="login-item"><input v-model="password" type="password" placeholder="password"></div>
             <div class="login-item">
-                <!--<router-link to="/employees">-->
+                <h1>Login</h1>
+            </div>
+            <div v-if="messages.includes('1')"
+                 class="login-item error">Wrong login or password
+            </div>
+            <div class="login-item">
+                <input v-model="user" type="text" placeholder="login">
+            </div>
+            <div class="login-item">
+                <input v-model="password" type="password" placeholder="password">
+            </div>
+            <div class="login-item">
                 <button @click="login">Login</button>
-                <!--</router-link>-->
             </div>
             <div @click="changeView()" class="login-item registration">
-                <!--<router-link to="/ChangePassword">-->Registration<!--</router-link>-->
             </div>
         </div>
         <div class="registration-box box" v-else>
-            <div class="login-item"><h1>Registration</h1></div>
-            <div v-if="messages.includes('2')" class="login-item error">Passwords ane not equal</div>
-            <div v-if="messages.includes('3')" class="login-item error">Employee with this login is already exists</div>
-            <div v-if="messages.includes('4')" class="login-item error">Please fill all fields</div>
-            <div v-if="messages.includes('5')" class="login-item error">Something went wrong, please try again</div>
-            <div v-if="messages.includes('10')" class="login-item success">Registration successful</div>
-            <div class="login-item"><input v-model="user" type="text" placeholder="login"></div>
-            <div class="login-item"><input v-model="password" type="password" placeholder="password"></div>
-            <div class="login-item"><input v-model="password2" type="password" placeholder="password"></div>
-            <div class="login-item"><input v-model="name" type="text" placeholder="Name"></div>
-            <div class="login-item"><input v-model="surname" type="text" placeholder="Surname"></div>
-            <div class="login-item"><input v-model="project" type="text" placeholder="Project"></div>
-            <div class="login-item"><input v-model="email" type="text" placeholder="E-mail"></div>
-            <div class="login-item"><input v-model="startData" type="text" placeholder="Start Date"></div>
-            <div class="login-item"><input v-model="gender" type="text" placeholder="Gender"></div>
-            <div class="login-item"><input v-model="birthDay" type="text" placeholder="Birthday"></div>
-            <div class="login-item"><input v-model="position" type="text" placeholder="Position"></div>
             <div class="login-item">
-                <!--<router-link to="/employees">-->
+                <h1>Registration</h1>
+            </div>
+            <div v-if="messages.includes('2')"
+                 class="login-item error">Passwords ane not equal
+            </div>
+            <div v-if="messages.includes('3')"
+                 class="login-item error">Employee with this login is already exists
+            </div>
+            <div v-if="messages.includes('4')"
+                 class="login-item error">Please fill all fields
+            </div>
+            <div v-if="messages.includes('5')"
+                 class="login-item error">Something went wrong, please try again
+            </div>
+            <div v-if="messages.includes('10')"
+                 class="login-item success">Registration successful
+            </div>
+            <div class="login-item">
+                <input v-model="user" type="text" placeholder="login">
+            </div>
+            <div class="login-item">
+                <input v-model="password" type="password" placeholder="password">
+            </div>
+            <div class="login-item">
+                <input v-model="password2" type="password" placeholder="password">
+            </div>
+            <div class="login-item">
+                <input v-model="name" type="text" placeholder="Name">
+            </div>
+            <div class="login-item">
+                <input v-model="surname" type="text" placeholder="Surname">
+            </div>
+            <div class="login-item">
+                <input v-model="project" type="text" placeholder="Project">
+            </div>
+            <div class="login-item">
+                <input v-model="email" type="text" placeholder="E-mail">
+            </div>
+            <div class="login-item">
+                <input v-model="startData" type="text" placeholder="Start Date">
+            </div>
+            <div class="login-item">
+                <input v-model="gender" type="text" placeholder="Gender">
+            </div>
+            <div class="login-item">
+                <input v-model="birthDay" type="text" placeholder="Birthday">
+            </div>
+            <div class="login-item">
+                <input v-model="position" type="text" placeholder="Position">
+            </div>
+            <div class="login-item">
                 <button @click="reg">Register</button>
-                <!--</router-link>-->
             </div>
             <div @click="changeView()" class="login-item registration">
-                <!--<router-link to="/ChangePassword">-->Login<!--</router-link>-->
             </div>
         </div>
         <router-view></router-view>
@@ -69,7 +105,8 @@ export default {
   methods: {
     login () {
       this.messages = []
-      let validData = this.employees.find(employee => employee.auth.login === this.user && employee.auth.password === this.password)
+      let validData = this.employees
+        .find(employee => employee.auth.login === this.user && employee.auth.password === this.password)
       if (validData !== undefined) {
         this.$store.commit('setId', validData.id)
         this.$router.push('/employees')
@@ -79,12 +116,14 @@ export default {
     },
     reg () {
       this.messages = []
-      if (this.user === null || this.password === null || this.name === null || this.surname === null || this.project === null) {
+      if (this.user === null || this.password === null ||
+        this.name === null || this.surname === null || this.project === null) {
         this.messages.push('4')
       } else if (this.password !== this.password2) {
         this.messages.push('2')
       } else {
-        let validData = this.employees.find(employee => employee.auth.login === this.user)
+        let validData = this.employees
+          .find(employee => employee.auth.login === this.user)
         if (validData === undefined) {
           this.$store.commit('addEmployee', {
             user: this.user,
@@ -127,7 +166,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
     .login-box, .registration-box {
         margin-top: 100px;
@@ -151,13 +189,5 @@ export default {
     .registration {
         margin-top: 30px;
         cursor: pointer;
-    }
-
-    .wrapper {
-        /*position: fixed;*/
-        /*top: 0;*/
-        /*left: 0;*/
-        /*background-color: #fff;*/
-        /*width: 100%;*/
     }
 </style>

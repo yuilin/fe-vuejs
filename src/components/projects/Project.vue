@@ -1,8 +1,10 @@
 <template>
     <div class="body">
         <h1>{{selectedProject.name}}</h1>
-        <myTable :headerNames="headerNames" :data="data" link="/employees/"
-                 :editable="selectedProject.manager === user"></myTable>
+        <myTable :headerNames="headerNames"
+                 :data="data" link="/employees/"
+                 :editable="selectedProject.manager === user">
+        </myTable>
     </div>
 </template>
 
@@ -21,7 +23,8 @@ export default {
       return this.projects.find(project => project.id === Number(this.$route.params.id))
     },
     data () {
-      return this.parse(this.$store.getters['getEmployees']).filter(employee => employee.project === this.selectedProject.id)
+      return this.parse(this.$store.getters['getEmployees'])
+        .filter(employee => employee.project === this.selectedProject.id)
     },
     user () {
       return this.$store.getters['getId']
@@ -37,10 +40,17 @@ export default {
             name: object.personalData.credentials.name,
             surname: object.personalData.credentials.surname,
             position: info.find(item => item.name === 'Position').value,
-            project: this.$store.getters['getProjects'].find(project => project.id === object.personalData.items.find(item => item.name === 'Project').value),
+            project: this.$store.getters['getProjects']
+              .find(project => project.id === object.personalData.items
+                .find(item => item.name === 'Project').value),
             skills: object.skills.map((object) => {
-              let skill = this.$store.getters['getSkills'].find(skill => skill.id === Number(object.id))
-              return {name: skill.personalData.credentials.name, link: '/skills/', id: skill.id}
+              let skill = this.$store.getters['getSkills']
+                .find(skill => skill.id === Number(object.id))
+              return {
+                name: skill.personalData.credentials.name,
+                link: '/skills/',
+                id: skill.id
+              }
             })
           }
           if (this.selectedProject.manager === this.user) {
@@ -51,7 +61,11 @@ export default {
                 surname: {value: parsed.surname, link: true, editable: false},
                 position: {value: parsed.position, options: 'projectPositionList'},
                 skills: {values: parsed.skills},
-                actions: this.selectedProject.manager === parsed.id ? [] : [{value: 'edit', function: 'editProjectEmployee'}, {value: 'delete', function: 'deleteProjectEmployee'}]
+                actions: this.selectedProject.manager === parsed.id
+                  ? []
+                  : [
+                    {value: 'edit', function: 'editProjectEmployee'},
+                    {value: 'delete', function: 'deleteProjectEmployee'}]
               },
               project: parsed.project === undefined ? undefined : parsed.project.id
             }

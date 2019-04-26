@@ -2,19 +2,23 @@
     <div class="search-box box">
         <div class="search-box-row search-box-header">
             <div v-for="(headerName, index) in headerNames" v-bind:key="index"
-                 :class="headerName.display ? headerName.display === 'editable' && !editable ? 'search-item none' : 'search-item ' + headerName.display : 'search-item'">
+                 :class="headerName.display
+                 ? headerName.display === 'editable' && !editable
+                 ? 'search-item none'
+                 : 'search-item ' + headerName.display
+                 : 'search-item'">
                 {{headerName.name}}
             </div>
         </div>
         <div v-for="(row, index) in data" v-bind:key="index"
              :class="row.id !== editRecord ? 'search-box-row' : 'search-box-row editing'">
             <div v-for="(r, i) in row.data" v-bind:key="i" class="contents">
-                <div v-if="row.id !== editRecord" :class="r.display ? 'search-item ' + r.display : 'search-item'">
+                <div v-if="row.id !== editRecord"
+                     :class="r.display ? 'search-item ' + r.display : 'search-item'">
                     <router-link v-if="r.value && r.link && !r.id" :to="link  + row.id">{{r.value}}</router-link>
-                    <router-link v-else-if="r.value && r.link && r.id" :to="r.link + r.id">{{r.value}}
-                    </router-link>
+                    <router-link v-else-if="r.value && r.link && r.id" :to="r.link + r.id">{{r.value}}</router-link>
                     <div v-else-if="r.value !== undefined" class="contents">{{r.value}}</div>
-                    <div v-else-if="r.values" v-for="(arr, i) in r.values" v-bind:key="i">
+                    <div v-else-if="r.values && !Array.isArray(r)" v-for="(arr, i) in r.values" v-bind:key="i">
                         <router-link :to="arr.link + arr.id">{{arr.name}}</router-link>
                     </div>
                     <div v-else class="contents" v-for="(action, i) in r" v-bind:key="i">
@@ -25,14 +29,14 @@
                     </div>
                 </div>
                 <div v-else :class="r.display ? 'search-item ' + r.display : 'search-item'">
-                    <select v-if="r.value && r.editable !== false" :to="link  + row.id">
+                    <select v-if="r.value && r.editable !== false" :to="link  + row.id" @change="updateItem($event)">
                         <option v-for="(item, i) in handleListCall(r.options)" v-bind:key="i" :value="item.id"
-                                :selected="selectedRecord(item.id, r.options)" @click="updateItem" :class="r.options">
+                                :selected="selectedRecord(item.id, r.options)" :class="r.options">
                             {{item.value}}
                         </option>
                     </select>
                     <div v-else-if="r.value && r.editable === false" class="contents">{{r.value}}</div>
-                    <div v-else-if="r.values" v-for="(arr, i) in r.values" v-bind:key="i">
+                    <div v-else-if="r.values && !Array.isArray(r)" v-for="(arr, i) in r.values" v-bind:key="i">
                         <router-link :to="arr.link + arr.id">{{arr.name}}</router-link>
                     </div>
                     <div v-else class="contents" v-for="(action, i) in r" v-bind:key="i">
@@ -75,7 +79,8 @@ export default {
       return Number(this.$store.getters['getEditRecord'])
     },
     employee () {
-      return this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getId'])
+      return this.$store.getters['getEmployees']
+        .find(employee => employee.id === this.$store.getters['getId'])
     },
     skillList () {
       return this.$store.getters['getSkills'].map(
@@ -147,7 +152,7 @@ export default {
   },
   methods: {
     updateItem (e) {
-      switch (e.target.className) {
+      switch (e.target.options[0].className) {
         case 'skillList': {
           this.selectedSkill = e.target.value
           break

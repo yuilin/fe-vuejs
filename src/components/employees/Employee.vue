@@ -23,7 +23,9 @@ export default {
         (skill) => {
           let data = skill.data
           if (this.selectedEmployee.id === this.$store.getters['getId']) {
-            data.action = [{value: 'edit', function: 'editEmployee'}, {value: 'delete', function: 'deleteEmployee'}]
+            data.action = [
+              {value: 'edit', function: 'editEmployee'},
+              {value: 'delete', function: 'deleteEmployee'}]
           }
           return {data: data, id: skill.id}
         })

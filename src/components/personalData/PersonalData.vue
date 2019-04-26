@@ -1,15 +1,24 @@
 <template>
     <div class="info">
-        <div class="icon"><img v-if="parent === 'Employee'" :src="'/static/user-icons/' + personalData.icon + '.png'"
-                               class="user-icon" alt="username">
-            <img v-else :src="'/static/skill-icons/' + personalData.icon + '.png'" class="user-icon" alt="username">
+        <div class="icon">
+            <img v-if="parent === 'Employee'"
+                 :src="'/static/user-icons/' + personalData.icon + '.png'"
+                 class="user-icon"
+                 alt="username">
+            <img v-else
+                 :src="'/static/skill-icons/' + personalData.icon + '.png'"
+                 class="user-icon"
+                 alt="username">
         </div>
         <hr class="mobile">
         <div class="personal-data">
-            <PersonalDataItem type="header"
-                              :header="Object.values(personalData.credentials).toString().replace(',', ' ')"></PersonalDataItem>
+            <PersonalDataItem
+                    type="header"
+                    :header="Object.values(personalData.credentials).toString().replace(',', ' ')">
+            </PersonalDataItem>
             <PersonalDataItem v-for="(item, index) in personalData.items" v-bind:key="index"
-                              :item="item"></PersonalDataItem>
+                              :item="item">
+            </PersonalDataItem>
         </div>
     </div>
 </template>

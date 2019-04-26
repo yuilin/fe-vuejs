@@ -1,7 +1,9 @@
 <template>
     <div class="tab-info">
-        <InfoBox v-for="(infoBox, index) in data" v-bind:key="index" :infoHeader="infoBox.name"
-                 :infoItems="infoBox.items"></InfoBox>
+        <InfoBox v-for="(infoBox, index) in data" v-bind:key="index"
+                 :infoHeader="infoBox.name"
+                 :infoItems="infoBox.items">
+        </InfoBox>
     </div>
 </template>
 

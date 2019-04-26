@@ -1,14 +1,18 @@
 <template>
     <div v-if="parent === 'Employee'" class="tab-skills">
         <div v-if="employee !== undefined && employee.id === Number(this.$route.params.id)" class="skills-header">
-            <div class="skills-label"><h2>My Skills</h2>
+            <div class="skills-label">
+                <h2>My Skills</h2>
             </div>
             <div class="add-icon">
                 <img src="../../../../static/icons/add.png" alt="add" @click="addSkill">
             </div>
         </div>
-        <myTable :headerNames="headerNames" :data="data" link="/skills/"
-                 :editable="employee !== undefined && employee.id === Number(this.$route.params.id)"></myTable>
+        <myTable :headerNames="headerNames"
+                 :data="data"
+                 link="/skills/"
+                 :editable="employee !== undefined && employee.id === Number(this.$route.params.id)">
+        </myTable>
     </div>
 </template>
 
@@ -27,7 +31,8 @@ export default {
   },
   computed: {
     employee () {
-      return this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getId'])
+      return this.$store.getters['getEmployees']
+        .find(employee => employee.id === this.$store.getters['getId'])
     },
     skillList () {
       return this.$store.getters['getSkills'].map(
