@@ -55,9 +55,14 @@ export default {
                 id: manager.id
               },
               employees: {
-                value: this.employees.filter(employee => employee.info
-                  .find(info => info.name === 'Job Details').items
-                  .find(item => item.name === 'Department').value === object.id).length
+                value: this.employees.filter(employee => employee.personalData.items
+                  .find(item => item.name === 'Project' && Array.from(this.$store.getters['getProjects']
+                    .filter(project => project.department === object.id).map(
+                      (project) => {
+                        return project.id
+                      }
+                    )).includes(item.value))).length + this.$store.getters['getDepartments']
+                  .filter(department => department.id === object.id && department.manager > 0).length
               }
             }
           }

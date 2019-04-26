@@ -24,7 +24,7 @@ export default {
             },
             {
               name: 'Project',
-              value: '-'
+              value: null
             }
           ],
           icon: 1
@@ -53,13 +53,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Department Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 1
               }
             ]
           }
@@ -126,7 +119,7 @@ export default {
             },
             {
               name: 'Project',
-              value: '-'
+              value: null
             }
           ],
           icon: 2
@@ -155,13 +148,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Department Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 2
               }
             ]
           }
@@ -257,13 +243,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Project Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 1
               }
             ]
           }
@@ -359,13 +338,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Project Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 1
               }
             ]
           }
@@ -461,13 +433,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Project Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 2
               }
             ]
           }
@@ -563,13 +528,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Project Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 1
               }
             ]
           }
@@ -665,13 +623,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Project Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 2
               }
             ]
           }
@@ -767,13 +718,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Project Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 2
               }
             ]
           }
@@ -869,13 +813,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Project Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 2
               }
             ]
           }
@@ -971,13 +908,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Project Manager'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 2
               }
             ]
           }
@@ -1073,13 +1003,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Developer'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 2
               }
             ]
           }
@@ -1175,13 +1098,6 @@ export default {
               {
                 name: 'Position',
                 value: 'Developer'
-              },
-              {
-                name: 'Supervisor'
-              },
-              {
-                name: 'Department',
-                value: 2
               }
             ]
           }
@@ -1325,9 +1241,6 @@ export default {
             project: {
               value: payload.project
             },
-            department: {
-              value: ''
-            },
             skills: {
               value: ''
             }
@@ -1393,12 +1306,6 @@ export default {
       state.employees
         .find(employee => employee.id === payload.employeeId).personalData.items
         .find(item => item.name === 'Project').value = payload.projectId
-    },
-    updateEmployeeDepartment (state, payload) {
-      state.employees
-        .find(employee => employee.id === payload.employeeId).info
-        .find(info => info.name === 'Job Details').items
-        .find(item => item.name === 'Department').value = payload.departmentId
     }
   },
   actions: {

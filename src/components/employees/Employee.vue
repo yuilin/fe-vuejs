@@ -19,7 +19,46 @@ export default {
       return this.selectedEmployee.info.map(
         (info) => {
           if (info.name === 'Personal Info') {
-            info.items.unshift({name: 'Id', value: this.selectedEmployee.id})
+            if (info.items.find(item => item.name === 'Id') === undefined) {
+              info.items.unshift({name: 'Id', value: this.selectedEmployee.id})
+            }
+          } else if (info.name === 'Job Details') {
+            if (info.items.find(item => item.name === 'Supervisor') === undefined) {
+              let position = this.selectedEmployee.info
+                .find(info => info.name === 'Job Details').items
+                .find(item => item.name === 'Position').value
+              if (position === 'Department Manager') {
+                let department = this.$store.getters['getDepartments']
+                  .find(department => department.id === this.selectedEmployee.id)
+                info.items.push({name: 'Supervisor', value: '-'})
+                info.items.push({name: 'Department', value: department.id, link: '/departments/' + department.id})
+              } else {
+                let projectId = this.selectedEmployee.personalData.items
+                  .find(item => item.name === 'Project').value
+                if (projectId) {
+                  let project = this.$store.getters['getProjects']
+                    .find(project => project.id === projectId)
+                  let department = this.$store.getters['getDepartments']
+                    .find(department => department.id === project.department)
+                  let supervisor
+                  if (position === 'Project Manager') {
+                    supervisor = this.$store.getters['getEmployees']
+                      .find(employee => employee.id === department.manager)
+                  } else {
+                    supervisor = this.$store.getters['getEmployees']
+                      .find(employee => employee.id === project.manager)
+                  }
+                  info.items.push({
+                    name: 'Supervisor',
+                    value: supervisor.name + ' ' + supervisor.surname,
+                    link: '/departments/' + department.id})
+                  info.items.push({name: 'Department', value: department.id, link: '/departments/' + department.id})
+                } else {
+                  info.items.push({name: 'Supervisor', value: '-'})
+                  info.items.push({name: 'Department', value: '-'})
+                }
+              }
+            }
           }
           return info
         }

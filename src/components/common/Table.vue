@@ -143,9 +143,10 @@ export default {
         (project) => {
           return {
             id: project.id,
-            value: project.name
+            value: project.name,
+            department: project.department
           }
-        })
+        }).filter(project => project.department === Number(this.$route.params.id))
       projects.unshift({id: null, name: ''})
       return projects
     }
@@ -187,7 +188,8 @@ export default {
             employeeId: this.employee.id,
             recordId: this.editRecord,
             value: this.selectedSkill,
-            skillName: this.$store.getters['getSkills'].find(skill => skill.id === Number(this.selectedSkill)).personalData.credentials.name
+            skillName: this.$store.getters['getSkills']
+              .find(skill => skill.id === Number(this.selectedSkill)).personalData.credentials.name
           })
           this.selectedSkill = null
           this.selectedLevel = null
@@ -208,7 +210,9 @@ export default {
       if (this.editRecord === 0 || this.editRecord === id) {
         if (this.editRecord === id) {
           if (this.selectedPosition === 'Project Manager') {
-            let previousManager = this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getProjects'].find(project => project.id === Number(this.$route.params.id)).manager)
+            let previousManager = this.$store.getters['getEmployees']
+              .find(employee => employee.id === this.$store.getters['getProjects']
+                .find(project => project.id === Number(this.$route.params.id)).manager)
             this.$store.commit('updateEmployeeProject', {employeeId: previousManager.id, projectId: null})
             this.$store.commit('updateProject', {projectId: Number(this.$route.params.id), manager: id})
           }
@@ -232,10 +236,13 @@ export default {
     editDepartmentEmployee (id) {
       if (this.editRecord === 0 || this.editRecord === id) {
         if (this.editRecord === id) {
-          let previousDManager = this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getDepartments'].find(department => department.id === Number(this.$route.params.id)).manager)
-          let previousPManager = this.$store.getters['getEmployees'].find(employee => employee.id === this.$store.getters['getProjects'].find(project => project.id === Number(this.selectedProject)).manager)
+          let previousDManager = this.$store.getters['getEmployees']
+            .find(employee => employee.id === this.$store.getters['getDepartments']
+              .find(department => department.id === Number(this.$route.params.id)).manager)
+          let previousPManager = this.$store.getters['getEmployees']
+            .find(employee => employee.id === this.$store.getters['getProjects']
+              .find(project => project.id === Number(this.selectedProject)).manager)
           if (this.selectedPosition === 'Department Manager' && id !== previousDManager.id) {
-            this.$store.commit('updateEmployeeDepartment', {employeeId: previousDManager.id, departmentId: null})
             this.$store.commit('updateDepartment', {departmentId: Number(this.$route.params.id), manager: id})
           } else if (this.selectedPosition === 'Project Manager' && id !== previousPManager.id) {
             this.$store.commit('updateEmployeeProject', {employeeId: previousPManager.id, projectId: null})
@@ -263,7 +270,6 @@ export default {
       if (this.editRecord === id) {
         this.$store.commit('setEditRecord', 0)
       }
-      this.$store.commit('updateEmployeeDepartment', {employeeId: id, departmentId: null})
       this.$store.commit('updateEmployeeProject', {employeeId: id, departmentId: null})
     },
     handleFunctionCall (functionName, id) {

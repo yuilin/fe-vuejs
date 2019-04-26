@@ -36,46 +36,42 @@ export default {
     parse (objects) {
       return objects.map(
         (object) => {
-          let info = object.info
-            .find(i => i.name === 'Job Details').items
-          let department = this.$store.getters['getDepartments']
-            .find(department => department.id === info
-              .find(item => item.name === 'Department').value)
-          let parsed = {
-            id: object.id,
-            name: object.personalData.credentials.name,
-            surname: object.personalData.credentials.surname,
-            position: info
-              .find(item => item.name === 'Position').value,
-            project: this.$store.getters['getProjects']
-              .find(project => project.id === object.personalData.items
-                .find(item => item.name === 'Project').value),
-            skills: object.skills.map(
-              (object) => {
-                let skill = this.$store.getters['getSkills']
-                  .find(skill => skill.id === Number(object.id))
-                return {
-                  name: skill.personalData.credentials.name,
-                  link: '/skills/',
-                  id: skill.id
-                }
-              })
+          let info = object.info.find(i => i.name === 'Job Details').items
+          let project = this.$store.getters['getProjects']
+            .find(project => project.id === object.personalData.items
+              .find(item => item.name === 'Project').value)
+          let position = info.find(item => item.name === 'Position').value
+          let department
+          if (position === 'Department Manager') {
+            department = this.$store.getters['getDepartments'].find(department => department.manager === object.id)
+          } else if (project !== undefined) {
+            department = this.$store.getters['getDepartments'].find(department => department.id === project.department)
           }
+          let skills = object.skills.map(
+            (object) => {
+              let skill = this.$store.getters['getSkills']
+                .find(skill => skill.id === Number(object.id))
+              return {
+                name: skill.personalData.credentials.name,
+                link: '/skills/',
+                id: skill.id
+              }
+            })
           if (this.selectedDepartment.manager === this.user) {
             return {
-              id: parsed.id,
+              id: object.id,
               data: {
-                name: {value: parsed.name, link: true, editable: false},
-                surname: {value: parsed.surname, link: true, editable: false},
-                position: {value: parsed.position, options: 'positionList'},
+                name: {value: object.personalData.credentials.name, link: true, editable: false},
+                surname: {value: object.personalData.credentials.surname, link: true, editable: false},
+                position: {value: position, options: 'positionList'},
                 project: {
-                  value: parsed.project === undefined ? '-' : parsed.project.name,
-                  link: parsed.project === undefined ? undefined : '/projects/',
-                  id: parsed.project === undefined ? undefined : parsed.project.id,
+                  value: project === undefined ? '-' : project.name,
+                  link: project === undefined ? undefined : '/projects/',
+                  id: project === undefined ? undefined : project.id,
                   options: 'projectList'
                 },
-                skills: {values: parsed.skills},
-                actions: this.selectedDepartment.manager === parsed.id || parsed.position === 'Project Manager'
+                skills: {values: skills},
+                actions: this.selectedDepartment.manager === object.id || position === 'Project Manager'
                   ? []
                   : [{value: 'edit', function: 'editDepartmentEmployee'},
                     {value: 'delete', function: 'deleteDepartmentEmployee'}]
@@ -84,17 +80,17 @@ export default {
             }
           } else {
             return {
-              id: parsed.id,
+              id: object.id,
               data: {
-                name: {value: parsed.name, link: true},
-                surname: {value: parsed.surname, link: true},
-                position: {value: parsed.position},
+                name: {value: object.personalData.credentials.name, link: true},
+                surname: {value: object.personalData.credentials.surname, link: true},
+                position: {value: position},
                 project: {
-                  value: parsed.project === undefined ? '-' : parsed.project.name,
-                  link: parsed.project === undefined ? undefined : '/projects/',
-                  id: parsed.project === undefined ? undefined : parsed.project.id
+                  value: project === undefined ? '-' : project.name,
+                  link: project === undefined ? undefined : '/projects/',
+                  id: project === undefined ? undefined : project.id
                 },
-                skills: {values: parsed.skills}
+                skills: {values: skills}
               },
               department: department !== undefined ? department.id : '-'
             }
