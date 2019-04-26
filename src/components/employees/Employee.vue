@@ -16,7 +16,14 @@ export default {
       return this.employees.find(employee => employee.id === Number(this.$route.params.id))
     },
     info () {
-      return this.selectedEmployee.info
+      return this.selectedEmployee.info.map(
+        (info) => {
+          if (info.name === 'Personal Info') {
+            info.items.unshift({name: 'Id', value: this.selectedEmployee.id})
+          }
+          return info
+        }
+      )
     },
     skills () {
       return this.selectedEmployee.skills.map(

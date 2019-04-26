@@ -34,10 +34,6 @@ export default {
             name: 'Personal Info',
             items: [
               {
-                name: 'Id',
-                value: 1
-              },
-              {
                 name: 'Start date',
                 value: '01-01-1970'
               },
@@ -139,10 +135,6 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              {
-                name: 'Id',
-                value: 2
-              },
               {
                 name: 'Start date',
                 value: '01-01-1970'
@@ -246,10 +238,6 @@ export default {
             name: 'Personal Info',
             items: [
               {
-                name: 'Id',
-                value: 3
-              },
-              {
                 name: 'Start date',
                 value: '01-01-1970'
               },
@@ -351,10 +339,6 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              {
-                name: 'Id',
-                value: 4
-              },
               {
                 name: 'Start date',
                 value: '01-01-1970'
@@ -458,10 +442,6 @@ export default {
             name: 'Personal Info',
             items: [
               {
-                name: 'Id',
-                value: 5
-              },
-              {
                 name: 'Start date',
                 value: '01-01-1970'
               },
@@ -563,10 +543,6 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              {
-                name: 'Id',
-                value: 6
-              },
               {
                 name: 'Start date',
                 value: '01-01-1970'
@@ -670,10 +646,6 @@ export default {
             name: 'Personal Info',
             items: [
               {
-                name: 'Id',
-                value: 7
-              },
-              {
                 name: 'Start date',
                 value: '01-01-1970'
               },
@@ -775,10 +747,6 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              {
-                name: 'Id',
-                value: 8
-              },
               {
                 name: 'Start date',
                 value: '01-01-1970'
@@ -882,10 +850,6 @@ export default {
             name: 'Personal Info',
             items: [
               {
-                name: 'Id',
-                value: 9
-              },
-              {
                 name: 'Start date',
                 value: '01-01-1970'
               },
@@ -987,10 +951,6 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              {
-                name: 'Id',
-                value: 10
-              },
               {
                 name: 'Start date',
                 value: '01-01-1970'
@@ -1094,10 +1054,6 @@ export default {
             name: 'Personal Info',
             items: [
               {
-                name: 'Id',
-                value: 11
-              },
-              {
                 name: 'Start date',
                 value: '01-01-1970'
               },
@@ -1199,10 +1155,6 @@ export default {
           {
             name: 'Personal Info',
             items: [
-              {
-                name: 'Id',
-                value: 12
-              },
               {
                 name: 'Start date',
                 value: '01-01-1970'
@@ -1345,10 +1297,6 @@ export default {
             {
               name: 'Personal Info',
               items: [
-                {
-                  name: 'Id',
-                  value: payload.id
-                },
                 {
                   name: 'Start date',
                   value: payload.startDate
