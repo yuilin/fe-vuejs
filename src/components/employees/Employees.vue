@@ -43,8 +43,11 @@ export default {
           .search(this.filterName.toUpperCase()) > -1))))
       }
       if (this.filterSkill != null && this.filterSkill.length > 0) {
-        data = data.filter(data => data.data.skills.value.toUpperCase()
-          .search(this.filterSkill.toUpperCase()) > -1)
+        data = data.filter(data => data.data.skills.values.map(
+          (skill) => {
+            return skill.name
+          }
+        ).join(' ').toUpperCase().search(this.filterSkill.toUpperCase()) > -1)
       }
       if (this.filterProject != null && this.filterProject.length > 0) {
         data = data.filter(data => data.data.project.value.toUpperCase()
