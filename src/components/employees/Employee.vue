@@ -29,9 +29,9 @@ export default {
                 .find(item => item.name === 'Position').value
               if (position === 'Department Manager') {
                 let department = this.$store.getters['getDepartments']
-                  .find(department => department.id === this.selectedEmployee.id)
+                  .find(department => department.manager === this.selectedEmployee.id)
                 info.items.push({name: 'Supervisor', value: '-'})
-                info.items.push({name: 'Department', value: department.id, link: '/departments/' + department.id})
+                info.items.push({name: 'Department', value: department.name, linkTo: '/departments/' + department.id})
               } else {
                 let projectId = this.selectedEmployee.personalData.items
                   .find(item => item.name === 'Project').value
@@ -50,9 +50,9 @@ export default {
                   }
                   info.items.push({
                     name: 'Supervisor',
-                    value: supervisor.name + ' ' + supervisor.surname,
-                    link: '/departments/' + department.id})
-                  info.items.push({name: 'Department', value: department.id, link: '/departments/' + department.id})
+                    value: supervisor.personalData.credentials.name + ' ' + supervisor.personalData.credentials.surname,
+                    linkTo: '/employees/' + supervisor.id})
+                  info.items.push({name: 'Department', value: department.name, linkTo: '/departments/' + department.id})
                 } else {
                   info.items.push({name: 'Supervisor', value: '-'})
                   info.items.push({name: 'Department', value: '-'})
