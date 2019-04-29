@@ -337,7 +337,51 @@ export default {
         name: 'Projects'
       }
     ],
-    editRecord: 0
+    editRecord: 0,
+    skillTree: [
+      {
+        id: 1,
+        parentId: 0,
+        skillId: null,
+        categoryId: 1,
+        tagId: null
+      },
+      {
+        id: 2,
+        parentId: 0,
+        skillId: null,
+        categoryId: 2,
+        tagId: null
+      },
+      {
+        id: 3,
+        parentId: 2,
+        skillId: null,
+        categoryId: null,
+        tagId: 2
+      },
+      {
+        id: 4,
+        parentId: 2,
+        skillId: null,
+        categoryId: null,
+        tagId: 3
+      },
+      {
+        id: 5,
+        parentId: 1,
+        skillId: null,
+        categoryId: null,
+        tagId: 3
+      },
+      {
+        id: 6,
+        parentId: 5,
+        skillId: 1,
+        categoryId: null,
+        tagId: null
+      }
+    ]
   },
   mutations: {
     setEditRecord (state, payload) {
@@ -347,6 +391,7 @@ export default {
   getters: {
     getSkills: state => state.skills,
     getSkillsHeaderNames: state => state.skillsHeaderNames,
-    getEditRecord: state => state.editRecord
+    getEditRecord: state => state.editRecord,
+    getSkillTree: state => state.skillTree
   }
 }

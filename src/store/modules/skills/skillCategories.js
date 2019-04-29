@@ -1,11 +1,17 @@
 export default {
   state: {
-    categories: [
-      'Backend',
-      'Frontend'
+    skillCategories: [
+      {
+        id: 1,
+        name: 'Backend'
+      },
+      {
+        id: 2,
+        name: 'Frontend'
+      }
     ]
   },
   getters: {
-    getCategories: state => state.categories
+    getSkillCategories: state => state.skillCategories
   }
 }

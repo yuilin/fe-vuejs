@@ -14,14 +14,21 @@
                  :editable="employee !== undefined && employee.id === Number(this.$route.params.id)">
         </myTable>
     </div>
+    <div v-else class="tab-skills">
+        <TreeItem
+                class="item"
+                :item="treeData">
+        </TreeItem>
+    </div>
 </template>
 
 <script>
 import myTable from '@/components/common/Table'
+import TreeItem from '@/components/common/skills/TreeItem'
 
 export default {
   name: 'TabSkills',
-  components: {myTable},
+  components: {myTable, TreeItem},
   props: {
     data: Array,
     parent: String
@@ -52,6 +59,9 @@ export default {
           }
         }
       )
+    },
+    treeData () {
+      return this.parseTree(this.$store.getters['getSkillTree'], 0)
     }
   },
   methods: {
@@ -64,6 +74,34 @@ export default {
         })
         this.$store.commit('setEditRecord', 0)
       }
+    },
+    parseTree (treeData, counter) {
+      let data = []
+      let children = []
+      treeData.filter(skill => skill.parentId === counter).forEach(
+        (skill) => {
+          children.push(skill)
+        }
+      )
+      children.forEach(
+        (child) => {
+          let name = child.skillId !== null
+            ? this.$store.getters['getSkills']
+              .find(skill => skill.id === child.skillId).personalData.credentials.name
+            : child.categoryId !== null
+              ? this.$store.getters['getSkillCategories']
+                .find(category => category.id === child.categoryId).name
+              : this.$store.getters['getSkillTags']
+                .find(tag => tag.id === child.tagId).name
+          data.push(
+            {
+              name: name,
+              children: this.parseTree(treeData, child.id),
+              link: child.skillId !== null ? child.skillId : null
+            }
+          )
+        })
+      return counter > 0 ? data : {name: 'Skills', children: data}
     }
   }
 }

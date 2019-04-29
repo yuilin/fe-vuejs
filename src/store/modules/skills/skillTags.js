@@ -1,9 +1,18 @@
 export default {
   state: {
     skillTags: [
-      'Markup',
-      'Framework',
-      'Programming language'
+      {
+        id: 1,
+        name: 'Markup'
+      },
+      {
+        id: 2,
+        name: 'Framework'
+      },
+      {
+        id: 3,
+        name: 'Programming language'
+      }
     ]
   },
   getters: {
