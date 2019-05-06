@@ -25,7 +25,7 @@
                 <div class="icon">
                     <img :src="'/static/user-icons/' + employee.personalData.icon + '.png'"
                          class="user-icon"
-                         alt="username">
+                         alt="userIcon">
                 </div>
             </router-link>
         </div>

@@ -24,8 +24,8 @@ export default {
               [
                 {
                   name: 'URL',
-                  value: 'java.com',
-                  type: 'link'
+                  value: 'http://java.com',
+                  link: true
                 },
                 {
                   name: 'Latest ver',
@@ -38,11 +38,11 @@ export default {
                 },
                 {
                   name: 'Category',
-                  value: 'Backend'
+                  value: 1
                 },
                 {
                   name: 'Type',
-                  value: 'Programming language'
+                  value: 3
                 }
               ]
           }
@@ -72,7 +72,7 @@ export default {
                 {
                   name: 'URL',
                   value: 'https://developer.mozilla.org/docs/Web/JavaScript',
-                  type: 'link'
+                  link: true
                 },
                 {
                   name: 'Latest ver',
@@ -80,11 +80,11 @@ export default {
                 },
                 {
                   name: 'Category',
-                  value: 'Frontend'
+                  value: 2
                 },
                 {
                   name: 'Type',
-                  value: 'Programming language'
+                  value: 3
                 }
               ]
           }
@@ -114,7 +114,7 @@ export default {
                 {
                   name: 'URL',
                   value: 'https://www.w3.org/Style/CSS/',
-                  type: 'link'
+                  link: true
                 },
                 {
                   name: 'Latest ver',
@@ -122,11 +122,11 @@ export default {
                 },
                 {
                   name: 'Category',
-                  value: 'Frontend'
+                  value: 2
                 },
                 {
                   name: 'Type',
-                  value: 'Style Sheet language'
+                  value: 3
                 }
               ]
           }
@@ -156,7 +156,7 @@ export default {
                 {
                   name: 'URL',
                   value: 'http://www.typescriptlang.org/',
-                  type: 'link'
+                  link: true
                 },
                 {
                   name: 'Latest ver',
@@ -164,11 +164,11 @@ export default {
                 },
                 {
                   name: 'Category',
-                  value: 'Frontend'
+                  value: 2
                 },
                 {
                   name: 'Type',
-                  value: 'Programming language'
+                  value: 3
                 }
               ]
           }
@@ -198,7 +198,7 @@ export default {
                 {
                   name: 'URL',
                   value: 'https://reactjs.org/',
-                  type: 'link'
+                  link: true
                 },
                 {
                   name: 'Latest ver',
@@ -211,11 +211,11 @@ export default {
                 },
                 {
                   name: 'Category',
-                  value: 'Frontend'
+                  value: 2
                 },
                 {
                   name: 'Type',
-                  value: 'Library'
+                  value: 2
                 }
               ]
           }
@@ -245,7 +245,7 @@ export default {
                 {
                   name: 'URL',
                   value: 'https://vuejs.org/',
-                  type: 'link'
+                  link: true
                 },
                 {
                   name: 'Latest ver',
@@ -258,11 +258,11 @@ export default {
                 },
                 {
                   name: 'Category',
-                  value: 'Frontend'
+                  value: 2
                 },
                 {
                   name: 'Type',
-                  value: 'Framework'
+                  value: 2
                 }
               ]
           }
@@ -292,7 +292,7 @@ export default {
                 {
                   name: 'URL',
                   value: 'https://angularjs.org/',
-                  type: 'link'
+                  link: true
                 },
                 {
                   name: 'Latest ver',
@@ -305,11 +305,11 @@ export default {
                 },
                 {
                   name: 'Category',
-                  value: 'Frontend'
+                  value: 2
                 },
                 {
                   name: 'Type',
-                  value: 'Framework'
+                  value: 3
                 }
               ]
           }
@@ -344,48 +344,110 @@ export default {
         parentId: 0,
         skillId: null,
         categoryId: 1,
-        tagId: null
+        typeId: null
       },
       {
         id: 2,
         parentId: 0,
         skillId: null,
         categoryId: 2,
-        tagId: null
+        typeId: null
       },
       {
         id: 3,
         parentId: 2,
         skillId: null,
         categoryId: null,
-        tagId: 2
+        typeId: 2
       },
       {
         id: 4,
         parentId: 2,
         skillId: null,
         categoryId: null,
-        tagId: 3
+        typeId: 3
       },
       {
         id: 5,
         parentId: 1,
         skillId: null,
         categoryId: null,
-        tagId: 3
+        typeId: 3
       },
       {
         id: 6,
         parentId: 5,
         skillId: 1,
         categoryId: null,
-        tagId: null
+        typeId: null
       }
     ]
   },
   mutations: {
     setEditRecord (state, payload) {
       state.editRecord = Number(payload)
+    },
+    addSkill (state, payload) {
+      state.skills.push(
+        {
+          id: payload.id,
+          personalData: {
+            icon: payload.id,
+            credentials: {
+              name: payload.name
+            },
+            items: [
+              {
+                name: 'Staff count'
+              },
+              {
+                name: 'Used in projects'
+              }
+            ]
+          },
+          info: [
+            {
+              name: 'Info',
+              items:
+                [
+                  {
+                    name: 'URL',
+                    value: payload.url,
+                    link: true
+                  },
+                  {
+                    name: 'Latest ver',
+                    value: payload.version
+                  },
+                  {
+                    name: 'GIT',
+                    value: payload.version,
+                    link: true
+                  },
+                  {
+                    name: 'Category',
+                    value: payload.category
+                  },
+                  {
+                    name: 'Type',
+                    value: payload.type
+                  }
+                ]
+            }
+          ]
+        }
+      )
+    },
+    addSkillToTree (state, payload) {
+      state.skillTree.push(
+        {
+          id: payload.id,
+          parentId: payload.parentId,
+          skillId: payload.skillId,
+          categoryId: null,
+          typeId: null
+        }
+      )
     }
   },
   getters: {

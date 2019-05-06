@@ -4,11 +4,11 @@
             <img v-if="parent === 'Employee'"
                  :src="'/static/user-icons/' + personalData.icon + '.png'"
                  class="user-icon"
-                 alt="username">
+                 alt=" ">
             <img v-else
                  :src="'/static/skill-icons/' + personalData.icon + '.png'"
                  class="user-icon"
-                 alt="username">
+                 alt=" ">
         </div>
         <hr class="mobile">
         <div class="personal-data">

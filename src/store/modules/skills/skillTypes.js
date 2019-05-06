@@ -1,10 +1,21 @@
 export default {
   state: {
     skillTypes: [
-      'Technology'
+      {
+        id: 1,
+        name: 'Markup'
+      },
+      {
+        id: 2,
+        name: 'Framework'
+      },
+      {
+        id: 3,
+        name: 'Programming language'
+      }
     ]
   },
-  getSkillTypes: {
-    getId: state => state.skillTypes
+  getters: {
+    getSkillTypes: state => state.skillTypes
   }
 }

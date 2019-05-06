@@ -43,7 +43,6 @@ export default {
     },
     openSkill (link) {
       if (link) {
-        console.log(link)
         this.$router.push('/skills/' + link)
       }
     }

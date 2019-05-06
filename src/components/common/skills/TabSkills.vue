@@ -91,8 +91,8 @@ export default {
             : child.categoryId !== null
               ? this.$store.getters['getSkillCategories']
                 .find(category => category.id === child.categoryId).name
-              : this.$store.getters['getSkillTags']
-                .find(tag => tag.id === child.tagId).name
+              : this.$store.getters['getSkillTypes']
+                .find(type => type.id === child.typeId).name
           data.push(
             {
               name: name,
@@ -111,24 +111,5 @@ export default {
 
     .skills-label {
         display: inline-block;
-    }
-
-    .skills-header {
-        width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .add-icon {
-        text-align: right;
-        float: right;
-        margin-top: 30px;
-    }
-
-    @media screen and (max-width: 400px) {
-
-        .skills-header {
-            width: 100%;
-        }
     }
 </style>

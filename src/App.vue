@@ -28,6 +28,12 @@ export default {
         margin: 50px;
     }
 
+    .skills-header {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     @media screen and (max-width: 800px) {
         .body {
             margin: 40px 0 0 0;
@@ -59,6 +65,9 @@ export default {
     @media screen and (max-width: 400px) {
         body, input, textarea, button, select {
             font-size: 8px;
+        }
+        .skills-header {
+            width: 100%;
         }
     }
 
@@ -129,5 +138,11 @@ export default {
 
     .success {
         color: green
+    }
+
+    .add-icon {
+        text-align: right;
+        float: right;
+        margin-top: 30px;
     }
 </style>

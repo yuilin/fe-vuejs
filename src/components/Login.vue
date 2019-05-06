@@ -16,7 +16,7 @@
             <div class="login-item">
                 <button @click="login">Login</button>
             </div>
-            <div @click="changeView()" class="login-item registration">
+            <div @click="changeView()" class="login-item registration">Registration
             </div>
         </div>
         <div class="registration-box box" v-else>
@@ -74,7 +74,7 @@
             <div class="login-item">
                 <button @click="reg">Register</button>
             </div>
-            <div @click="changeView()" class="login-item registration">
+            <div @click="changeView()" class="login-item registration">Login
             </div>
         </div>
         <router-view></router-view>

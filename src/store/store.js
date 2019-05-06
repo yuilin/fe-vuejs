@@ -8,7 +8,6 @@ import departments from './modules/departments/departments'
 import employeePositions from './modules/employees/employeePositions'
 import projects from './modules/projects/projects'
 import skillCategories from './modules/skills/skillCategories'
-import skillTags from './modules/skills/skillTags'
 import skillTypes from './modules/skills/skillTypes'
 
 Vue.use(Vuex)
@@ -23,7 +22,6 @@ export default new Vuex.Store({
     employeePositions,
     projects,
     skillCategories,
-    skillTags,
     skillTypes
   }
 })
