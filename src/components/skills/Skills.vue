@@ -7,7 +7,7 @@
             </div>
         </div>
         <myFilter parent="Skills"></myFilter>
-        <myTable :headerNames="headerNames" :data="data" link="/skills/"></myTable>
+        <myTable :headerNames="headerNames" :data="data" link="/skills/" :editable="user !== null"></myTable>
         <Pagination></Pagination>
         <modal v-if="showModal" @close="closeModal" @save="save">
             <h2 slot="header">Add new skill</h2>
@@ -180,7 +180,8 @@ export default {
                   .find(item => item.name === 'Latest ver').value
               },
               employees: {value: this.calculateEmployees(object.id)},
-              projects: {value: this.calculateProjects(object.id)}
+              projects: {value: this.calculateProjects(object.id)},
+              actions: this.user === null ? [] : [{value: 'edit', function: 'editSkill'}]
             }
           }
         }
@@ -228,8 +229,4 @@ export default {
 </script>
 
 <style scoped>
-    .newItem {
-        margin: 10px 20px 0 20px;
-        width: 140px;
-    }
 </style>

@@ -48,11 +48,54 @@
                 </div>
             </div>
         </div>
+        <modal v-if="editSkillId !== 0" @close="closeModal" @save="save">
+            <h2 slot="header">Edit skill</h2>
+            <div slot="body">
+                <input class="newItem" type="text" v-model="name" placeholder="name">
+                <input class="newItem" type="text" v-model="url" placeholder="url">
+                <input class="newItem" type="text" v-model="version" placeholder="version">
+                <input class="newItem" type="text" v-model="git" placeholder="git">
+                <select class="newItem" v-model="category">
+                    <option value="null" disabled>Select a category</option>
+                    <option v-for="(item, i) in categories" v-bind:key="i" :value="item.id">
+                        {{item.name}}
+                    </option>
+                </select>
+                <select class="newItem" v-model="type">
+                    <option value="null" disabled>Select a type</option>
+                    <option v-for="(item, i) in types" v-bind:key="i" :value="item.id">
+                        {{item.name}}
+                    </option>
+                </select>
+                <select class="newItem" v-model="parent">
+                    <option value="null" disabled>Select a parent</option>
+                    <option value="null"></option>
+                    <optgroup label="Types">
+                        <option v-for="(item, i) in parentTypes" v-bind:key="i" :value="item.id">
+                            {{item.name}}
+                        </option>
+                    </optgroup>
+                    <optgroup label="Categories">
+                        <option v-for="(item, i) in parentCategories" v-bind:key="i" :value="item.id">
+                            {{item.name}}
+                        </option>
+                    </optgroup>
+                    <optgroup label="Skills">
+                        <option v-for="(item, i) in parentSkills" v-bind:key="i" :value="item.id">
+                            {{item.name}}
+                        </option>
+                    </optgroup>
+                </select>
+            </div>
+        </modal>
     </div>
 </template>
 
 <script>
+import Modal from '@/components/common/Modal'
+
 export default {
+  components: {Modal},
   name: 'myTable',
   props: {
     headerNames: Array,
@@ -71,7 +114,15 @@ export default {
       selectedSkill: null,
       selectedLevel: null,
       selectedPosition: null,
-      selectedProject: null
+      selectedProject: null,
+      editSkillId: 0,
+      name: null,
+      url: null,
+      version: null,
+      git: null,
+      category: null,
+      type: null,
+      parent: null
     }
   },
   computed: {
@@ -149,6 +200,45 @@ export default {
         }).filter(project => project.department === Number(this.$route.params.id))
       projects.unshift({id: null, name: ''})
       return projects
+    },
+    categories () {
+      return this.$store.getters['getSkillCategories']
+    },
+    types () {
+      return this.$store.getters['getSkillTypes']
+    },
+    parentTypes () {
+      let parents = []
+      this.$store.getters['getSkillTree'].filter(item => item.typeId !== null).forEach(
+        (element) => {
+          parents.push({id: element.id, name: this.types.find(type => type.id === element.typeId).name})
+        }
+      )
+      return parents
+    },
+    parentCategories () {
+      let parents = []
+      this.$store.getters['getSkillTree'].filter(item => item.categoryId !== null).forEach(
+        (element) => {
+          parents.push({
+            id: element.id,
+            name: this.categories.find(category => category.id === element.categoryId).name
+          })
+        }
+      )
+      return parents
+    },
+    parentSkills () {
+      let parents = []
+      this.$store.getters['getSkillTree'].filter(item => item.skillId !== null).forEach(
+        (element) => {
+          parents.push({
+            id: element.id,
+            name: this.$store.getters['getSkills'].find(skill => skill.id === element.skillId).personalData.credentials.name
+          })
+        }
+      )
+      return parents
     }
   },
   methods: {
@@ -296,6 +386,75 @@ export default {
           return id === this.selectedProject
         }
       }
+    },
+    editSkill (id) {
+      this.loadSkillById(id)
+      this.editSkillId = id
+    },
+    loadSkillById (id) {
+      let skills = this.$store.getters['getSkills'].find(skill => skill.id === id)
+      let items = skills.info.find(info => info.name === 'Info').items
+      this.name = skills.personalData.credentials.name
+
+      this.url = items.find(item => item.name === 'URL').value
+      this.version = items.find(item => item.name === 'Latest ver').value
+      this.git = items.find(item => item.name === 'GIT').value
+      this.category = items.find(item => item.name === 'Category').value
+      this.type = items.find(item => item.name === 'Type').value
+      if (this.$store.getters['getSkillTree'].find(item => item.skillId === id) !== undefined) {
+        this.parent = this.$store.getters['getSkillTree'].find(item => item.skillId === id).parentId
+      }
+    },
+    closeModal () {
+      this.editSkillId = 0
+      this.name = null
+      this.url = null
+      this.version = null
+      this.git = null
+      this.category = null
+      this.type = null
+      this.parent = null
+    },
+    save () {
+      this.$store.commit('editSkill', {
+        id: this.editSkillId,
+        name: this.name,
+        url: this.url,
+        version: this.version,
+        git: this.git,
+        category: this.category,
+        type: this.type
+      })
+      let oldParent = this.$store.getters['getSkillTree'].find(item => item.skillId === this.editSkillId)
+      if (!((oldParent === undefined && this.parent === null) ||
+        (oldParent !== undefined && oldParent.parentId === this.parent))) {
+        if (oldParent === undefined) {
+          // add
+          this.$store.commit('addSkillToTree', {
+            id: 1 + this.$store.getters['getSkillTree'][this.$store.getters['getSkillTree'].length - 1].id,
+            parentId: this.parent,
+            skillId: this.editSkillId
+          })
+        } else if (this.parent === 'null') {
+          // delete
+          this.deleteFromSkillTree(oldParent.id)
+        } else {
+          // edit
+          this.$store.commit('editSkillTree', {
+            id: oldParent.id,
+            parentId: this.parent
+          })
+        }
+      }
+      this.closeModal()
+    },
+    deleteFromSkillTree (id) {
+      if (this.$store.getters['getSkillTree'].find(item => item.parentId === id) !== undefined) {
+        this.deleteFromSkillTree(this.$store.getters['getSkillTree'].find(item => item.parentId === id).id)
+      }
+      this.$store.commit('deleteFromSkillTree', {
+        id: this.$store.getters['getSkillTree'].find(item => item.id === id).id
+      })
     }
   }
 }

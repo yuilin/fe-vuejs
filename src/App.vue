@@ -145,4 +145,9 @@ export default {
         float: right;
         margin-top: 30px;
     }
+
+    .newItem {
+        margin: 10px 20px 0 20px;
+        width: 140px;
+    }
 </style>

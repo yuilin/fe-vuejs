@@ -79,6 +79,11 @@ export default {
                   value: 'ECMAScript 2016'
                 },
                 {
+                  name: 'GIT',
+                  value: null,
+                  link: true
+                },
+                {
                   name: 'Category',
                   value: 2
                 },
@@ -121,6 +126,11 @@ export default {
                   value: '3'
                 },
                 {
+                  name: 'GIT',
+                  value: null,
+                  link: true
+                },
+                {
                   name: 'Category',
                   value: 2
                 },
@@ -161,6 +171,11 @@ export default {
                 {
                   name: 'Latest ver',
                   value: '3.2.4'
+                },
+                {
+                  name: 'GIT',
+                  value: null,
+                  link: true
                 },
                 {
                   name: 'Category',
@@ -335,6 +350,10 @@ export default {
       },
       {
         name: 'Projects'
+      },
+      {
+        name: 'Actions',
+        display: 'editable'
       }
     ],
     editRecord: 0,
@@ -448,6 +467,25 @@ export default {
           typeId: null
         }
       )
+    },
+    editSkill (state, payload) {
+      state.skills.find(skill => skill.id === payload.id).personalData.credentials.name = payload.name
+      state.skills.find(skill => skill.id === payload.id).info.find(info => info.name === 'Info').items
+        .find(item => item.name === 'URL').value = payload.url
+      state.skills.find(skill => skill.id === payload.id).info.find(info => info.name === 'Info').items
+        .find(item => item.name === 'Latest ver').value = payload.version
+      state.skills.find(skill => skill.id === payload.id).info.find(info => info.name === 'Info').items
+        .find(item => item.name === 'GIT').value = payload.git
+      state.skills.find(skill => skill.id === payload.id).info.find(info => info.name === 'Info').items
+        .find(item => item.name === 'Category').value = payload.category
+      state.skills.find(skill => skill.id === payload.id).info.find(info => info.name === 'Info').items
+        .find(item => item.name === 'Type').value = payload.type
+    },
+    editSkillTree (state, payload) {
+      state.skillTree.find(item => item.id === payload.id).parentId = payload.parentId
+    },
+    deleteFromSkillTree (state, payload) {
+      state.skillTree.splice(state.skillTree.indexOf(state.skillTree.find(item => item.id === payload.id)), 1)
     }
   },
   getters: {
