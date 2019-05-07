@@ -2,9 +2,10 @@
     <div class="content">
         <div class="header">
             <div class="logo">
-                <router-link to="/"><img src="../assets/logo.jpg" alt="Skills"></router-link>
+                <router-link v-if="employee === undefined" to="/"><img class="logo-icon" src="../assets/logo.jpg" alt="Skills"></router-link>
+                <img class="logo-icon" v-else src="../assets/logo.jpg" alt="Skills">
             </div>
-            <nav>
+            <nav v-if="employee !== undefined">
                 <ul class="navigation">
                     <li class="navigation-item">
                         <router-link to="/employees">Employees</router-link>
@@ -32,7 +33,7 @@
         <div>
             <hr>
         </div>
-        <nav class="mobile-navigation-container">
+        <nav class="mobile-navigation-container" v-if="employee !== undefined">
             <ul class="mobile-navigation">
                 <li class="navigation-item">
                     <router-link to="/employees">Employees</router-link>
@@ -79,6 +80,11 @@ export default {
     .logo {
         display: flex;
         width: 120px;
+    }
+
+    .logo-icon {
+        width: 80px;
+        height: 80px;
     }
 
     nav {
