@@ -4,10 +4,10 @@
         <myFilter parent="Projects"></myFilter>
         <myTable
                 :headerNames="headerNames"
-                :data="data"
+                :data="paginatedData"
                 link="/projects/">
         </myTable>
-        <Pagination></Pagination>
+        <Pagination :page="page" :data="data" @pageChanged="pageChanged"></Pagination>
     </div>
 </template>
 
@@ -19,6 +19,11 @@ import myTable from '@/components/common/Table'
 export default {
   components: {myTable, Pagination, myFilter},
   name: 'Projects',
+  data () {
+    return {
+      page: 1
+    }
+  },
   created () {
     this.headerNames = this.$store.getters['getProjectsHeaderNames']
   },
@@ -47,6 +52,9 @@ export default {
           .search(this.filterDepartment.toUpperCase()) > -1)
       }
       return data
+    },
+    paginatedData () {
+      return this.paginateData(this.data)
     },
     employees () {
       return this.$store.getters['getEmployees']
@@ -78,6 +86,12 @@ export default {
           }
         }
       )
+    },
+    pageChanged (page) {
+      this.page = page
+    },
+    paginateData (data) {
+      return data.slice((this.page - 1) * 10, this.page * 10)
     }
   }
 }

@@ -2,19 +2,26 @@
     <div class="body">
         <h1>{{selectedDepartment.name}}</h1>
         <myTable :headerNames="headerNames"
-                 :data="data"
+                 :data="paginatedData"
                  link="/employees/"
                  :editable="selectedDepartment.manager === user">
         </myTable>
+        <Pagination :page="page" :data="data" @pageChanged="pageChanged"></Pagination>
     </div>
 </template>
 
 <script>
 import myTable from '@/components/common/Table'
+import Pagination from '@/components/common/Pagination'
 
 export default {
-  components: {myTable},
+  components: {myTable, Pagination},
   name: 'Department',
+  data () {
+    return {
+      page: 1
+    }
+  },
   created () {
     this.departments = this.$store.getters['getDepartments']
     this.headerNames = this.$store.getters['getDepartmentHeaderNames']
@@ -27,6 +34,9 @@ export default {
     data () {
       return this.parse(this.$store.getters['getEmployees'])
         .filter(employee => employee.department === this.selectedDepartment.id)
+    },
+    paginatedData () {
+      return this.paginateData(this.data)
     },
     user () {
       return this.$store.getters['getId']
@@ -97,6 +107,12 @@ export default {
           }
         }
       )
+    },
+    pageChanged (page) {
+      this.page = page
+    },
+    paginateData (data) {
+      return data.slice((this.page - 1) * 10, this.page * 10)
     }
   }
 }

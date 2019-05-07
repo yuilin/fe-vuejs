@@ -7,8 +7,8 @@
             </div>
         </div>
         <myFilter parent="Skills"></myFilter>
-        <myTable :headerNames="headerNames" :data="data" link="/skills/" :editable="user !== null"></myTable>
-        <Pagination></Pagination>
+        <myTable :headerNames="headerNames" :data="paginatedData" link="/skills/" :editable="user !== null"></myTable>
+        <Pagination :page="page" :data="data" @pageChanged="pageChanged"></Pagination>
         <modal v-if="showModal" @close="closeModal" @save="save">
             <h2 slot="header">Add new skill</h2>
             <div slot="body">
@@ -70,7 +70,8 @@ export default {
       git: null,
       category: null,
       type: null,
-      parent: null
+      parent: null,
+      page: 1
     }
   },
   created () {
@@ -104,6 +105,9 @@ export default {
         data = data.filter(data => data.data.tags.value.toUpperCase().search(this.filterTags.toUpperCase()) > -1)
       }
       return data
+    },
+    paginatedData () {
+      return this.paginateData(this.data)
     },
     user () {
       return this.$store.getters['getId']
@@ -223,6 +227,12 @@ export default {
         this.addSkill()
       }
       this.closeModal()
+    },
+    pageChanged (page) {
+      this.page = page
+    },
+    paginateData (data) {
+      return data.slice((this.page - 1) * 10, this.page * 10)
     }
   }
 }

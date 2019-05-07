@@ -84,10 +84,17 @@ export default {
         items: this.selectedEmployee.personalData.items.map(
           (item) => {
             if (item.name === 'Project') {
-              return {
-                name: 'Project',
-                value: this.$store.getters['getProjects'].find(project => project.id === item.value).name,
-                linkTo: '/projects/' + item.value
+              if (item.value !== null) {
+                return {
+                  name: 'Project',
+                  value: this.$store.getters['getProjects'].find(project => project.id === item.value).name,
+                  linkTo: '/projects/' + item.value
+                }
+              } else {
+                return {
+                  name: 'Project',
+                  value: '-'
+                }
               }
             }
             return item

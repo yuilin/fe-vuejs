@@ -3,23 +3,26 @@
         <h1>{{selectedProject.name}}</h1>
         <myFilter v-if="userHasRights" parent="Project" @changed="getSwitchValue"></myFilter>
         <myTable :headerNames="headerNames"
-                 :data="data" link="/employees/"
+                 :data="paginatedData" link="/employees/"
                  :editable="selectedProject.manager === user">
         </myTable>
+        <Pagination :page="page" :data="data" @pageChanged="pageChanged"></Pagination>
     </div>
 </template>
 
 <script>
 import myTable from '@/components/common/Table'
 import myFilter from '@/components/common/Filter'
+import Pagination from '@/components/common/Pagination'
 
 export default {
-  components: {myTable, myFilter},
+  components: {myTable, myFilter, Pagination},
   name: 'Project',
   data () {
     return {
       showModal: false,
-      isSwitched: false
+      isSwitched: false,
+      page: 1
     }
   },
   created () {
@@ -65,6 +68,9 @@ export default {
         ).join(' ').toUpperCase().search(this.filterSkill.toUpperCase()) > -1)
       }
       return data
+    },
+    paginatedData () {
+      return this.paginateData(this.data)
     },
     user () {
       return this.$store.getters['getId']
@@ -142,8 +148,14 @@ export default {
         }
       )
     },
-    getSwitchValue (e) {
-      this.isSwitched = e
+    getSwitchValue (isSwitched) {
+      this.isSwitched = isSwitched
+    },
+    pageChanged (page) {
+      this.page = page
+    },
+    paginateData (data) {
+      return data.slice((this.page - 1) * 10, this.page * 10)
     }
   }
 }
