@@ -51,7 +51,8 @@ export default {
                   info.items.push({
                     name: 'Supervisor',
                     value: supervisor.personalData.credentials.name + ' ' + supervisor.personalData.credentials.surname,
-                    linkTo: '/employees/' + supervisor.id})
+                    linkTo: '/employees/' + supervisor.id
+                  })
                   info.items.push({name: 'Department', value: department.name, linkTo: '/departments/' + department.id})
                 } else {
                   info.items.push({name: 'Supervisor', value: '-'})
@@ -77,7 +78,22 @@ export default {
         })
     },
     personalData () {
-      return this.selectedEmployee.personalData
+      return {
+        credentials: this.selectedEmployee.personalData.credentials,
+        icon: this.selectedEmployee.personalData.icon,
+        items: this.selectedEmployee.personalData.items.map(
+          (item) => {
+            if (item.name === 'Project') {
+              return {
+                name: 'Project',
+                value: this.$store.getters['getProjects'].find(project => project.id === item.value).name,
+                linkTo: '/projects/' + item.value
+              }
+            }
+            return item
+          }
+        )
+      }
     }
   }
 }

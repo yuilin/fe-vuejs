@@ -1,11 +1,6 @@
 <template>
     <div class="body">
         <h1>Projects</h1>
-        <div v-if="user" class="skills-header">
-            <div class="add-icon">
-                <img src="../../../static/icons/add.png" alt="add" @click="addSkill">
-            </div>
-        </div>
         <myFilter parent="Projects"></myFilter>
         <myTable
                 :headerNames="headerNames"
@@ -55,9 +50,6 @@ export default {
     },
     employees () {
       return this.$store.getters['getEmployees']
-    },
-    user () {
-      return this.$store.getters['getId']
     }
   },
   methods: {
@@ -86,16 +78,6 @@ export default {
           }
         }
       )
-    },
-    addSkill () {
-      if (this.$store.getters['getEditRecord'] === 0 && this.skillList.length > 0) {
-        this.$store.commit('addSkillToEmployee', {
-          employeeId: this.employee.id,
-          value: this.skillList[0].id,
-          skillName: this.skillList[0].value
-        })
-        this.$store.commit('setEditRecord', 0)
-      }
     }
   }
 }

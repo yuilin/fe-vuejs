@@ -29,6 +29,13 @@
                :value="filter11"
                @input="updateFilter">
         <input class="filter-item"
+               id="Filter14"
+               type="text"
+               v-else-if="parent === 'Project'"
+               placeholder="Name / Surname"
+               :value="filter14"
+               @input="updateFilter">
+        <input class="filter-item"
                id="Filter2"
                type="text"
                v-if="parent === 'Employees'"
@@ -57,6 +64,13 @@
                :value="filter12"
                @input="updateFilter">
         <input class="filter-item"
+               id="Filter15"
+               type="text"
+               v-else-if="parent === 'Project'"
+               placeholder="Position"
+               :value="filter15"
+               @input="updateFilter">
+        <input class="filter-item"
                id="Filter3"
                type="text"
                v-if="parent === 'Employees'"
@@ -78,6 +92,13 @@
                :value="filter13"
                @input="updateFilter">
         <input class="filter-item"
+               id="Filter16"
+               type="text"
+               v-else-if="parent === 'Project'"
+               placeholder="Skills"
+               :value="filter16"
+               @input="updateFilter">
+        <input class="filter-item"
                id="Filter4"
                type="text"
                v-if="parent === 'Employees'"
@@ -91,12 +112,16 @@
                placeholder="Tags"
                :value="filter8"
                @input="updateFilter">
+        <mySwitch v-else-if="parent === 'Project'" @changed="getSwitchValue"></mySwitch>
     </div>
 </template>
 
 <script>
+import mySwitch from '@/components/common/Switch'
+
 export default {
   name: 'myFilter',
+  components: {mySwitch},
   props: {
     parent: String
   },
@@ -139,11 +164,23 @@ export default {
     },
     filter13 () {
       return this.$store.getters['getFilter13']
+    },
+    filter14 () {
+      return this.$store.getters['getFilter14']
+    },
+    filter15 () {
+      return this.$store.getters['getFilter15']
+    },
+    filter16 () {
+      return this.$store.getters['getFilter16']
     }
   },
   methods: {
     updateFilter (e) {
       this.$store.commit('set' + e.target.id, e.target.value)
+    },
+    getSwitchValue (e) {
+      this.$emit('changed', e)
     }
   }
 }

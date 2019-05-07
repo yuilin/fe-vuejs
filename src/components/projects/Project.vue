@@ -1,6 +1,7 @@
 <template>
     <div class="body">
         <h1>{{selectedProject.name}}</h1>
+        <myFilter v-if="userHasRights" parent="Project" @changed="getSwitchValue"></myFilter>
         <myTable :headerNames="headerNames"
                  :data="data" link="/employees/"
                  :editable="selectedProject.manager === user">
@@ -10,10 +11,17 @@
 
 <script>
 import myTable from '@/components/common/Table'
+import myFilter from '@/components/common/Filter'
 
 export default {
-  components: {myTable},
+  components: {myTable, myFilter},
   name: 'Project',
+  data () {
+    return {
+      showModal: false,
+      isSwitched: false
+    }
+  },
   created () {
     this.projects = this.$store.getters['getProjects']
     this.headerNames = this.$store.getters['getProjectHeaderNames']
@@ -23,11 +31,19 @@ export default {
       return this.projects.find(project => project.id === Number(this.$route.params.id))
     },
     data () {
-      return this.parse(this.$store.getters['getEmployees'])
-        .filter(employee => employee.project === this.selectedProject.id)
+      if (this.isSwitched) {
+        return this.parse(this.$store.getters['getEmployees'])
+          .filter(employee => employee.project === undefined && employee.data.position.value !== 'Department Manager')
+      } else {
+        return this.parse(this.$store.getters['getEmployees'])
+          .filter(employee => employee.project === this.selectedProject.id)
+      }
     },
     user () {
       return this.$store.getters['getId']
+    },
+    userHasRights () {
+      return this.selectedProject.manager === this.user
     }
   },
   methods: {
@@ -53,7 +69,22 @@ export default {
               }
             })
           }
-          if (this.selectedProject.manager === this.user) {
+          if (this.selectedProject.manager === this.user && this.isSwitched) {
+            return {
+              id: parsed.id,
+              data: {
+                name: {value: parsed.name, link: true, editable: false},
+                surname: {value: parsed.surname, link: true, editable: false},
+                position: {value: parsed.position, options: 'projectPositionList'},
+                skills: {values: parsed.skills},
+                actions: this.selectedProject.manager === parsed.id
+                  ? []
+                  : [
+                    {value: 'add', function: 'addProjectEmployee'}]
+              },
+              project: parsed.project === undefined ? undefined : parsed.project.id
+            }
+          } else if (this.selectedProject.manager === this.user) {
             return {
               id: parsed.id,
               data: {
@@ -83,6 +114,9 @@ export default {
           }
         }
       )
+    },
+    getSwitchValue (e) {
+      this.isSwitched = e
     }
   }
 }

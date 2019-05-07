@@ -12,7 +12,10 @@ export default {
     filter10: null,
     filter11: null,
     filter12: null,
-    filter13: null
+    filter13: null,
+    filter14: null,
+    filter15: null,
+    filter16: null
   },
   mutations: {
     setFilter1 (state, payload) {
@@ -53,6 +56,15 @@ export default {
     },
     setFilter13 (state, payload) {
       state.filter13 = payload
+    },
+    setFilter14 (state, payload) {
+      state.filter14 = payload
+    },
+    setFilter15 (state, payload) {
+      state.filter15 = payload
+    },
+    setFilter16 (state, payload) {
+      state.filter16 = payload
     }
   },
   getters: {
@@ -68,6 +80,9 @@ export default {
     getFilter10: state => state.filter10,
     getFilter11: state => state.filter11,
     getFilter12: state => state.filter12,
-    getFilter13: state => state.filter13
+    getFilter13: state => state.filter13,
+    getFilter14: state => state.filter14,
+    getFilter15: state => state.filter15,
+    getFilter16: state => state.filter16
   }
 }

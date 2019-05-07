@@ -321,7 +321,7 @@ export default {
       if (this.editRecord === id) {
         this.$store.commit('setEditRecord', 0)
       }
-      this.$store.commit('updateEmployeeProject', {employeeId: id, project: null})
+      this.$store.commit('updateEmployeeProject', {employeeId: id, projectId: null})
     },
     editDepartmentEmployee (id) {
       if (this.editRecord === 0 || this.editRecord === id) {
@@ -455,6 +455,9 @@ export default {
       this.$store.commit('deleteFromSkillTree', {
         id: this.$store.getters['getSkillTree'].find(item => item.id === id).id
       })
+    },
+    addProjectEmployee (id) {
+      this.$store.commit('updateEmployeeProject', {employeeId: id, projectId: Number(this.$route.params.id)})
     }
   }
 }

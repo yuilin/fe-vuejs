@@ -5,6 +5,9 @@
     <div class="personal-data-item" v-else-if="item.type === 'link'">{{item.name}}: <a
             :href="'http://' + item.value" target="_blank">{{item.value}}</a>
     </div>
+    <div class="personal-data-item" v-else-if="item.linkTo">{{item.name}}:
+        <router-link :to="item.linkTo">{{item.value}}</router-link>
+    </div>
     <div class="personal-data-item" v-else>{{item.name}}: {{item.value}}</div>
 </template>
 
