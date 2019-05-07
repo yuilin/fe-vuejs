@@ -12,6 +12,10 @@
 </template>
 
 <script>
+
+/**
+ * Personal data item component.
+ */
 export default {
   name: 'PersonalDataItem',
   props: {

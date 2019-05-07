@@ -10,6 +10,9 @@
 <script>
 import InfoBox from '@/components/common/info/InfoBox'
 
+/**
+ * First tab component for employee or skill.
+ */
 export default {
   components: {InfoBox},
   name: 'TabInfo',

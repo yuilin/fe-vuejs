@@ -9,6 +9,10 @@
 </template>
 
 <script>
+
+/**
+ * Switch component.
+ */
 export default {
   name: 'mySwitch',
   data () {
@@ -17,6 +21,9 @@ export default {
     }
   },
   methods: {
+    /**
+     * Inform parent component that switch was changed.
+     */
     change () {
       this.isSwitched = !this.isSwitched
       this.$emit('changed', this.isSwitched)

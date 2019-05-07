@@ -6,15 +6,26 @@
 <script>
 import Main from '@/components/common/Main'
 
+/**
+ * Employee component.
+ */
 export default {
   components: {Main},
   created () {
     this.employees = this.$store.getters['getEmployees']
   },
   computed: {
+    /**
+     * Selected employee.
+     * @returns {*}
+     */
     selectedEmployee () {
       return this.employees.find(employee => employee.id === Number(this.$route.params.id))
     },
+    /**
+     * Prepared data for info tab.
+     * @returns {*}
+     */
     info () {
       return this.selectedEmployee.info.map(
         (info) => {
@@ -65,18 +76,26 @@ export default {
         }
       )
     },
+    /**
+     * Prepared data for skills tab.
+     * @returns {*}
+     */
     skills () {
       return this.selectedEmployee.skills.map(
         (skill) => {
           let data = skill.data
           if (this.selectedEmployee.id === this.$store.getters['getId']) {
             data.action = [
-              {value: 'edit', function: 'editEmployee'},
-              {value: 'delete', function: 'deleteEmployee'}]
+              {value: 'edit', function: 'editEmployeeSkill'},
+              {value: 'delete', function: 'deleteEmployeeSkill'}]
           }
           return {data: data, id: skill.id}
         })
     },
+    /**
+     * Prepared personal data.
+     * @returns {{credentials: *, icon: *, items: *}}
+     */
     personalData () {
       return {
         credentials: this.selectedEmployee.personalData.credentials,

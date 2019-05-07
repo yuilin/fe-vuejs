@@ -7,6 +7,9 @@
 <script>
 import InfoItem from '@/components/common/info/InfoItem'
 
+/**
+ * A component to group InfoItem.
+ */
 export default {
   name: 'infoItems',
   components: {InfoItem},

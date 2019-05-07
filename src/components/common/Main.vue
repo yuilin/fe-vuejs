@@ -18,6 +18,9 @@
 import Tabs from '@/components/common/Tabs'
 import PersonalData from '@/components/personalData/PersonalData'
 
+/**
+ * Base component for employee or skill.
+ */
 export default {
   name: 'Main',
   components: {PersonalData, Tabs},

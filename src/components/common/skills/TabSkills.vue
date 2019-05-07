@@ -26,6 +26,9 @@
 import myTable from '@/components/common/Table'
 import TreeItem from '@/components/common/skills/TreeItem'
 
+/**
+ * Second tab component for employee or skill.
+ */
 export default {
   name: 'TabSkills',
   components: {myTable, TreeItem},
@@ -65,6 +68,9 @@ export default {
     }
   },
   methods: {
+    /**
+     * Add skill to employee.
+     */
     addSkill () {
       if (this.$store.getters['getEditRecord'] === 0 && this.skillList.length > 0) {
         this.$store.commit('addSkillToEmployee', {
@@ -75,6 +81,13 @@ export default {
         this.$store.commit('setEditRecord', 0)
       }
     },
+
+    /**
+     * Parse the tree
+     * @param treeData
+     * @param counter
+     * @returns {*}
+     */
     parseTree (treeData, counter) {
       let data = []
       let children = []

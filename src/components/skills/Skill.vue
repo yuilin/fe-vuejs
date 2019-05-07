@@ -17,6 +17,11 @@ export default {
     }
   },
   methods: {
+    /**
+     * Calculate employees and projects where the skill is used.
+     * @param selectedSkill
+     * @returns {{credentials: *, icon: *, items: *}}
+     */
     addCalculatedValues (selectedSkill) {
       return {
         icon: selectedSkill.personalData.icon,
@@ -33,6 +38,11 @@ export default {
         )
       }
     },
+    /**
+     * Prepare data for info tab.
+     * @param info
+     * @returns {*}
+     */
     addInfoData (info) {
       return info.map(
         (info) => {
@@ -59,12 +69,22 @@ export default {
         }
       )
     },
+    /**
+     * Calculate projects where the skill is used.
+     * @param id
+     * @returns {any}
+     */
     calculateProjects (id) {
       let projects = this.$store.getters['getEmployees'].filter(employee => employee.skills
         .find(skill => Number(skill.id) === id)).map((employee) =>
         employee.personalData.items.find(item => item.name === 'Project').value)
       return Object.assign(projects).length > 0 ? Array.from(new Set(projects.filter(Number))).length : '0'
     },
+    /**
+     * Calculate employees where the skill is used.
+     * @param id
+     * @returns {string}
+     */
     calculateEmployees (id) {
       let employees = this.$store.getters['getEmployees'].filter(employee => employee.skills
         .find(skill => Number(skill.id) === id))

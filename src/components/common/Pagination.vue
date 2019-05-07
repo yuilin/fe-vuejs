@@ -19,6 +19,10 @@
 </template>
 
 <script>
+
+/**
+ * Pagination component.
+ */
 export default {
   name: 'Pagination',
   data () {
@@ -31,18 +35,29 @@ export default {
     page: Number
   },
   methods: {
+    /**
+     * Go to previous page.
+     * @param i - the step
+     */
     previousPage (i) {
       if (this.newPage > i) {
         this.newPage -= i
         this.pageChanged()
       }
     },
+    /**
+     * Go to next page.
+     * @param i - the step
+     */
     nextPage (i) {
       if (this.data.length > 10 * (this.newPage + i - 1)) {
         this.newPage += i
         this.pageChanged()
       }
     },
+    /**
+     * Inform parent component that page was changed.
+     */
     pageChanged () {
       this.$emit('pageChanged', this.newPage)
     }

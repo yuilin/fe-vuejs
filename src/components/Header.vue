@@ -55,6 +55,9 @@
 </template>
 
 <script>
+/**
+ * Header component.
+ */
 export default {
   name: 'Content',
   methods: {

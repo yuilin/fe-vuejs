@@ -83,6 +83,9 @@
 
 <script>
 
+/**
+ * Login & registration component.
+ */
 export default {
   data () {
     return {
@@ -103,6 +106,9 @@ export default {
     }
   },
   methods: {
+    /**
+     * Log into the system.
+     */
     login () {
       this.messages = []
       let validData = this.employees
@@ -114,6 +120,9 @@ export default {
         this.messages.push('1')
       }
     },
+    /**
+     * Register a new employee.
+     */
     reg () {
       this.messages = []
       if (this.user === null || this.password === null ||
@@ -144,10 +153,16 @@ export default {
         }
       }
     },
+    /**
+     * Change a view from login to registration.
+     */
     changeView () {
       this.clearFields()
       this.display = this.display === 'login' ? 'registration' : 'login'
     },
+    /**
+     * Clear fields.
+     */
     clearFields () {
       this.user = null
       this.password = null

@@ -94,6 +94,9 @@
 <script>
 import Modal from '@/components/common/Modal'
 
+/**
+ * Common component to display table.
+ */
 export default {
   components: {Modal},
   name: 'myTable',
@@ -126,13 +129,25 @@ export default {
     }
   },
   computed: {
+    /**
+     * Selected row to record.
+     * @returns {number}
+     */
     editRecord () {
       return Number(this.$store.getters['getEditRecord'])
     },
+    /**
+     * Logged in employee.
+     * @returns {*}
+     */
     employee () {
       return this.$store.getters['getEmployees']
         .find(employee => employee.id === this.$store.getters['getId'])
     },
+    /**
+     * List of possible skills.
+     * @returns {*}
+     */
     skillList () {
       return this.$store.getters['getSkills'].map(
         (skill) => {
@@ -143,6 +158,10 @@ export default {
         }
       ).filter(skill => this.employeeSkillList.indexOf(skill.id) === -1)
     },
+    /**
+     * List of possible skills for current employee.
+     * @returns {*}
+     */
     employeeSkillList () {
       return this.employee.skills.map(
         (eSkill) => {
@@ -152,6 +171,10 @@ export default {
         }
       )
     },
+    /**
+     * List of possible skill levels.
+     * @returns {{id: number, value: number}[]}
+     */
     levelList () {
       return [
         {
@@ -176,6 +199,10 @@ export default {
         }
       ]
     },
+    /**
+     * List of possible positions.
+     * @returns {*}
+     */
     positionList () {
       return this.$store.getters['getPositions'].map(
         (position) => {
@@ -186,9 +213,17 @@ export default {
         }
       )
     },
+    /**
+     * List of possible positions for project manager.
+     * @returns {*}
+     */
     projectPositionList () {
       return this.positionList.filter(position => position.id !== 'Department Manager')
     },
+    /**
+     * List of project for selected department.
+     * @returns {*}
+     */
     projectList () {
       let projects = this.$store.getters['getProjects'].map(
         (project) => {
@@ -201,12 +236,24 @@ export default {
       projects.unshift({id: null, name: ''})
       return projects
     },
+    /**
+     * List of skill categories.
+     * @returns {*}
+     */
     categories () {
       return this.$store.getters['getSkillCategories']
     },
+    /**
+     * List of skill types.
+     * @returns {*}
+     */
     types () {
       return this.$store.getters['getSkillTypes']
     },
+    /**
+     * List of parent types.
+     * @returns {Array}
+     */
     parentTypes () {
       let parents = []
       this.$store.getters['getSkillTree'].filter(item => item.typeId !== null).forEach(
@@ -216,6 +263,10 @@ export default {
       )
       return parents
     },
+    /**
+     * List of parent categories.
+     * @returns {Array}
+     */
     parentCategories () {
       let parents = []
       this.$store.getters['getSkillTree'].filter(item => item.categoryId !== null).forEach(
@@ -228,6 +279,10 @@ export default {
       )
       return parents
     },
+    /**
+     * List of parent skills.
+     * @returns {Array}
+     */
     parentSkills () {
       let parents = []
       this.$store.getters['getSkillTree'].filter(item => item.skillId !== null).forEach(
@@ -242,6 +297,10 @@ export default {
     }
   },
   methods: {
+    /**
+     * Check changes for item.
+     * @param e
+     */
     updateItem (e) {
       switch (e.target.options[0].className) {
         case 'skillList': {
@@ -266,7 +325,11 @@ export default {
         }
       }
     },
-    editEmployee (id) {
+    /**
+     * Edit employee skill
+     * @param id - employee id
+     */
+    editEmployeeSkill (id) {
       if (this.editRecord === 0 || this.editRecord === id) {
         if (this.editRecord === id) {
           this.$store.commit('updateEmployeeSkillLevel', {
@@ -290,12 +353,20 @@ export default {
         this.$store.commit('setEditRecord', this.editRecord === id ? Number(0) : id)
       }
     },
-    deleteEmployee (id) {
+    /**
+     * Delete employee skill.
+     * @param id - employee id
+     */
+    deleteEmployeeSkill (id) {
       if (this.editRecord === id) {
         this.$store.commit('setEditRecord', 0)
       }
       this.$store.commit('deleteEmployeeSkill', {employeeId: this.employee.id, skillId: id})
     },
+    /**
+     * Edit employee by project manager.
+     * @param id - employee id
+     */
     editProjectEmployee (id) {
       if (this.editRecord === 0 || this.editRecord === id) {
         if (this.editRecord === id) {
@@ -317,12 +388,20 @@ export default {
         this.$store.commit('setEditRecord', this.editRecord === id ? Number(0) : id)
       }
     },
+    /**
+     * Fire employee from project.
+     * @param id - employee id
+     */
     deleteProjectEmployee (id) {
       if (this.editRecord === id) {
         this.$store.commit('setEditRecord', 0)
       }
       this.$store.commit('updateEmployeeProject', {employeeId: id, projectId: null})
     },
+    /**
+     * Edit employee by department manager.
+     * @param id - employee id
+     */
     editDepartmentEmployee (id) {
       if (this.editRecord === 0 || this.editRecord === id) {
         if (this.editRecord === id) {
@@ -356,18 +435,28 @@ export default {
         this.$store.commit('setEditRecord', this.editRecord === id ? Number(0) : id)
       }
     },
-    deleteDepartmentEmployee (id) {
-      if (this.editRecord === id) {
-        this.$store.commit('setEditRecord', 0)
-      }
-      this.$store.commit('updateEmployeeProject', {employeeId: id, departmentId: null})
-    },
+    /**
+     * Handle function.
+     * @param functionName
+     * @param id
+     */
     handleFunctionCall (functionName, id) {
       this[functionName](id)
     },
+    /**
+     * Handle list.
+     * @param functionName
+     * @returns {*}
+     */
     handleListCall (functionName) {
       return this[functionName]
     },
+    /**
+     * Select option from the list
+     * @param id
+     * @param options
+     * @returns {boolean}
+     */
     selectedRecord (id, options) {
       switch (options) {
         case 'skillList': {
@@ -387,10 +476,10 @@ export default {
         }
       }
     },
-    editSkill (id) {
-      this.loadSkillById(id)
-      this.editSkillId = id
-    },
+    /**
+     * Prepare existing skill for editing.
+     * @param id - skill id
+     */
     loadSkillById (id) {
       let skills = this.$store.getters['getSkills'].find(skill => skill.id === id)
       let items = skills.info.find(info => info.name === 'Info').items
@@ -404,7 +493,11 @@ export default {
       if (this.$store.getters['getSkillTree'].find(item => item.skillId === id) !== undefined) {
         this.parent = this.$store.getters['getSkillTree'].find(item => item.skillId === id).parentId
       }
+      this.editSkillId = id
     },
+    /**
+     * Close the model window.
+     */
     closeModal () {
       this.editSkillId = 0
       this.name = null
@@ -415,6 +508,9 @@ export default {
       this.type = null
       this.parent = null
     },
+    /**
+     * Save edited skill.
+     */
     save () {
       this.$store.commit('editSkill', {
         id: this.editSkillId,
@@ -448,6 +544,10 @@ export default {
       }
       this.closeModal()
     },
+    /**
+     * Delete skill from skill tree
+     * @param id - skill id
+     */
     deleteFromSkillTree (id) {
       if (this.$store.getters['getSkillTree'].find(item => item.parentId === id) !== undefined) {
         this.deleteFromSkillTree(this.$store.getters['getSkillTree'].find(item => item.parentId === id).id)
@@ -456,6 +556,10 @@ export default {
         id: this.$store.getters['getSkillTree'].find(item => item.id === id).id
       })
     },
+    /**
+     * Hire employee to a project.
+     * @param id - the project id
+     */
     addProjectEmployee (id) {
       this.$store.commit('updateEmployeeProject', {employeeId: id, projectId: Number(this.$route.params.id)})
     }

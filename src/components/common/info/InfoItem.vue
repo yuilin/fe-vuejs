@@ -15,6 +15,10 @@
 </template>
 
 <script>
+
+/**
+ * A component to display info about employee or skill.
+ */
 export default {
   name: 'InfoItem',
   props: {

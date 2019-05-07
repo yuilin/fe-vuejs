@@ -58,6 +58,9 @@ import Pagination from '@/components/common/Pagination'
 import myTable from '@/components/common/Table'
 import Modal from '@/components/common/Modal'
 
+/**
+ * Skills component.
+ */
 export default {
   components: {myTable, Pagination, myFilter, Modal},
   name: 'Skills',
@@ -153,15 +156,30 @@ export default {
     }
   },
   methods: {
+    /**
+     * Calculate employees where the skill is used.
+     * @param id - skill id
+     * @returns {string}
+     */
     calculateEmployees (id) {
       let employees = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === id))
       return Object.assign(employees).length > 0 ? employees.length : '0'
     },
+    /**
+     * Calculate projects where the skill is used.
+     * @param id - skill id
+     * @returns {any}
+     */
     calculateProjects (id) {
       let projects = this.$store.getters['getEmployees'].filter(employee => employee.skills.find(skill => Number(skill.id) === id)).map((employee) =>
         employee.personalData.items.find(item => item.name === 'Project').value)
       return Object.assign(projects).length > 0 ? Array.from(new Set(projects.filter(Number))).length : '0'
     },
+    /**
+     * Parse the data for the result table.
+     * @param objects
+     * @returns {*}
+     */
     parse (objects) {
       return objects.map(
         (object) => {
@@ -185,12 +203,15 @@ export default {
               },
               employees: {value: this.calculateEmployees(object.id)},
               projects: {value: this.calculateProjects(object.id)},
-              actions: this.user === null ? [] : [{value: 'edit', function: 'editSkill'}]
+              actions: this.user === null ? [] : [{value: 'edit', function: 'loadSkillById'}]
             }
           }
         }
       )
     },
+    /**
+     * Add a new skill.
+     */
     addSkill () {
       let skillId = 1 + this.$store.getters['getSkills'][this.$store.getters['getSkills'].length - 1].id
       if (this.name != null && this.category != null) {
@@ -212,6 +233,9 @@ export default {
         })
       }
     },
+    /**
+     * Close modal window.
+     */
     closeModal () {
       this.showModal = false
       this.name = null
@@ -222,15 +246,27 @@ export default {
       this.type = null
       this.parent = null
     },
+    /**
+     * Save the skill.
+     */
     save () {
       if (this.name != null && this.category != null && this.type != null) {
         this.addSkill()
       }
       this.closeModal()
     },
+    /**
+     * Update page in component.
+     * @param page
+     */
     pageChanged (page) {
       this.page = page
     },
+    /**
+     * Split the large dataset into 10 record parts.
+     * @param data
+     * @returns {*}
+     */
     paginateData (data) {
       return data.slice((this.page - 1) * 10, this.page * 10)
     }

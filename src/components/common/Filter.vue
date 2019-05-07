@@ -119,6 +119,9 @@
 <script>
 import mySwitch from '@/components/common/Switch'
 
+/**
+ * Component with all filters.
+ */
 export default {
   name: 'myFilter',
   components: {mySwitch},
@@ -126,61 +129,133 @@ export default {
     parent: String
   },
   computed: {
+    /**
+     * Name / Surname filter for employees.
+     * @returns {*}
+     */
     filter1 () {
       return this.$store.getters['getFilter1']
     },
+    /**
+     * Skill filter for employees.
+     * @returns {*}
+     */
     filter2 () {
       return this.$store.getters['getFilter2']
     },
+    /**
+     * Project filter for employees.
+     * @returns {*}
+     */
     filter3 () {
       return this.$store.getters['getFilter3']
     },
+    /**
+     * Department filter for employees.
+     * @returns {*}
+     */
     filter4 () {
       return this.$store.getters['getFilter4']
     },
+    /**
+     * Skill filter for skills.
+     * @returns {*}
+     */
     filter5 () {
       return this.$store.getters['getFilter5']
     },
+    /**
+     * Type filter for skills.
+     * @returns {*}
+     */
     filter6 () {
       return this.$store.getters['getFilter6']
     },
+    /**
+     * Category filter for skills.
+     * @returns {*}
+     */
     filter7 () {
       return this.$store.getters['getFilter7']
     },
+    /**
+     * Tags filter for skills.
+     * @returns {*}
+     */
     filter8 () {
       return this.$store.getters['getFilter8']
     },
+    /**
+     * Name filter for departments.
+     * @returns {*}
+     */
     filter9 () {
       return this.$store.getters['getFilter9']
     },
+    /**
+     * Manager filter for departments.
+     * @returns {*}
+     */
     filter10 () {
       return this.$store.getters['getFilter10']
     },
+    /**
+     * Name filter for projects.
+     * @returns {*}
+     */
     filter11 () {
       return this.$store.getters['getFilter11']
     },
+    /**
+     * Manager filter for projects
+     * @returns {*}
+     */
     filter12 () {
       return this.$store.getters['getFilter12']
     },
+    /**
+     * Department filter for projects.
+     * @returns {*}
+     */
     filter13 () {
       return this.$store.getters['getFilter13']
     },
+    /**
+     * Name / Surname filter for project
+     * @returns {*}
+     */
     filter14 () {
       return this.$store.getters['getFilter14']
     },
+    /**
+     * Position filter for project
+     * @returns {*}
+     */
     filter15 () {
       return this.$store.getters['getFilter15']
     },
+    /**
+     * Skills filter for project
+     * @returns {*}
+     */
     filter16 () {
       return this.$store.getters['getFilter16']
     }
   },
   methods: {
-    updateFilter (e) {
-      this.$store.commit('set' + e.target.id, e.target.value)
+    /**
+     * Update data in filter
+     * @param value
+     */
+    updateFilter (value) {
+      this.$store.commit('set' + value.target.id, value.target.value)
     },
-    getSwitchValue (e) {
-      this.$emit('changed', e)
+    /**
+     * Throw the value from switch
+     * @param value
+     */
+    getSwitchValue (value) {
+      this.$emit('changed', value)
     }
   }
 }

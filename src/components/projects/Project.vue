@@ -15,6 +15,9 @@ import myTable from '@/components/common/Table'
 import myFilter from '@/components/common/Filter'
 import Pagination from '@/components/common/Pagination'
 
+/**
+ * Project component.
+ */
 export default {
   components: {myTable, myFilter, Pagination},
   name: 'Project',
@@ -80,6 +83,11 @@ export default {
     }
   },
   methods: {
+    /**
+     * Parse the data for the result table.
+     * @param objects
+     * @returns {*}
+     */
     parse (objects) {
       return objects.map(
         (object) => {
@@ -148,12 +156,25 @@ export default {
         }
       )
     },
+    /**
+     * Update isSwitched in component.
+     * @param isSwitched
+     */
     getSwitchValue (isSwitched) {
       this.isSwitched = isSwitched
     },
+    /**
+     * Update page in component.
+     * @param page
+     */
     pageChanged (page) {
       this.page = page
     },
+    /**
+     * Split the large dataset into 10 record parts.
+     * @param data
+     * @returns {*}
+     */
     paginateData (data) {
       return data.slice((this.page - 1) * 10, this.page * 10)
     }

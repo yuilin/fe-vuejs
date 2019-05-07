@@ -12,6 +12,9 @@ import myFilter from '@/components/common/Filter'
 import Pagination from '@/components/common/Pagination'
 import myTable from '@/components/common/Table'
 
+/**
+ * Departments component.
+ */
 export default {
   components: {myTable, Pagination, myFilter},
   name: 'Departments',
@@ -48,6 +51,11 @@ export default {
     }
   },
   methods: {
+    /**
+     * Parse the data for the result table.
+     * @param objects
+     * @returns {*}
+     */
     parse (objects) {
       return objects.map(
         (object) => {
@@ -77,9 +85,18 @@ export default {
         }
       )
     },
+    /**
+     * Update page in component.
+     * @param page
+     */
     pageChanged (page) {
       this.page = page
     },
+    /**
+     * Split the large dataset into 10 record parts.
+     * @param data
+     * @returns {*}
+     */
     paginateData (data) {
       return data.slice((this.page - 1) * 10, this.page * 10)
     }

@@ -19,6 +19,10 @@
 </template>
 
 <script>
+
+/**
+ * Tree item for skills second tab.
+ */
 export default {
   name: 'TreeItem',
   props: {
@@ -36,11 +40,18 @@ export default {
     }
   },
   methods: {
+    /**
+     * Open folders.
+     */
     toggle: function () {
       if (this.isFolder) {
         this.isOpen = !this.isOpen
       }
     },
+    /**
+     * Open skill.
+     * @param link the skill id
+     */
     openSkill (link) {
       if (link) {
         this.$router.push('/skills/' + link)
@@ -55,14 +66,17 @@ export default {
         font-family: Menlo, Consolas, monospace;
         color: #444;
     }
+
     .item {
         cursor: pointer;
         margin: 50px;
         padding: 20px;
     }
+
     .bold {
         font-weight: bold;
     }
+
     ul, li {
         padding-left: 1em;
         line-height: 1.5em;

@@ -31,6 +31,9 @@
 import TabInfo from '@/components/common/info/TabInfo'
 import TabSkills from '@/components/common/skills/TabSkills'
 
+/**
+ * A component with tabs for employee or skill
+ */
 export default {
   name: 'Tabs',
   components: {TabSkills, TabInfo},

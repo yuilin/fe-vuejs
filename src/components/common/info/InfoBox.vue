@@ -11,6 +11,9 @@
 <script>
 import InfoItems from '@/components/common/info/InfoItems'
 
+/**
+ * A component to group InfoItems.
+ */
 export default {
   name: 'InfoBox',
   components: {InfoItems},

@@ -26,6 +26,9 @@
 <script>
 import PersonalDataItem from '@/components/personalData/PersonalDataItem'
 
+/**
+ * Personal data component.
+ */
 export default {
   name: 'PersonalData',
   components: {PersonalDataItem},

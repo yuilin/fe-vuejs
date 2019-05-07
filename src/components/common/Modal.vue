@@ -33,6 +33,9 @@
 </template>
 
 <script>
+/**
+ * Modal window component.
+ */
 export default {
   name: 'Modal'
 }
