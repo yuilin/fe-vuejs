@@ -66,6 +66,7 @@ export default {
         body, input, textarea, button, select {
             font-size: 12px;
         }
+
         .skills-header {
             width: 100%;
         }

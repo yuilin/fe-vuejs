@@ -4,9 +4,6 @@
             <div class="login-item">
                 <h1>Login</h1>
             </div>
-            <div v-if="messages.includes('1')"
-                 class="login-item error">Wrong login or password
-            </div>
             <div class="login-item">
                 <input v-model="user" type="text" placeholder="login">
             </div>
@@ -22,21 +19,6 @@
         <div class="registration-box box" v-else>
             <div class="login-item">
                 <h1>Registration</h1>
-            </div>
-            <div v-if="messages.includes('2')"
-                 class="login-item error">Passwords ane not equal
-            </div>
-            <div v-if="messages.includes('3')"
-                 class="login-item error">Employee with this login is already exists
-            </div>
-            <div v-if="messages.includes('4')"
-                 class="login-item error">Please fill all fields
-            </div>
-            <div v-if="messages.includes('5')"
-                 class="login-item error">Something went wrong, please try again
-            </div>
-            <div v-if="messages.includes('10')"
-                 class="login-item success">Registration successful
             </div>
             <div class="login-item">
                 <input v-model="user" type="text" placeholder="login">
@@ -69,28 +51,33 @@
             </div>
         </div>
         <router-view></router-view>
+        <Notification ref="notification"></Notification>
     </div>
 </template>
 
 <script>
 
+import Notification from '@/components/common/Notification'
+
 /**
  * Login & registration component.
  */
 export default {
+  components: {Notification},
   data () {
     return {
       user: null,
       password: null,
       password2: null,
       employees: this.$store.getters['getEmployees'],
-      messages: [],
       display: 'login',
       name: null,
       surname: null,
       email: null,
       gender: null,
-      birthDay: null
+      birthDay: null,
+      message: null,
+      type: null
     }
   },
   methods: {
@@ -98,26 +85,24 @@ export default {
      * Log into the system.
      */
     login () {
-      this.messages = []
       let validData = this.employees
         .find(employee => employee.auth.login === this.user && employee.auth.password === this.password)
       if (validData !== undefined) {
         this.$store.commit('setId', validData.id)
         this.$router.push('/employees')
       } else {
-        this.messages.push('1')
+        this.$refs.notification.error('Wrong login or password')
       }
     },
     /**
      * Register a new employee.
      */
     reg () {
-      this.messages = []
       if (this.user === null || this.password === null ||
         this.name === null || this.surname === null) {
-        this.messages.push('4')
+        this.$refs.notification.error('Please fill all fields')
       } else if (this.password !== this.password2) {
-        this.messages.push('2')
+        this.$refs.notification.error('Passwords ane not equal')
       } else {
         let validData = this.employees
           .find(employee => employee.auth.login === this.user)
@@ -132,9 +117,9 @@ export default {
             birthday: this.birthday,
             id: 1 + this.employees[this.employees.length - 1].id
           })
-          this.messages.push('10')
+          this.$refs.notification.success('Registration successful')
         } else {
-          this.messages.push('3')
+          this.$refs.notification.error('Employee with this login is already exists')
         }
       }
     },
@@ -152,12 +137,10 @@ export default {
       this.user = null
       this.password = null
       this.password2 = null
-      this.messages = []
       this.name = null
       this.surname = null
       this.project = null
       this.email = null
-      this.startData = null
       this.gender = null
       this.birthDay = null
       this.position = null
@@ -176,7 +159,7 @@ export default {
     }
 
     @media screen and (max-width: 400px) {
-        .login-box {
+        .login-box, .registration-box {
             width: auto;
             margin-top: 20px;
         }

@@ -13,6 +13,7 @@
                  link="/skills/"
                  :editable="employee !== undefined && employee.id === Number(this.$route.params.id)">
         </myTable>
+        <Notification ref="notification"></Notification>
     </div>
     <div v-else class="tab-skills">
         <TreeItem
@@ -25,13 +26,14 @@
 <script>
 import myTable from '@/components/common/Table'
 import TreeItem from '@/components/common/skills/TreeItem'
+import Notification from '@/components/common/Notification'
 
 /**
  * Second tab component for employee or skill.
  */
 export default {
   name: 'TabSkills',
-  components: {myTable, TreeItem},
+  components: {myTable, TreeItem, Notification},
   props: {
     data: Array,
     parent: String
@@ -78,6 +80,7 @@ export default {
           value: this.skillList[0].id,
           skillName: this.skillList[0].value
         })
+        this.$refs.notification.success('Skill added')
         this.$store.commit('setEditRecord', 0)
       }
     },

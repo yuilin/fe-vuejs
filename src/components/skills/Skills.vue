@@ -49,6 +49,7 @@
                 </select>
             </div>
         </modal>
+        <Notification ref="notification"></Notification>
     </div>
 </template>
 
@@ -57,12 +58,13 @@ import myFilter from '@/components/common/Filter'
 import Pagination from '@/components/common/Pagination'
 import myTable from '@/components/common/Table'
 import Modal from '@/components/common/Modal'
+import Notification from '@/components/common/Notification'
 
 /**
  * Skills component.
  */
 export default {
-  components: {myTable, Pagination, myFilter, Modal},
+  components: {myTable, Pagination, myFilter, Modal, Notification},
   name: 'Skills',
   data () {
     return {
@@ -252,6 +254,7 @@ export default {
     save () {
       if (this.name != null && this.category != null && this.type != null) {
         this.addSkill()
+        this.$refs.notification.success('Skill added')
       }
       this.closeModal()
     },

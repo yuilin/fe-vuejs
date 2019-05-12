@@ -89,17 +89,19 @@
                 </select>
             </div>
         </modal>
+        <Notification ref="notification"></Notification>
     </div>
 </template>
 
 <script>
 import Modal from '@/components/common/Modal'
+import Notification from '@/components/common/Notification'
 
 /**
  * Common component to display table.
  */
 export default {
-  components: {Modal},
+  components: {Modal, Notification},
   name: 'myTable',
   props: {
     headerNames: Array,
@@ -349,6 +351,7 @@ export default {
           })
           this.selectedSkill = null
           this.selectedLevel = null
+          this.$refs.notification.success('Skill updated')
         } else {
           this.selectedSkill = this.employee.skills.find(skill => skill.id === id).id
           this.selectedLevel = this.employee.skills.find(skill => skill.id === id).data.level.value
@@ -365,6 +368,7 @@ export default {
         this.$store.commit('setEditRecord', 0)
       }
       this.$store.commit('deleteEmployeeSkill', {employeeId: this.employee.id, skillId: id})
+      this.$refs.notification.success('Skill deleted')
     },
     /**
      * Edit employee by project manager.
@@ -385,6 +389,7 @@ export default {
             position: this.selectedPosition
           })
           this.selectedPosition = null
+          this.$refs.notification.success('Employee updated')
         } else {
           this.selectedPosition = this.data.find(employee => employee.id === id).data.position.value
         }
@@ -400,6 +405,7 @@ export default {
         this.$store.commit('setEditRecord', 0)
       }
       this.$store.commit('updateEmployeeProject', {employeeId: id, projectId: null})
+      this.$refs.notification.success('Employee fired')
     },
     /**
      * Edit employee by department manager.
@@ -431,6 +437,7 @@ export default {
           })
           this.selectedPosition = null
           this.selectedProject = null
+          this.$refs.notification.success('Employee updated')
         } else {
           this.selectedPosition = this.data.find(employee => employee.id === id).data.position.value
           this.selectedProject = this.data.find(employee => employee.id === id).data.project.id
@@ -545,6 +552,7 @@ export default {
           })
         }
       }
+      this.$refs.notification.success('Skill updated')
       this.closeModal()
     },
     /**
@@ -565,6 +573,7 @@ export default {
      */
     addProjectEmployee (id) {
       this.$store.commit('updateEmployeeProject', {employeeId: id, projectId: Number(this.$route.params.id)})
+      this.$refs.notification.success('Employee hired to project')
     }
   }
 }
