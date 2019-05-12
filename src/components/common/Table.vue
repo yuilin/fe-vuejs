@@ -31,7 +31,8 @@
                 <div v-else :class="r.display ? 'search-item ' + r.display : 'search-item'">
                     <select v-if="r.value && r.editable !== false" :to="link  + row.id" @change="updateItem($event)">
                         <option v-for="(item, i) in handleListCall(r.options)" v-bind:key="i" :value="item.id"
-                                :selected="selectedRecord(item.id, r.options)" :class="r.options">
+                                :selected="selectedRecord(item.id, r.options)" :class="r.options"
+                                :disabled="item.id === ' '">
                             {{item.value}}
                         </option>
                     </select>
@@ -204,7 +205,7 @@ export default {
      * @returns {*}
      */
     positionList () {
-      return this.$store.getters['getPositions'].map(
+      let positions = this.$store.getters['getPositions'].map(
         (position) => {
           return {
             id: position,
@@ -212,6 +213,8 @@ export default {
           }
         }
       )
+      positions.unshift({id: ' ', value: ' '})
+      return positions
     },
     /**
      * List of possible positions for project manager.

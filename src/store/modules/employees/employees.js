@@ -1204,7 +1204,7 @@ export default {
               },
               {
                 name: 'Project',
-                value: payload.project
+                value: null
               }
             ],
             icon: payload.id
@@ -1215,7 +1215,7 @@ export default {
               items: [
                 {
                   name: 'Start date',
-                  value: payload.startDate
+                  value: new Date().toLocaleString()
                 },
                 {
                   name: 'Gender',
@@ -1226,25 +1226,18 @@ export default {
                   value: payload.birthday
                 }
               ]
+            },
+            {
+              name: 'Job Details',
+              items: [
+                {
+                  name: 'Position',
+                  value: ' '
+                }
+              ]
             }
           ],
-          data: {
-            name: {
-              value: payload.name
-            },
-            surname: {
-              value: payload.surname
-            },
-            position: {
-              value: payload.position
-            },
-            project: {
-              value: payload.project
-            },
-            skills: {
-              value: ''
-            }
-          }
+          skills: []
         }
       )
     },

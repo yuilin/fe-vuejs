@@ -54,22 +54,13 @@
                 <input v-model="surname" type="text" placeholder="Surname">
             </div>
             <div class="login-item">
-                <input v-model="project" type="text" placeholder="Project">
-            </div>
-            <div class="login-item">
                 <input v-model="email" type="text" placeholder="E-mail">
-            </div>
-            <div class="login-item">
-                <input v-model="startData" type="text" placeholder="Start Date">
             </div>
             <div class="login-item">
                 <input v-model="gender" type="text" placeholder="Gender">
             </div>
             <div class="login-item">
                 <input v-model="birthDay" type="text" placeholder="Birthday">
-            </div>
-            <div class="login-item">
-                <input v-model="position" type="text" placeholder="Position">
             </div>
             <div class="login-item">
                 <button @click="reg">Register</button>
@@ -97,12 +88,9 @@ export default {
       display: 'login',
       name: null,
       surname: null,
-      project: null,
       email: null,
-      startData: null,
       gender: null,
-      birthDay: null,
-      position: null
+      birthDay: null
     }
   },
   methods: {
@@ -126,7 +114,7 @@ export default {
     reg () {
       this.messages = []
       if (this.user === null || this.password === null ||
-        this.name === null || this.surname === null || this.project === null) {
+        this.name === null || this.surname === null) {
         this.messages.push('4')
       } else if (this.password !== this.password2) {
         this.messages.push('2')
@@ -139,12 +127,9 @@ export default {
             password: this.password,
             name: this.name,
             surname: this.surname,
-            project: this.project,
             email: this.email,
-            startDate: this.startDate,
             gender: this.gender,
             birthday: this.birthday,
-            position: this.position,
             id: 1 + this.employees[this.employees.length - 1].id
           })
           this.messages.push('10')
