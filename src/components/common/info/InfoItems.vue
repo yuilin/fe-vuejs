@@ -37,7 +37,6 @@ export default {
 
     @media screen and (max-width: 400px) {
         .info-items {
-            padding-top: 20px;
             display: block;
         }
     }

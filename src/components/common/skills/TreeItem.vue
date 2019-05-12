@@ -69,8 +69,8 @@ export default {
 
     .item {
         cursor: pointer;
-        margin: 50px;
-        padding: 20px;
+        margin: 5px;
+        padding: 5px;
     }
 
     .bold {

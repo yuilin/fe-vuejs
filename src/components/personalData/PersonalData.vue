@@ -70,5 +70,16 @@ export default {
         .info {
             display: block;
         }
+
+        .user-icon {
+            height: 50px;
+            width: 50px;
+        }
+
+        .icon {
+            height: 50px;
+            width: 50px;
+            margin: 20px;
+        }
     }
 </style>

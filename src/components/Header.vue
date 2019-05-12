@@ -93,8 +93,8 @@ export default {
     nav {
         display: flex;
         width: calc(100% - 420px);
-        margin-right: 50px;
-        margin-left: 50px;
+        margin-right: 90px;
+        margin-left: 0;
     }
 
     .navigation {
@@ -103,7 +103,7 @@ export default {
 
     .navigation-item {
         display: flex;
-        margin: 20px;
+        margin-left: 20px;
     }
 
     .logout {
@@ -130,11 +130,10 @@ export default {
     }
 
     .mobile-navigation-container {
-        margin-left: auto;
-        margin-right: auto;
+        width: 90%;
     }
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 960px) {
         .navigation {
             display: flex;
         }
@@ -145,6 +144,14 @@ export default {
 
         .mobile-navigation {
             display: none;
+        }
+
+        nav {
+            margin-left: 50px;
+        }
+
+        .navigation-item {
+            margin: 20px;
         }
     }
 </style>

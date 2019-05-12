@@ -64,7 +64,7 @@ export default {
 
     @media screen and (max-width: 400px) {
         body, input, textarea, button, select {
-            font-size: 8px;
+            font-size: 12px;
         }
         .skills-header {
             width: 100%;

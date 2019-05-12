@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
     .info-item {
-        padding: 20px;
+        padding: 5pt
     }
 
     .info-textarea {
@@ -44,7 +44,7 @@ export default {
     @media screen and (max-width: 400px) {
 
         .info-item {
-            padding: 5px;
+            padding: 2pt 5pt
         }
     }
 </style>

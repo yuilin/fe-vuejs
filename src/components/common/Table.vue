@@ -625,5 +625,10 @@ export default {
         .not-mobile {
             display: none;
         }
+
+        .search-item {
+            padding: 0;
+        }
+
     }
 </style>
