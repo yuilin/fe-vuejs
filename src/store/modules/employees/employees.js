@@ -1069,7 +1069,7 @@ export default {
             },
             {
               name: 'Project',
-              value: 1
+              value: 4
             }
           ],
           icon: 12
@@ -1098,6 +1098,2972 @@ export default {
               {
                 name: 'Position',
                 value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 13,
+        auth: {
+          login: 'd3',
+          password: 'd3'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Third'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd3@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 13
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 14,
+        auth: {
+          login: 'd4',
+          password: 'd4'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Fourth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd4@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 14
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 15,
+        auth: {
+          login: 'd5',
+          password: 'd5'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Second'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd5@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 15
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 16,
+        auth: {
+          login: 'd6',
+          password: 'd6'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Sixth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd6@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 16
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 17,
+        auth: {
+          login: 'd7',
+          password: 'd7'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Seventh'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd7@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 17
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 18,
+        auth: {
+          login: 'd8',
+          password: 'd8'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Eighth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd8@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 18
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 19,
+        auth: {
+          login: 'd9',
+          password: 'd9'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Ninth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd9@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 19
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 20,
+        auth: {
+          login: 'd10',
+          password: 'd10'
+        },
+        personalData: {
+          credentials: {
+            name: 'Developer',
+            surname: 'Tenth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'd10@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 20
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 21,
+        auth: {
+          login: 'jd1',
+          password: 'jd1'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'First'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd1@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 1
+            }
+          ],
+          icon: 21
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 22,
+        auth: {
+          login: 'jd2',
+          password: 'jd2'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Second'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd2@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 22
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 23,
+        auth: {
+          login: 'jd3',
+          password: 'jd3'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Third'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd3@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: null
+            }
+          ],
+          icon: 23
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 24,
+        auth: {
+          login: 'jd4',
+          password: 'jd4'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Fourth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd4@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: null
+            }
+          ],
+          icon: 24
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 25,
+        auth: {
+          login: 'jd5',
+          password: 'jd5'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Second'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd5@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 25
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 26,
+        auth: {
+          login: 'jd6',
+          password: 'jd6'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Sixth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd6@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 26
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 27,
+        auth: {
+          login: 'jd7',
+          password: 'jd7'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Seventh'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd7@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 2
+            }
+          ],
+          icon: 27
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 3,
+            data: {
+              skill: {
+                value: 'CSS',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 28,
+        auth: {
+          login: 'jd8',
+          password: 'jd8'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Eighth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd8@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 5
+            }
+          ],
+          icon: 28
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 29,
+        auth: {
+          login: 'jd9',
+          password: 'jd9'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Ninth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd9@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 6
+            }
+          ],
+          icon: 29
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 30,
+        auth: {
+          login: 'jd10',
+          password: 'jd10'
+        },
+        personalData: {
+          credentials: {
+            name: 'Junior Developer',
+            surname: 'Tenth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'jd10@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 7
+            }
+          ],
+          icon: 30
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Junior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 31,
+        auth: {
+          login: 'sd1',
+          password: 'sd1'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'First'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd1@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 8
+            }
+          ],
+          icon: 31
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 32,
+        auth: {
+          login: 'sd2',
+          password: 'sd2'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Second'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 1
+            }
+          ],
+          icon: 32
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 33,
+        auth: {
+          login: 'sd3',
+          password: 'sd3'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Third'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd3@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 2
+            }
+          ],
+          icon: 33
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 3,
+            data: {
+              skill: {
+                value: 'CSS',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 4,
+            data: {
+              skill: {
+                value: 'TypeScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 5,
+            data: {
+              skill: {
+                value: 'React',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 34,
+        auth: {
+          login: 'sd4',
+          password: 'sd4'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Fourth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd4@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 3
+            }
+          ],
+          icon: 34
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 3,
+            data: {
+              skill: {
+                value: 'CSS',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 4,
+            data: {
+              skill: {
+                value: 'TypeScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 5,
+            data: {
+              skill: {
+                value: 'React',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 6,
+            data: {
+              skill: {
+                value: 'Vue',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 7,
+            data: {
+              skill: {
+                value: 'Angular',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 35,
+        auth: {
+          login: 'sd5',
+          password: 'sd5'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Second'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd5@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 3
+            }
+          ],
+          icon: 35
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 3,
+            data: {
+              skill: {
+                value: 'CSS',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 4,
+            data: {
+              skill: {
+                value: 'TypeScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 5,
+            data: {
+              skill: {
+                value: 'React',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 6,
+            data: {
+              skill: {
+                value: 'Vue',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 7,
+            data: {
+              skill: {
+                value: 'Angular',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 36,
+        auth: {
+          login: 'sd6',
+          password: 'sd6'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Sixth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd6@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 3
+            }
+          ],
+          icon: 36
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 3,
+            data: {
+              skill: {
+                value: 'CSS',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 4,
+            data: {
+              skill: {
+                value: 'TypeScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 5,
+            data: {
+              skill: {
+                value: 'React',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 7,
+            data: {
+              skill: {
+                value: 'Angular',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 37,
+        auth: {
+          login: 'sd7',
+          password: 'sd7'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Seventh'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd7@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 4
+            }
+          ],
+          icon: 37
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 38,
+        auth: {
+          login: 'sd8',
+          password: 'sd8'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Eighth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd8@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 5
+            }
+          ],
+          icon: 38
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 39,
+        auth: {
+          login: 'sd9',
+          password: 'sd9'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Ninth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd9@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 6
+            }
+          ],
+          icon: 39
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
+              }
+            ]
+          }
+        ],
+        skills: [
+          {
+            id: 1,
+            data: {
+              skill: {
+                value: 'Java',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          },
+          {
+            id: 2,
+            data: {
+              skill: {
+                value: 'JavaScript',
+                link: true,
+                options: 'skillList'
+              },
+              level: {
+                value: 5,
+                options: 'levelList'
+              },
+              date: {
+                value: '23.04.2019, 14:37:14',
+                editable: false
+              }
+            }
+          }
+        ]
+      },
+      {
+        id: 40,
+        auth: {
+          login: 'sd10',
+          password: 'sd10'
+        },
+        personalData: {
+          credentials: {
+            name: 'Senior Developer',
+            surname: 'Tenth'
+          },
+          items: [
+            {
+              name: 'E-mail',
+              value: 'sd10@test.ru',
+              type: 'e-mail'
+            },
+            {
+              name: 'Workplace',
+              value: '12AA'
+            },
+            {
+              name: 'Project',
+              value: 7
+            }
+          ],
+          icon: 40
+        },
+        info: [
+          {
+            name: 'Personal Info',
+            items: [
+              {
+                name: 'Start date',
+                value: '01-01-1970'
+              },
+              {
+                name: 'Gender',
+                value: 'Male'
+              },
+              {
+                name: 'Birthday',
+                value: '01-01-1970'
+              }
+            ]
+          },
+          {
+            name: 'Job Details',
+            items: [
+              {
+                name: 'Position',
+                value: 'Senior Developer'
               }
             ]
           }

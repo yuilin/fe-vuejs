@@ -105,13 +105,6 @@
                placeholder="Department"
                :value="filter4"
                @input="updateFilter">
-        <input class="filter-item"
-               id="Filter8"
-               type="text"
-               v-else-if="parent === 'Skills'"
-               placeholder="Tags"
-               :value="filter8"
-               @input="updateFilter">
         <mySwitch v-else-if="parent === 'Project'" @changed="getSwitchValue"></mySwitch>
     </div>
 </template>
@@ -177,13 +170,6 @@ export default {
      */
     filter7 () {
       return this.$store.getters['getFilter7']
-    },
-    /**
-     * Tags filter for skills.
-     * @returns {*}
-     */
-    filter8 () {
-      return this.$store.getters['getFilter8']
     },
     /**
      * Name filter for departments.

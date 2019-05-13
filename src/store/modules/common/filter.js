@@ -7,7 +7,6 @@ export default {
     filter5: null,
     filter6: null,
     filter7: null,
-    filter8: null,
     filter9: null,
     filter10: null,
     filter11: null,
@@ -38,9 +37,6 @@ export default {
     },
     setFilter7 (state, payload) {
       state.filter7 = payload
-    },
-    setFilter8 (state, payload) {
-      state.filter8 = payload
     },
     setFilter9 (state, payload) {
       state.filter9 = payload
@@ -75,7 +71,6 @@ export default {
     getFilter5: state => state.filter5,
     getFilter6: state => state.filter6,
     getFilter7: state => state.filter7,
-    getFilter8: state => state.filter8,
     getFilter9: state => state.filter9,
     getFilter10: state => state.filter10,
     getFilter11: state => state.filter11,

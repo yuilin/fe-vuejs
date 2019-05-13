@@ -3,25 +3,25 @@ export default {
     projects: [
       {
         id: 1,
-        name: 'Project 1',
+        name: 'Small backend project',
         manager: 3,
         department: 1
       },
       {
         id: 2,
-        name: 'Project 2',
+        name: 'Small project',
         manager: 4,
         department: 1
       },
       {
         id: 3,
-        name: 'Project 3',
+        name: 'Senior project',
         manager: 5,
         department: 2
       },
       {
         id: 4,
-        name: 'Project 4',
+        name: 'Large project',
         manager: 6,
         department: 1
       },

@@ -92,22 +92,16 @@ export default {
     filterCategory () {
       return this.$store.getters['getFilter7']
     },
-    filterTags () {
-      return this.$store.getters['getFilter8']
-    },
     data () {
       let data = this.parse(this.$store.getters['getSkills'])
       if (this.filterSkill != null && this.filterSkill.length > 0) {
-        data = data = data.filter(data => data.data.title.value.toUpperCase().search(this.filterSkill.toUpperCase()) > -1)
+        data = data = data.filter(data => data.data.name.value.toUpperCase().search(this.filterSkill.toUpperCase()) > -1)
       }
       if (this.filterType != null && this.filterType.length > 0) {
         data = data.filter(data => data.data.type.value.toUpperCase().search(this.filterType.toUpperCase()) > -1)
       }
       if (this.filterCategory != null && this.filterCategory.length > 0) {
         data = data.filter(data => data.data.category.value.toUpperCase().search(this.filterCategory.toUpperCase()) > -1)
-      }
-      if (this.filterTags != null && this.filterTags.length > 0) {
-        data = data.filter(data => data.data.tags.value.toUpperCase().search(this.filterTags.toUpperCase()) > -1)
       }
       return data
     },

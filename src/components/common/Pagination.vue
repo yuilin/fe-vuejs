@@ -4,7 +4,7 @@
         <button v-if="newPage > 3" class="pagination-item box" @click="previousPage(3)">{{newPage - 3}}</button>
         <button v-if="newPage > 2" class="pagination-item box" @click="previousPage(2)">{{newPage - 2}}</button>
         <button v-if="newPage > 1" class="pagination-item box" @click="previousPage(1)">{{newPage - 1}}</button>
-        <button class="pagination-item box">{{newPage}}</button>
+        <button class="pagination-item box active">{{newPage}}</button>
         <button v-if="data.length > 10 * newPage" class="pagination-item box" @click="nextPage(1)">
             {{newPage + 1}}
         </button>
@@ -79,5 +79,9 @@ export default {
         border-radius: 5px;
         box-shadow: inset 0 0 5px 1px #afafaf;
         margin: 4px;
+    }
+
+    .active {
+        background-color: bisque;
     }
 </style>
