@@ -26,6 +26,7 @@ export default {
     success (message) {
       this.message = message
       this.type = 'success'
+      setTimeout(this.clear, 1000)
     },
     /**
      * Display error
@@ -34,6 +35,7 @@ export default {
     error (message) {
       this.message = message
       this.type = 'error'
+      setTimeout(this.clear, 1000)
     },
     /**
      * Clear message
@@ -88,11 +90,9 @@ export default {
     }
 
     .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s
+        transition: opacity 0.7s
     }
-
-    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */
-    {
+    .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
         opacity: 0
     }
 </style>
