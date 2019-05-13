@@ -374,29 +374,50 @@ export default {
       },
       {
         id: 3,
-        parentId: 2,
-        skillId: null,
+        parentId: 1,
+        skillId: 1,
         categoryId: null,
-        typeId: 2
+        typeId: null
       },
       {
         id: 4,
         parentId: 2,
-        skillId: null,
+        skillId: 2,
         categoryId: null,
-        typeId: 3
+        typeId: null
       },
       {
         id: 5,
-        parentId: 1,
-        skillId: null,
+        parentId: 2,
+        skillId: 3,
         categoryId: null,
-        typeId: 3
+        typeId: null
       },
       {
         id: 6,
-        parentId: 5,
-        skillId: 1,
+        parentId: 4,
+        skillId: 4,
+        categoryId: null,
+        typeId: null
+      },
+      {
+        id: 7,
+        parentId: 4,
+        skillId: 5,
+        categoryId: null,
+        typeId: null
+      },
+      {
+        id: 8,
+        parentId: 4,
+        skillId: 6,
+        categoryId: null,
+        typeId: null
+      },
+      {
+        id: 9,
+        parentId: 4,
+        skillId: 7,
         categoryId: null,
         typeId: null
       }
