@@ -57,44 +57,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 2,
@@ -152,44 +115,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 3,
@@ -247,44 +173,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 4,
@@ -342,44 +231,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 5,
@@ -437,44 +289,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 6,
@@ -532,44 +347,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 7,
@@ -627,44 +405,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 8,
@@ -722,44 +463,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 9,
@@ -817,44 +521,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 10,
@@ -912,44 +579,7 @@ export default {
             ]
           }
         ],
-        skills: [
-          {
-            id: 1,
-            data: {
-              skill: {
-                value: 'Java',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          },
-          {
-            id: 2,
-            data: {
-              skill: {
-                value: 'JavaScript',
-                link: true,
-                options: 'skillList'
-              },
-              level: {
-                value: 5,
-                options: 'levelList'
-              },
-              date: {
-                value: '23.04.2019, 14:37:14',
-                editable: false
-              }
-            }
-          }
-        ]
+        skills: []
       },
       {
         id: 11,
